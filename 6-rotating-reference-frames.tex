@@ -1,0 +1,333 @@
+\section{Rotating Reference Frames}
+
+Rotating reference frames are important examples of non-inertial frames.
+
+\subsection{Newton's Equations in a Rotating Reference Frame}
+
+We first set up the problems, defining some notations.
+
+\begin{definition}[Notation on Rotating Frame]
+    \label{def:rotating-frame-notation}%
+    We define:
+    \begin{itemize}
+        \item \(\vm{e}_1, \vm{e}_2, \vm{e}_3\) as the axes of an inertial frame \(S\);
+        \item  \(\vm{e}_1', \vm{e}_2', \vm{e}_3'\) as the axes of a non-inertial rotating frame \(S'\).
+    \end{itemize}
+    
+    From the perspective of the inertial frame, let \(\vmb{\omega}\) be the angular velocity the \(\vm{e}_i'\) axes rotate, so
+    \[
+        \dot{\vm{e}}_i' = \vmb{\omega} \times \vm{e}_i'.
+    \]
+
+    In the two frames, the position of a particle is, respectively,
+    \[
+        \vm{x} = x_i \vm{e}_i = x_i' \vm{e}_i'.
+    \]
+
+    The differential operators
+    \[
+        \para{\DiffOp{t}}_S, \para{\DiffOp{t}}_{S'}
+    \]
+    means differentiating by Cartesian components with respect to a certain frame.
+\end{definition}
+
+\begin{proposition}[Velocity in a Rotating Frame]
+    \label{prop:velocity-rotating-frame}%
+    The velocity described in a rotating frame is given by
+    \[
+        \para{\DiffFrac{\vm{x}}{t}}_{S} = \para{\DiffFrac{\vm{x}}{t}}_{S'} + \vmb{\omega} \times \vm{x}.
+    \]
+\end{proposition}
+
+\begin{proof}
+    On one hand, in the inertial frame, we have
+    \[
+        \dot{\vm{x}} = \dot{x}_i \vm{e}_i = \para{\DiffFrac{\vm{x}}{t}}_{S},
+    \]
+    while in the rotating frame, differentiating gives
+    \begin{align*}
+        \dot{\vm{x}} &= \dot{x}_i' \vm{e}_i' + x_i' \dot{\vm{e}}_i' \\
+        &= \dot{x}_i' \vm{e}_i' + x_i' \para{\vmb{\omega} \times \vm{e}_i'} \\
+        &= \dot{x}_i' \vm{e}_i' + \vmb{\omega} \times \vm{x} \\
+        &= \para{\DiffFrac{\vm{x}}{t}}_{S'} + \vmb{\omega} \times \vm{x}.
+    \end{align*}
+\end{proof}
+
+This result is expected -- the difference is just the relative velocity of the two frames.
+
+\begin{proposition}[Acceleration in a Rotating Frame]
+    \label{prop:acceleration-rotating-frame}%
+    The acceleration in a rotating frame is given by
+    \[
+        \boxed{\para{\DiffNFrac{\vm{x}}{t}{2}}_{S} = \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + 2 \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}}.}
+    \]
+\end{proposition}
+
+\begin{proof}
+    Using Newton's Law, we have
+    \begin{align*}
+        \ddot{\vm{x}} &= \ddot{x}_i \vm{e}_i \\
+        &= \ddot{x}_i' \vm{e}_i' + \dot{x}_i' \dot{\vm{e}}_i' + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \dot{\vm{x}} \\
+        &= \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + \dot{x}_i' \para{\vmb{\omega} \times \vm{e}_i'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \dot{\vm{x}} \\
+        &= \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \dot{\vm{x}}.
+    \end{align*}
+
+    Hence, we have
+    \begin{align*}
+        \para{\DiffNFrac{\vm{x}}{t}{2}}_{S} &= \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \dot{\vm{x}} + \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} \\
+        &= \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \para{\para{\DiffFrac{\vm{x}}{t}}_{S'} + \vmb{\omega} \times \vm{x}} + \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} \\
+        &= \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} + 2 \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} + \dot{\vmb{\omega}} \times \vm{x} + \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}}.
+    \end{align*}
+\end{proof}
+
+Putting Newton's equations into this, we get \autoref{cor:fictitious-force-rotating-frame}.
+
+\begin{corollary}[Fictitious Forces in Rotating Frame]
+    \label{cor:fictitious-force-rotating-frame}%
+    In a rotating frame, Newton's Law involving the fictitious forces takes the form
+    \[
+        \boxed{m \para{\DiffNFrac{\vm{x}}{t}{2}}_{S'} = \vm{F} - m \dot{\vmb{\omega}} \times \vm{x} - 2 m \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'} - m \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}}.}
+    \]
+\end{corollary}
+
+\begin{definition}[Fictitious Forces: Euler/Coriolis/Centrifugal]
+    The fictitious forces involved in \autoref{cor:fictitious-force-rotating-frame} are named:
+    \begin{itemize}
+        \item \emph{Euler Force}: \(m \dot{\vmb{\omega}} \times \vm{x}\);
+        \item \emph{Coriolis Force}: \(2 m \vmb{\omega} \times \para{\DiffFrac{\vm{x}}{t}}_{S'}\);
+        \item \emph{Centrifugal Force}: \(m \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}}\).
+    \end{itemize}
+\end{definition}
+
+In other words, a free particle with \(\vm{F} = \vm{0}\) does \emph{not} move on a straight line in a rotating frame.
+
+\begin{example}[Rotation of Earth]
+    \label{ex:rotation-of-earth}%
+    For the rotation of Earth,
+    \[
+        \omega_{\text{rot}} = \frac{2 \pi}{\qty{1}{\day}} \approx \qty{7e5}{\per\second},
+    \]
+    and
+    \[
+        R_{\text{Earth}} \approx \qty{6e3}{\kilo\metre}.
+    \]
+
+    We neglect small `wobbles' of Earth, which means \(\dot{\vmb{\omega}} = \vm{0}\), so we do not experience Euler Force on Earth.
+\end{example}
+
+\subsection{Centrifugal Force}
+
+The centrifugal force
+\[
+    \vm{F}_{\text{cent}} = - m \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}}
+\]
+points away from axis of rotation, with magnitude
+\[
+    \abs{\vm{F}_{\text{cent}}} = m \omega^2 r \cos \theta = m \omega^2 d.
+\]
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Centrifugal Force}
+    \label{fig:centrifugal-force}%
+\end{figure}
+
+\begin{proposition}[Centrifugal Potential]
+    \label{prop:centrifugal-potential}%
+    The centrifugal force is conservative, satisfying
+    \[
+        \vm{F}_{\text{cent}} = - \grad V_{\text{cent}},
+    \]
+    where the centrifugal potential \(V_{\text{cent}}\) is given by
+    \[
+        V_{\text{cent}} = - \frac{m}{2} \abs{\vmb{\omega} \times \vm{x}}^2 = - \frac{m}{2} \omega^2 d^2.
+    \]
+\end{proposition}
+
+The centrifugal potential energy can be lowered by moving away from the axis of rotation.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Hanging String for Centrifugal Force}
+    \label{fig:hanging-string-centrifugal}%
+\end{figure}
+
+\begin{example}[Hanging String]
+    \label{ex:hanging-string}%
+    We aim to calculate how much centrifugal force displaces a hanging string by directly pointing towards the centre of the force, as setup in \autoref{fig:hanging-string-centrifugal}.
+
+    Forces acting on the particle (i.e. weight at the end of the string) satisfies
+    \[
+        \vm{g} = - m g \unitv{r}.
+    \]
+
+    As the force diagram in \autoref{fig:hanging-string-centrifugal} demonstrates, we have
+    \begin{align*}
+        \vm{F}_{\text{cent}} &= - m \vmb{\omega} \times \para{\vmb{\omega} \times \vm{x}} \\
+        &= m \omega^2 r \cos \theta \para{\cos \theta \unitv{r} - \sin \theta \unitvb{\theta}}.
+    \end{align*}
+
+    To hold the string together, there must be a force exerted by the molecules in the string that balances the other forces, and macroscopically, we call it the tension \(\vm{T}\). Therefore, we have
+    \[
+        \vm{T} = T \cos \phi \unitv{r} + T \sin \phi \unitvb{\theta}.
+    \]
+
+    In equilibrium, balancing gives
+    \[
+        \vm{g} + \vm{F}_{\text{cent}} + \vm{T} = \vm{0}.
+    \]
+
+    Two equations in the \(\unitv{r}\) and \(\unitvb{\theta}\) components allows us to solve for the unknowns \(T\) and \(\phi\), and hence,
+    \[
+        \tan \phi = \frac{\omega^2 R \cos \theta \sin \theta}{g - \omega^2 R \cos^2 \theta}.
+    \]
+
+    Putting in familiar values, at the equator, \(\theta = 0\), gravity would be a bit ``weaker'', but \(\phi = 0\). At the North Pole, \(\theta = \frac{\pi}{2}\), and the object receives no centrifugal force, so \(\phi = 0\) indeed.
+
+    When \(\theta \approx \qty{45}{\degree}\), we have \(\phi \approx 10^{-4}\), which is a very small effect.
+\end{example}
+
+\subsection{Coriolis Force}
+
+The Coriolis force satisfies
+\[
+    \vm{F}_{\text{cor}} = - 2 m \vmb{\omega} \times \vm{v},
+\]
+where \(\vm{v}\) is the velocity measured in the rotating frame (e.g., the Earth).
+
+We note the similarity with the Lorentz force, with the magnetic flux density \(\vm{B}\) substituted by \(\vmb{\omega}\). Therefore, moving particles will turn in circles.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Formation of Hurricanes}
+    \label{fig:hurricanes}%
+\end{figure}
+
+\begin{example}[Formation of Hurricanes, Qualitative Discussion]
+    \label{ex:hurricanes}%
+    When low pressure region forms, particles would naturally move in, while Coriolis force will bend them in, as demonstrated in \autoref{fig:hurricanes}.
+
+    In the Northern Hemisphere, each molecule of air is bent clockwise, by considering right-hand rule with \(-\vmb{\omega}\) pointing into the plane. This gives anti-clockwise swirling motion. Indeed, hurricanes in the Northern Hemisphere rotate anti-clockwise, while they rotate clockwise in the Southern Hemisphere.
+
+    Motion along the Earth's surface is in general not perpendicular, to \(\vmb{\omega}\). The effect of Coriolis force is weaker near the equator, so hurricanes barely occur near equators.
+
+    In general, the magnitude \(\vmb{\omega} \times \vm{v}\) can be substantial near the equator, but it pushes the particles vertically, but it is small compared to gravity.
+\end{example}
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Dropping a Ball from a Tower}
+    \label{fig:dropping-ball-from-tower}%
+\end{figure}
+
+\begin{example}[Dropping a Ball from a Tower]
+    \label{ex:dropping-ball-from-tower}%
+    We drop a ball from a tower on the equator, and we study where it falls.
+
+    First, we study the answer qualitatively, using conservation of angular momentum. Initially, the angular momentum is given by
+    \[
+        l = \omega \para{R + h}^2,
+    \]
+    and as the ball falls, the distance to axis decreases, so the angular velocity must speed up to conserve \(l\). For example, at the foot,
+    \[
+        l = \omega' R^2,
+    \]
+    so \(\omega' > \omega\), and hence the ball rotates faster than Earth, and must fall in front of the tower.
+
+    Quantitively, neglecting centrifugal force, we have
+    \[
+        \ddot{\vm{x}} = \vm{g} - 2 \vmb{\omega} \times \dot{\vm{x}}
+    \]
+    in the rotating frame. Integrating once, we get
+    \[
+        \dot{\vm{x}} = \vm{g} t - 2 \vmb{\omega} \times \para{\vm{x} - \vm{x}_0},
+    \]
+    where \(\vm{x}_0\) is the initial position (an integration constant). Substituting back into the original equation, we get
+    \[
+        \ddot{\vm{x}} = \vm{g} - 2 \vmb{\omega} \times \vm{g} t + 4 \vmb{\omega} \times \para{\vmb{\omega} \times \para{\vm{x} - \vm{x}_0}}.
+    \]
+
+    The final term has the same order as the centrifugal force, and acts in vertical direction, so is small compared to gravity. Therefore, we have
+    \[
+        \ddot{\vm{x}} = \vm{g} - 2 \vmb{\omega} \times \vm{g} t.
+    \]
+
+    We integrate twice to get
+    \[
+        \vm{x} = \vm{x}_0 + \frac{1}{2} \vm{g} t^2 - \frac{1}{3} \para{\vmb{\omega} \times \vm{g}} t^3.
+    \]
+
+    Constructing the basis in \autoref{fig:dropping-ball-from-tower}, using \(\vm{e}_1, \vm{e}_2, \vm{e}_3\) as North, West and Up respectively, we have
+    \begin{align*}
+        \vmb{\omega} &= \omega \vm{e}_1, \\
+        \vm{g} &= - g \vm{e}_3, \\
+        \vm{x}_0 &= \para{R + h} \vm{e}_3.
+    \end{align*}
+
+    Hence, we may solve that
+    \[
+        \vm{x} = \begin{pmatrix}
+            0 \\
+            - \frac{1}{3} \omega g t^3 \\
+            R + h - \frac{1}{2} g t^2
+        \end{pmatrix}.
+    \]
+
+    When the object hits the ground, we have \(\frac{1}{2} g t^2 = h\). Clearly, the positive \(t\) solution gives \(x_2 < 0\) at this time, so it has fallen `east' to the tower, in its front.
+\end{example}
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Foucault's Pendulum}
+    \label{fig:foucault}%
+\end{figure}
+
+\begin{example}[Foucault's Pendulum]
+    \label{ex:foucault}%
+    Foucault's pendulum demonstrates the rotation of the Earth.
+
+    Consider an extremal case -- if we hang a pendulum at the North Pole, as the Earth rotates under the pendulum, from the point of view of someone on the Earth, it will look like the pendulum rotates.
+
+    At a general latitude, we build the coordinate axis similarly as in \autoref{ex:dropping-ball-from-tower}, so we have
+    \[
+        \vmb{\omega} = \begin{pmatrix}
+            \omega \cos \theta \\ 0 \\ \omega \sin \theta
+        \end{pmatrix}
+    \]
+    where \(\theta\) is the latitude of the object.
+
+    The tension in the string satisfies
+    \[
+        \vm{T} = T \begin{pmatrix}
+            - \frac{x}{l} \\ - \frac{y}{l} \\ \frac{l - z}{l},
+        \end{pmatrix}
+    \]
+    with the geometrical constraint
+    \[
+        x^2 + y^2 + \para{l - z}^2 = l^2.
+    \]
+
+    With the equations of motion (giving 3 ODEs), in addition to the constraints, it suffices to solve the four unknowns, \(x, y, z\) and \(T\). The general strategy is to:
+    \begin{enumerate}
+        \item solve constraints of this equation, giving \(z = z \para{x, y}\);
+        \item put into the ODEs;
+        \item eliminate \(T\);
+        \item form 2 ODEs for \(x\para{t}\) and \(y\para{t}\).
+    \end{enumerate}
+
+    The solution is tedious, but the upshot is that the pendulum, in general, follows an ellipse in the \(\para{x, y}\) plane that slowly rotates, i.e.,
+    \[
+        x + iy = \exp \para{- i \omega t \sin \theta} \cdot \brac{a \cos \para{\sqrt{\frac{g}{l}} t} + b \sin \para{\sqrt{\frac{g}{l}}} t},
+    \]
+    where \(a\) and \(b\) are complex constants, and \(\exp\) gives the rotation of the ellipse. This means, the period of rotation is
+    \[
+        \frac{\qty{24}{\hour}}{\sin \theta}.
+    \]
+
+    The extremal cases \(\theta = \frac{\pi}{2}\) and \(\theta \to 0^+\) indeed satisfies this equation intuitively.
+\end{example}

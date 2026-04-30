@@ -1,0 +1,114 @@
+\section{The Structure of the Newtonian Universe}
+
+We first aim to build a structure of the universe to work in -- the one that we will be building here is Newtonian, and in the final chapter a relativistic one will be built as well.
+
+\begin{definition}[The Newtonian Space-Time]
+    \label{def:newtonian-spacetime}
+    The three-dimensional space \(\RR^3\) can be endowed with a \emph{Cartesian reference frame} (i.e. an origin and a set of axes), such that points in space can be labelled as
+    \[
+        \vm{x} = \para{x_1, x_2, x_3}.
+    \]
+
+    \emph{Times} can be labelled in an arbitrary reference frame, simply by a real number \(t\).
+\end{definition}
+
+\begin{definition}[Point Particle, Position, Velocity, Acceleration]
+    \label{def:point-particle-position-velocity-acceleration}%
+    A \emph{point particle} is an idealised object that is completely determined by its \emph{position} at a given time, \(\vm{x} \para{t}\).
+
+    The \emph{velocity} is the time derivative of the position, denoted as
+    \[
+        \boxed{\vm{v} = \DiffFrac{\vm{x}}{t} = \dot{\vm{x}}.}
+    \]
+
+    The \emph{acceleration} is defined as
+    \[
+        \boxed{\vm{a} = \ddot{\vm{x}} = \dot{\vm{v}} = \DiffNFrac{\vm{x}}{t}{2}.}
+    \]
+\end{definition}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Point Particle Trajectory and Velocity}
+    \label{fig:point-particle-trajectory-velocity}%
+\end{figure}
+
+Electrons, tennis balls, and planets can all be good examples of point particles: this depends on the context.
+
+From \emph{Vector Calculus}, we may recall that the velocity is tangent to the trajectory. Also recall in Cartesian coordinates, that
+\[
+    \vm{v} = \DiffFrac{\vm{x}}{t} = \para{\DiffFrac{x_1}{t}, \DiffFrac{x_2}{t}, \DiffFrac{x_3}{t}},
+\]
+i.e., differentiation is simply differentiating by components. Other useful coordinate systems (specifically polar) will be discussed later.
+
+The above structure is \emph{not enough} to write down Newton's equations yet. Indeed, consider a `free' particle that does not experience any forces, for example, a particle that is alone in the depths of space, far away from anything else. The position of this particle is \(\vm{x}\para{t}\) -- but which frame should we use?
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Choice of Reference Frames}
+    \label{fig:choice-of-reference-frame}%
+\end{figure}
+
+The particle may be at rest in a frame \(S\), but moving in a complicated way with respect to another frame \(S'\). It is impossible to impose a general law for \emph{any} reference frame -- but there are special ones that we can work with.
+
+\subsection{Law of Inertia}
+
+\begin{definition}[Inertial Frames]
+    \label{def:inertial-frame}%
+    \emph{Inertial frames} are reference frames which a \emph{free particle} has constant velocity.
+\end{definition}
+
+In an inertial frame, we may write for a free particle, that
+\[
+    \dot{\vm{v}} = \ddot{\vm{x}} = \vm{0}.
+\]
+
+The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an improved version of Newton's First Law. This is a true statement about the world, but not an obvious one -- indeed, in antiquity, it was assumed that the natural state of an object is to be at rest.
+
+\subsection{Galilean Relativity Principle}
+
+\begin{theorem}[Galilean Relativity Principle]
+    \label{thm:galilean-relativity-principle}%
+    A frame related to an inertial frame by a \emph{Galilean transformation} is also an inertial frame, and all laws of physics are the same in both frame.
+\end{theorem}
+
+\begin{definition}[Galilean Transformation]
+    \label{def:galilean-transformation}%
+    A \emph{Galilean transformation} is defined by a transformation of the form
+    \[
+        \boxed{\vm{x}' = \vm{R} \vm{x} + \vm{k} + \vmb{\omega} t,}
+    \]
+    where:
+    \begin{itemize}
+        \item \(\vm{R} \in \Or\para{3}\) is a constant \emph{rotation} or a \emph{reflection} matrix, i.e., \(\vm{R} \transpose \vm{R} = \identityM\);
+        \item \(\vm{k}\) is a constant vector that defines \emph{translation}; and
+        \item \(\vmb{\omega}\) is a constant velocity called a \emph{boost}.
+    \end{itemize}
+\end{definition}
+
+Mathematically, it is easy to see that
+\[
+    \ddot{\vm{x}} = \vm{0} \iff \ddot{\vm{x}}' = \vm{0}.
+\]
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Mass dropped from Moving Ship}
+    \label{fig:mass-dropped-from-moving-ship}%
+\end{figure}
+
+\begin{example}[Mass dropped from Moving Ship]
+    \label{ex:mass-dropped-from-moving-ship}%
+    Let a ship move at constant speed. A mass dropped from the mast of that ship lands on the same place on the ship, as if the ship were not moving.
+\end{example}
+
+Galilean invariance restricts the type of forces that are possible. Furthermore, Galilean relativity implies that the laws of physics should make no reference to any specific point, direction, time, or velocity -- all these things can only be relative. For example, it does not make sense to say one is `at rest' -- they must be at rest with respect to something (e.g., themselves).
+
+However, acceleration is \emph{not} relative -- if you are accelerating in one inertial frame, then you will be accelerating in \emph{all} other inertial frames, and with the same magnitude.
+
+The Galilean transformations form the \emph{Galilean group} (i.e. two Galilean transformations compose to another Galilean transformation), which is often supplemented by a time translation
+\[
+    t' = t + t_0.
+\]
+
+Laws of physics are also invariant under time translations, i.e., all inertial frames have the same time, called \emph{absolute time}.

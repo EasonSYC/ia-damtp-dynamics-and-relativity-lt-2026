@@ -1,0 +1,885 @@
+\section{Forces}
+
+Once there is more than one particle in the universe, there will be \emph{interactions} between the particles. In Newtonian physics, they are described by \emph{forces}. (In the future, in alternative formulations, these might be described as energies/potentials, fields, or in the geometry of the spacetime.)
+
+\subsection{Newton's Second Law}
+
+\begin{theorem}[Newton's Second Law]
+    \label{thm:newton-2}%
+    In an inertial frame,
+    \[
+        \boxed{\dot{\vm{p}} = \vm{F},}
+    \]
+    where the \emph{momentum} is defined as \(\vm{p} = m \dot{\vm{x}}\), where \(m\) is the \emph{(inertial) mass} of the particle.
+\end{theorem}
+
+The \emph{mass} \(m\) is an additional property of particles. It could change with time, but we usually assume it is constant, unless otherwise specified.
+
+The \emph{force} \(\vm{F}\) depends on the interactions, but it can \emph{only} depend on \(\vm{x}\) and \(\dot{\vm{x}}\) (and note no \(t\) dependence -- Galilean invariance bans this). In this case, Newton's Second Law is a second-order differential equation, for \(\vm{x} \para{t}\). Hence, given \(\vm{x}\) and \(\dot{\vm{x}}\) at \(t = 0\), for all particles, Newton's equations uniquely determine \(\vm{x}\para{t}\) for all future times.
+
+Newtonian mechanics has been superseded by both quantum mechanics (which describes small things) and relativity (which describes large and fast things), but it is the limiting case of both formulations, and accurately describes much of the universe.
+
+\subsection{Conservative Forces}
+
+\begin{definition}[Conservative Forces, Potentials]
+    \label{def:conservative-forces-potentials}%
+    A force of the form
+    \[
+        \boxed{\vm{F} = - \grad V}
+    \]
+    is called a \emph{conservative force}, and \(V\) is called its \emph{potential}.
+\end{definition}
+
+From \emph{Vector Calculus}, the gradient in Cartesian coordinates is the vector
+\[
+    \grad V = \para{\PartialFrac{V}{x_1}, \PartialFrac{V}{x_2}, \PartialFrac{V}{x_3}}.
+\]
+
+\subsubsection{Demonstration using Gravity}
+
+We now use gravity to demonstrate this.
+
+\begin{definition}[Gravitational Potential Energy]
+    \label{def:gpe}%
+    The \emph{gravitational potential energy} of a particle of mass \(m\) at \(\vm{x}\), due to a mass \(M\) at \(\vm{x}_0\), is
+    \[
+        V = - \frac{G M m}{\norm{\vm{x} - \vm{x}_0}}.
+    \]
+\end{definition}
+
+Here,
+\[
+    G = \qty{6.67e-11}{\metre\cubed\per\kilogram\per\second\squared}
+\]
+is Newton's Constant.
+
+\begin{proposition}[Gravitational Force]
+    \label{prop:gravitational-force}%
+    The \emph{gravitational force/attraction} between two objects is given by
+    \[
+        \boxed{\vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}^2}.}
+    \]
+\end{proposition}
+
+\begin{proof}
+    We take the gradient of \(V\) to find the gravitational force.
+
+    \begin{align*}
+        \PartialOp{x_i} \para{\norm{\vm{x} - \vm{x}_0}^2} &= \PartialOp{x_i} \para{\para{\vm{x} - \vm{x}_0}_j \para{\vm{x} - \vm{x}_0}_j} \\
+        &= 2 \para{\vm{x} - \vm{x}_0}_j \partial_i \para{\vm{x} - \vm{x}_0}_j \\
+        &= 2 \para{\vm{x} - \vm{x}_0}_j \kronecker_{ij} \\
+        &= \boxed{2 \para{\vm{x} - \vm{x}_0}_i,}
+    \end{align*}
+    while on the other hand
+    \[
+        \PartialOp{x_i} \para{\norm{\vm{x} - \vm{x}_0}^2} = \boxed{2 \norm{\vm{x} - \vm{x}_0} \PartialOp{x_i} \norm{\vm{x} - \vm{x}_0}}
+    \]
+
+    Hence,
+    \[
+        \PartialOp{x_i} \norm{\vm{x} - \vm{x}_0} = \frac{\para{\vm{x} - \vm{x}_0}_i}{\norm{\vm{x} - \vm{x}_0}},
+    \]
+    so
+    \[
+        \grad \norm{\vm{x} - \vm{x}_0} = \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}}.
+    \]
+
+    Hence, the gravitational force is given by
+    \[
+        \vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}^2}.
+    \]    
+\end{proof}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Gravitational Force is Attractive}
+    \label{fig:gravitational-force-attractive}%
+\end{figure}
+
+Let \(\vm{r} = \vm{x} - \vm{x}_0\) be the relative position between the two objects. Then
+\[
+    \vm{F} = - \frac{G M m}{r^2} \unitv{r} = - \frac{G M m \vm{r}}{r^3}
+\]
+gives an inverse square law, which matches experimental evidence!
+
+Indeed, this force is in the correct direction, being attractive.
+
+\begin{definition}[Gravitational Potential]
+    \label{def:gp}%
+    The \emph{gravitational potential} is defined as
+    \[
+    \Phi = - \frac{GM}{\norm{\vm{x} - \vm{x}_0}}.
+    \]
+\end{definition}
+
+With the help of this quantity, we may write
+\[
+    V = m \Phi.
+\]
+
+\subsubsection{Uniform Gravitational Field}
+
+Near the surface of the Earth, let \(\vm{x}_0 = \vm{0}\) be the centre of the Earth, and let \(\abs{\vm{x}} = R + z\), where \(R\) is the radius of the Earth, and \(z \ll R\).
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Description of Setup for Gravity}
+    \label{fig:description-of-setup-for-gravity}%
+\end{figure}
+
+Then, by Taylor expanding about \(R\), we have
+\begin{align*}
+    \Phi\para{R + z} &= - \frac{GM}{R + z} \\
+    &= - \frac{GM}{R} \para{1 - \frac{z}{R} + \frac{z^2}{R^2} - \cdots} \\
+    &\approx \text{const.} + \frac{GMz}{R^2}.
+\end{align*}
+
+Let
+\[
+    g = \frac{GM}{R^2} \approx \qty{9.8}{\metre\per\second\squared}.
+\]
+
+Then near the earth, we have
+\[
+    \boxed{\Phi \approx gz,}
+\]
+so
+\[
+    \boxed{\vm{F} \approx - mg \unitv{z}.}
+\]
+
+This leads to the simplest (non-trivial) example of motion due to an external force. Newton's Second Law gives
+\[
+    m \ddot{\vm{x}} = m \vm{g}
+\]
+where
+\[
+    \vm{g} = \para{0, 0, -g}.
+\]
+
+Consider the \(z\)-component, we have
+\[
+    m\ddot{z} = -mg,
+\]
+and integrating twice gives that
+\[
+    z = z_0 + v_0 t - \frac{1}{2} g t^2
+\]
+where \(z_0\) is the initial height, and \(v_0\) is the initial velocity.
+
+Note our assumptions here:
+\begin{enumerate}
+    \item We modelled the Earth as a point particle.
+    \item We ignored the non-inertial effects. (We will see later that Earth, as a rotating frame, has additional fictitious forces.)
+\end{enumerate}
+
+\subsection{Energy}
+
+\begin{definition}[Energy due to Conservative Force]
+    \label{def:energy-conservative-force}%
+    The formula for \emph{energy} due to a conservative force is given by
+    \[
+        \boxed{E = \frac{1}{2} m \dot{\vm{x}} \cdot \dot{\vm{x}} + V\para{\vm{x}}.}
+    \]
+\end{definition}
+
+\begin{proposition}[Conservative Forces give Conserved Energy]
+    \label{prop:conservative-forces-conserved-energy}%
+    Conservative forces have a \emph{conserved energy} in the form above.
+\end{proposition}
+
+\begin{proof}
+    By differentiating, we have
+    \begin{align*}
+        \DiffFrac{E}{t} &= \frac{1}{2} m \cdot 2 \cdot \ddot{x}_i \dot{x}_i + \PartialFrac{V}{x_i} \dot{x}_i \\
+        &= \dot{x}_i \brac{m \ddot{x}_i + \PartialFrac{V}{x_i}} \\
+        &= 0,
+    \end{align*}
+    since by Newton's Second Law, we have
+    \[
+        m \ddot{\vm{x}} = - \grad V.
+    \]
+\end{proof}
+
+\subsubsection{Escape Velocity}
+
+\begin{example}[Object Thrown to Space]
+    \label{ex:object-thrown-to-space}%
+    Suppose we throw an object to space, and we want it to never fall back down. The minimal velocity of the object must have to not fall down is called the \emph{escape velocity}.
+
+    As the object is thrown,
+    \[
+        E = \frac{1}{2} m v^2 - \frac{G M m}{R}.
+    \]
+
+    To not fall back, the object must reach \(\abs{\vm{x}} = \infty\), without the velocity \(\abs{\dot{\vm{x}}} = 0\). Hence,
+    \[
+        \frac{1}{2} m v^2 - \frac{G M m}{R} = E_{\text{initial}} = E_{\text{final}} = E_{\infty} = \frac{1}{2} m v_\infty^2 - 0 > 0.
+    \]
+
+    Hence,
+    \[
+        \boxed{v^2 > \frac{2GM}{R},}
+    \]
+    and this means
+    \[
+        v > \boxed{v_{\text{escape}} = \sqrt{\frac{2GM}{R}}} \approx \qty{10}{\kilo\metre\per\second}
+    \]
+    for the Earth.
+\end{example}
+
+\begin{remark}
+    Note that in the above example, we have the escape velocity is independent of the mass, since the masses cancel. This is under an assumption called \emph{principle of equivalence}, that the \emph{gravitational mass} (the mass for the inverse square law), is equal to the \emph{inertial mass} (the mass that appears in Newton's Second Law).
+\end{remark}
+
+It is useful to separate the \emph{potential} and \emph{kinetic} components of the energy.
+
+\begin{definition}[Kinetic Energy]
+    \label{def:kinetic-energy}%
+    The \emph{kinetic energy} of a particle is defined by
+    \[
+        \boxed{T = \frac{1}{2} m \dot{\vm{x}} \cdot \dot{\vm{x}}.}
+    \]
+\end{definition}
+
+We have
+\[
+    E = T + V.
+\]
+
+\subsubsection{Path Independence and Work Done}
+
+\begin{definition}[Work Done]
+    \label{def:work-done}%
+    The \emph{work done} by a force along a trajectory \(\mathcal{C}\) is defined as
+    \[
+        \boxed{W = \int_{\mathcal{C}} \vm{F} \cdot \Diff \vm{x}}
+    \]
+    where we define this using a line integral.
+\end{definition}
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Trajectory of Particle}
+    \label{fig:trajectory-of-particle}%
+\end{figure}
+
+\begin{proposition}[Conservative Forces do work Path-Independently]
+    \label{prop:conservative-force-path-independently}%
+    The work done by a conservative force as a particle moves along a trajectory \(\mathcal{C}\) only depends on the \emph{endpoints} of the trajectory, not on the path itself.
+\end{proposition}
+
+\begin{proof}[using Path Integration and Newton's Second Law]
+    \begin{align*}
+        W &= \int_{\mathcal{C}} \vm{F} \cdot \Diff \vm{x} \\
+        &= \int_{t_1}^{t_2} \boxed{\vm{F} \cdot \dot{\vm{x}}} \Diff t \\
+        &= m \cdot \int_{t_1}^{t_2} \ddot{\vm{x}} \cdot \dot{\vm{x}} \Diff t \\
+        &= \frac{1}{2} m \int_{t_1}^{t_2} \DiffOp{t} \para{\dot{\vm{x}} \cdot \dot{\vm{x}}} \Diff t \\
+        &= T\para{t_2} - T\para{t_1} \\
+        &= V\para{t_1} - V\para{t_2} && \text{Conservation of Energy} \\
+        &= V\para{\vm{x}_1} - V\para{\vm{x}_2}
+    \end{align*}
+    which only depends on endpoints.
+\end{proof}
+
+\begin{definition}[Power]
+    \label{def:power}%
+    The \emph{power} of a force is the rate of work done
+    \[
+        \boxed{P = \vm{F} \cdot \dot{\vm{x}}.}
+    \]
+\end{definition}
+
+\begin{proof}[using Gradient]
+    A more direct proof is as follows.
+
+    \begin{align*}
+        W &= \int_{\mathcal{C}} \vm{F} \cdot \Diff \vm{x} \\
+        &= - \int_{\mathcal{C}} \grad V \cdot \Diff \vm{x} \\
+        &= V \para{\vm{x}_1} - V \para{\vm{x}_2}.
+    \end{align*}
+\end{proof}
+
+\subsection{Electromagnetic Forces}
+
+Forces that depend on the velocity \(\dot{\vm{x}}\) typically don't have a conserved energy, for example friction, but the \emph{Lorentz Force} is an exception.
+
+\begin{definition}[Electromagnetic Force on Charged Particle]
+    \label{def:em-force-charged-particle}%
+    The \emph{electromagnetic fields} \(\vm{E}\) and \(\vm{B}\) exert the following forces on a particle with \emph{charge} \(q\)
+    \[
+        \boxed{\vm{F} = q \para{\vm{E} \para{\vm{x}} + \dot{\vm{x}} \times \vm{B} \para{\vm{x}}}}.
+    \]
+\end{definition}
+
+For example, the charge of an electron is
+\[
+    q = \qty{-1.6e-19}{\coulomb}.
+\]
+
+We restrict ourselves now to \emph{static} (time-independent) electromagnetic fields, which means (due to Maxwell's Equations)
+\[
+    \vm{E} = - \grad \phi
+\]
+where \(\phi\) is the \emph{electrostatic potential}.
+
+\begin{proposition}[Conservation of Energy in Static Electromagnetic Fields]
+    \label{prop:conservation-of-energy-em-field}%
+    The total energy
+    \[
+        E = \frac{1}{2} m \dot{\vm{x}} \cdot \dot{\vm{x}} + q \phi\para{\vm{x}}
+    \]
+    is conserved.
+\end{proposition}
+
+\begin{proof}
+    We may check by differentiation
+    \begin{align*}
+        \DiffFrac{E}{t} &= m \ddot{\vm{x}} \cdot \dot{\vm{x}} + q \grad \phi \cdot \dot{\vm{x}} \\
+        &= \para{\vm{F} + q \grad \phi} \cdot \dot{\vm{x}} \\
+        &= \para{q \dot{\vm{x}} \times \vm{B}} \cdot \dot{\vm{x}} \\
+        &= 0.
+    \end{align*}
+\end{proof}
+
+The velocity-dependent component of the force (the Lorentz Force, which described magnetic forces) is orthogonal to the trajectory of the particle, so does no work on the particle. Therefore, energy is conserved.
+
+\subsubsection{Electrical Forces}
+
+Electrical forces are similar to the gravitational ones, that the potential \(\phi\) at \(\vm{x}\) due to another particle of charge \(Q\) at \(\vm{x}_0\) is given by
+\[
+    \boxed{\phi = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{1}{\norm{\vm{x} - \vm{x}_0}},}
+\]
+where \(\epsilon_0\) is the permittivity of free space, with
+\[
+    \epsilon_0 \approx \qty{8.85e-12}{\per\metre\cubed\per\kilogram \second\squared\coulomb\squared}.
+\]
+
+Like gravity, this leads to an inverse square law, called the \emph{Coulomb force}. A big difference, however, is that charges can be positive or negative, but mass is always positive. This means gravity dominates in our universe for `big' objects (planets, chairs, etc.) while electric forces tend to cancel out overall.
+
+\subsubsection{Magnetic Forces}
+
+Magnetic forces are different. A charged particle in a magnetic field obeys
+\[
+    m \ddot{\vm{x}} = q \dot{\vm{x}} \times \vm{B}.
+\]
+
+We aim to solve this, which is a \emph{vector differential equation}. The most direct way to solve is to write in Cartesian coordinates. Let \(\vm{B}\) be constant, without loss of generality, in the \(z\)-direction, so
+\[
+    \vm{B} = \para{0, 0, B} = B \unitv{z}.
+\]
+
+The equations of motions become, for \(\vm{x} = \para{x, y, z}\), that
+\begin{align*}
+    m \ddot{x} &= q \dot{y} B \tag{1}, \\
+    m \ddot{y} &= -q \dot{x} B \tag{2}, \\
+    m \ddot{z} &= 0. \tag{3}
+\end{align*}
+
+(3) solves simply to
+\[
+    \boxed{z = z_0 + v_z t}
+\]
+which means the particle moves with constant velocity (\emph{drifts}) in the \(z\)-direction.
+
+To solve for the \(x\) and \(y\) components, we take the time derivative of (1), and use (2), so we have
+\[
+    m \dddot{x} = q \ddot{y} B = - \frac{q^2 \dot{x} B^2}{m}.
+\]
+
+This is a second-order differential equation for \(\dot{x}\), so
+\[
+    \dot{x} = \tilde{A} \sin \para{\omega t + \phi},
+\]
+where \(\boxed{\omega = \frac{qB}{m}}\) is the \emph{cyclotron frequency}. Hence,
+\[
+    \boxed{x = x_0 + A \cos \para{\omega t + \phi}.}
+\]
+We put this back into \((1)\), so
+\[
+    q B \dot{y} = - m A \omega^2 \cos \para{\omega t + \phi},
+\]
+and hence
+\[
+    \boxed{y = y_0 - A \sin \para{\omega t + \phi}.}
+\]
+
+Here, \(A\) and \(\phi\) are arbitrary constants. This gives \emph{cyclotron motion} which is an \emph{anticlockwise} spiral, and the time period is given by
+\[
+    T = \frac{2\pi}{\omega}.
+\]
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Cyclotron Motion}
+    \label{fig:cyclotron-motion}%
+\end{figure}
+
+An alternative way to solve this is using a complex substitution
+\[
+    \xi = x + iy.
+\]
+
+By calculating the sum of (1) and (2) multiplied by \(i\), we have
+\[
+    m \ddot{\xi} = - i q B \dot{\xi},
+\]
+and hence
+\[
+    \xi = C_1 \exp\para{- i \omega t} + C_2
+\]
+where \(C_1\) and \(C_2\) are arbitrary complex constants. If we set them as
+\[
+    C_1 = A \exp\para{- i \phi}, \quad C_2 = x_0 + i y_0
+\]
+for real \(\phi, x_0\) and \(y_0\), this reduces to an identical solution as above
+\begin{align*}
+    x &= x_0 + A \cos \para{\omega t + \phi}, \\
+    y &= y_0 - A \sin \para{\omega t + \phi}.
+\end{align*}
+
+There is something `complex' underlying cyclotron motion: the quantum Hall effect.
+
+\subsection{Motion in One Dimension}
+
+Often, problems can be reduced to one-dimensional motion, i.e.,
+\[
+    m \ddot{x} = F_x.
+\]
+
+If the force \(F\para{x}\) is independent of the velocity \(\dot{x}\), then it can \emph{always} be written in terms of a potential, by setting
+\[
+    V\para{x} = - \int_{x_0}^{x} \Diff x' F_x \para{x'}
+\]
+where \(x_0\) is an arbitrary reference point. This gives
+\[
+    F_x \para{x} = - \DiffFrac{V}{x}.
+\]
+
+The energy conserved is then
+\[
+    E = \frac{1}{2} m \dot{x}^2 + V\para{x}.
+\]
+
+Constant energy then gives a first-order differential equation for \(x\para{t}\), which is easy to integrate. Indeed,
+\[
+    E = \frac{1}{2} m \dot{x}^2 + V\para{x}
+\]
+gives
+\[
+    \dot{x} = \pm \sqrt{\frac{2}{m} \para{E - V\para{x}}},
+\]
+and hence integrating gives
+\[
+    \boxed{t - t_0 = \pm \int_{x_0}^{x} \frac{\Diff x'}{\sqrt{\frac{2}{m} \para{E - V\para{x'}}}}}.
+\]
+
+This equation tells us how long it takes for a particle to go from \(x_0\) to \(x\), if it has energy \(E\). Sometimes, this integral is simple, but sometimes it is impossible to integrate -- but we can still say certain properties on the motion of the particle.
+
+\subsubsection{Potential and Energy}
+
+In particular, from the equation
+\[
+    E = \frac{1}{2} m \dot{x}^2 + V\para{x},
+\]
+this means since squares are non-negative, we have
+\[
+    E > V\para{x},
+\]
+restricting the range of \(X\) where the particle can be.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Potential, Energy, and Allowed Motion}
+    \label{fig:potential-energy-allowed-motion}%
+\end{figure}
+
+\begin{definition}[Turning Points]
+    The points satisfying  \(V\para{x} = E\) (giving \(\dot{x} = 0\)) are called \emph{turning points}.
+\end{definition}
+
+Typically, particles `bounces off' the potential at turning points and turns around.
+
+We now refer to \autoref{fig:potential-energy-allowed-motion}.
+
+\begin{definition}[Bounded and Unbounded Motion]
+    \label{def:bounded-unbounded-motion}%
+    \begin{itemize}
+        \item Region (a) gives \emph{bounded motion}, since the particle bounces back and forth between the turning points.
+        \item Region (b) gives \emph{unbounded motion}, since the particle bounces of the turning point, and flies off to \(x \to \minusinfty\).
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Equilibrium Points}
+
+\begin{definition}[Equilibrium Points]
+    \label{def:equilibrium-points}%
+    \emph{Equilibrium points} are when \(V\para{x} = E\) and \(V'\para{x} = 0\).
+\end{definition}
+
+These cases are special, since they are points where particles can sit forever.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Motion near Equilibrium Points}
+    \label{fig:motion-near-equilibrium-points}%
+\end{figure}
+
+The motions of equations and conservation of energy gives
+\begin{align*}
+    m \ddot{x} &= - V'\para{x} = 0, \\
+    E &= \frac{1}{2} m \dot{x}^2 + V\para{x},
+\end{align*}
+and so \(\ddot{x} = \dot{x} = 0\), the particle stays at \(x\).
+
+In fact, motion close to an equilibrium point is especially simple, since we can Taylor expand the potential. Let \(x_0\) be the equilibrium point, and we Taylor expand \(V\) about \(x_0\).
+
+\begin{align*}
+    V\para{x} &\approx V\para{x_0} + \para{x - x_0} V' \para{x_0} + \frac{1}{2} \para{x - x_0}^2 V''\para{x_0} \\
+    &= V\para{x_0} + \frac{1}{2} \para{x - x_0}^2 V''\para{x_0}.
+\end{align*}
+
+Similar to when we classify minimums and maximums of a function, we may classify equilibrium points.
+
+\begin{definition}[Stable and Unstable Equilibrium Points]
+    \label{def:stable-unstable-equilibrium-points}%
+    Let \(x_0\) be an equilibrium point.
+    \begin{itemize}
+        \item If \(\boxed{V''\para{x_0} > 0}\), we say \(x_0\) is a \emph{stable equilibrium point} where \(V\) is a \emph{minimum}.
+        \item If \(\boxed{V''\para{x_0} < 0}\), we say \(x_0\) is an \emph{unstable equilibrium point} where \(V\) is a \emph{maximum}.
+    \end{itemize}
+    
+    
+\end{definition}
+
+\paragraph{Stable Equilibrium Point}
+
+If \(x_0\) is a stable equilibrium point, this gives the potential for a \emph{harmonic oscillator} (quadratic). Similarly, we have
+\[
+    V'\para{x} \approx V'\para{x_0} + \para{x - x_0} V''\para{x_0} = \para{x - x_0} V''\para{x_0}.
+\]
+
+Hence, Newton's Equations gives
+\[
+    m \ddot{x} = - V'\para{x} \approx - \para{x - x_0} V''\para{x},
+\]
+and hence
+\[
+    x = x_0 + A \cos \para{\omega t + \phi},
+\]
+where \(A\) is the amplitude, \(\phi\) is the phase, and oscillations are with frequency
+\[
+    \omega = \sqrt{\frac{V'\para{x_0}}{m}}.
+\]
+
+We want \(A \ll 1\) to put the oscillations close to the equilibrium point. If the amplitude of the oscillations are small enough, we can neglect higher-order terms in the Taylor expansion, and the oscillation solution is hence valid.
+
+\paragraph{Unstable Equilibrium Point}
+
+On the other hand, if \(x_0\) is an unstable equilibrium point, we have
+\[
+    x = x_0 + \tilde{A} \exp \para{\gamma t} + \tilde{B} \exp \para{- \gamma t}
+\]
+where
+\[
+    \gamma = \sqrt{- \frac{V''\para{x_0}}{m}}.
+\]
+
+If \(\tilde{A} \neq 0\), the exponential growth means particles move far away from equilibrium point. Eventually, the Taylor expansion will break down.
+
+The case where \(\tilde{A} = 0\) corresponds to `rolling up the potential' with just enough energy to reach the top, as \(t \to \infty\).
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Motion around an Unstable Equilibrium Point}
+    \label{fig:motion-around-unstable-equilibrium-point}%
+\end{figure}
+
+If \(V''\para{x_0} = 0\), we will have to expand to a higher order term.
+
+\subsection{Dimensional Analysis}
+
+Dimensional analysis is a way to get information about solutions to the equations without solving them. At a mathematical level, dimensional analysis is the ability to rescale variables, to remove certain constants from the equations.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Dimensional Analysis of Pendulum}
+    \label{fig:dimensional-analysis-pendulum}%
+\end{figure}
+
+\begin{example}[Motivating Dimensional Analysis for a Pendulum]
+    \label{ex:dimensional-anslysis-pendulum}%
+    Later we will derive the solution for a pendulum being
+    \[
+        \DiffNFrac{\theta}{t}{2} = - \frac{g}{l} \sin \theta.
+    \]
+
+    Suppose we release it from rest, at some angle \(\theta_0\). We want to find its period.
+
+    We remove \(g\) and \(l\) from the equation, by rescaling
+    \[
+        t = \sqrt{\frac{l}{g}} \cdot \tau.
+    \]
+
+    Furthermore, let
+    \[
+        \theta\para{t} = \theta\para{t\para{\tau}} = \theta\para{\tau}.
+    \]
+
+    By the chain rule,
+    \[
+        \DiffNFrac{\theta}{\tau}{2} = - \sin \theta.
+    \]
+
+    The solution of this equation is independent of \(g\) and \(l\). Therefore, the solution is some \(\theta\para{\tau}\). The period \(\Delta \tau\) of \(\theta\para{\tau}\) may depend on the initial angle \(\theta_0 = \theta\para{-}\), but cannot depend on \(g\) and \(l\). Hence,
+    \[
+        \theta\para{\tau + \Delta \tau} = \theta\para{\tau}
+    \]
+    gives
+    \[
+        \Delta t = \sqrt{\frac{f}{g}} \Delta \tau
+    \]
+    as the period.
+
+    The period of a pendulum goes like the square root of its length
+    \[
+        T \propto \sqrt{L}.
+    \]
+\end{example}
+
+In general, the necessary rescaling may not be obvious. Associating \emph{dimensions} to all constants and variables of a form of bookkeeping that accounts for how these quantities appear in equations. The basic dimensions that we concern are
+\begin{itemize}
+    \item length \(\dimL\),
+    \item mass \(\dimM\), and
+    \item time \(\dimT\).
+\end{itemize}
+
+Then we have
+\begin{align*}
+    \brac{\dot{x}} &= \dimL \dimT\inverse, \\
+    \brac{\ddot{x}} &= \dimL \dimT^{-2}, \\
+    \brac{F} &= \dimM \dimL \dimT^{-2}, \\
+    \brac{E} &= \dimM \dimL^2 \dimT^{-2},
+\end{align*}
+etc.
+
+There can be other dimensions (for example, charge), depending on the problem.
+
+For all equations, we have
+\[
+    \brac{\LHS} = \brac{\RHS}.
+\]
+
+All arguments of non-trivial functions (i.e. involving sums of different powers) must be \emph{dimensionless}, e.g., \(\sin \theta\) tells us that \(\brac{\theta} = \dimLess\).
+
+\begin{example}[Dimensional Analysis on Pendulum]
+    \label{ex:dimensional-analysis-pendulum}%
+    We revisit the pendulum problem. The quantities involved have dimensions
+    \begin{align*}
+        \brac{g} &= \dimL \dimT^{-2}, \\
+        \brac{l} &= \dimL, \\
+        \brac{m} &= \dimM.
+    \end{align*}
+
+    The initial angle satisfies \(\brac{\theta_0} = \dimLess\). These are all the quantities involved, and we want to find the period \(\brac{T} = \dimT\). We let
+    \[
+        T = f\para{\theta_0} g^A l^B m^C.
+    \]
+
+    Taking dimensions, we have
+    \[
+        \dimT = \brac{T} = \brac{g}^A \brac{l}^B \brac{m}^C = \dimL^A \dimT^{-2A} \dimL^{B} \dimM^{c}.
+    \]
+
+    This solves to \(A = - \frac{1}{2}\), \(B = \frac{1}{2}\), and \(C = 0\). So
+    \[
+        T = f\para{\theta_0} \sqrt{\frac{l}{g}}.
+    \]
+\end{example}
+
+Note that in the above example, if \(A, B, C\) are not all fixed, this means we have some \emph{dimensionless ratio/group} - and we cannot say how they behave in the final solution, since there may be a (very general) function taking it as an argument.
+
+\subsection{Friction}
+
+When objects move through a medium (e.g. air or water), \emph{microscopic forces} between the object medium causes momentum and energy to be carried off into the medium, and lost.
+
+\begin{definition}[Friction]
+    \label{def:friction}%
+    \emph{Friction} is a \emph{macroscopic force} that keeps track of the momentum lost due to the complicated microscopic behaviours.
+\end{definition}
+
+Friction has two important properties.
+
+\begin{enumerate}
+    \item \emph{Friction does not conserve energy}. It is lost to the medium, and this is called \emph{heat}.
+    \item \emph{Friction is irreversible}. Energy once lost by the object is never gained. (This is closely tied to the Second Law of Thermodynamics on entropy).
+\end{enumerate}
+
+For the second property, if ever in doubt of the sign of a friction force, it must always \emph{slow an object down}. This means that the friction force must change sign if velocity is reversed from \(\vm{v}\) to \(- \vm{v}\).
+
+\subsubsection{Linear and Quadratic Drag}
+
+Two important examples of friction are given by linear and quadratic drags.
+
+\begin{definition}[Linear and Quadratic Drag]
+    \label{def:linear-and-quadratic-drag}%
+    \begin{itemize}
+        \item \emph{Linear Drag} is where the frictional force takes the form
+        \[
+            \boxed{\vm{F} = - k_1 \vm{v}.}
+        \]
+        \item \emph{Quadratic Drag} is where the frictional force takes the form
+        \[
+            \boxed{\vm{F} = - k_2 \abs{\vm{v}} \vm{v} = - k_2 \para{\vm{v} \cdot \vm{v}} \unitv{v}.}
+        \]
+    \end{itemize}
+
+    The coefficients \(k_1\) and \(k_2\) are called \emph{coefficients of friction}.
+
+\end{definition}
+
+\paragraph{Quadratic Drag}
+
+Quadratic drag is the more intuitive one. An object bumps into molecules, where the rate of collisions is proportional to the velocity and the change of momentum per collision is also proportional to that. This gives a proportion of \(v^2\) overall.
+
+The number of collisions should go like the density of the medium \(\rho\), and the cross-sectional area \(A\) of the object, something like
+\[
+    \boxed{k_2 \propto \rho A.}
+\]
+
+It might be tempted to say `this is it', and if we check the dimensions, we have
+\[
+    \brac{k_2 v^2} = \dimM \dimL^{-3} \dimL^2 \dimL^2 \dimT^{-2} = \dimM \dimL \dimT^{-2}.
+\]
+
+This seems to agree with the dimension of the force. This is indeed the result.
+
+\paragraph{Linear Drag}
+
+Linear drag, on the other hand, is dependent on \emph{viscous effects}, for example a spoon in honey. The object \emph{moves} the \emph{medium related with it}.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Linear Drag of Viscous Fluid}
+    \label{fig:linear-drag-viscous-fliud}%
+\end{figure}
+
+For example, \emph{Stokes's law} for a spherical object with radius \(L\) gives
+\[
+    k_1 = 6 \pi \eta L
+\]
+where \(\eta\) is the \emph{viscosity} of the fluid.
+
+\paragraph{Reynolds's Number}
+
+Both linear and quadratic drag are typically present. In a fluid, their importance is quantified by the Reynolds's number.
+
+\begin{definition}[Reynolds's Number]
+    \label{def:reynolds-number}%
+    The \emph{Reynolds's Number} is defined as
+    \[
+        \boxed{R = \frac{\rho L v}{\eta}.}
+    \]
+\end{definition}
+
+Indeed, we have 
+\[
+    \frac{F_{\text{quad}}}{F_{\text{lin}}} \sim \frac{\rho A v^2}{\eta L v} \sim \frac{\rho L v}{\eta} = R.
+\]
+
+In particular, \(R \gg 1\) gives \(F_{\text{quad}}\) dominates, and \(R \ll 1\) gives \(F_{\text{lin}}\) dominates (the viscous effect).
+
+\subsubsection{Terminal Velocity}
+
+\begin{example}[Terminal Velocity]
+    \label{ex:terminal-velocity}%
+    We consider a particle falling with quadratic friction under gravity. The \(z\)-component of the motion gives
+    \[
+        m \DiffFrac{v}{t} = -mg + k v^2,
+    \]
+    with the positive sign going up.
+
+    The velocity initially starts at \(0\), and then increases. Initially, the \(mg\) term is larger on the right-hand side. Eventually, as the velocity increases, the terms on the right-hand side balance, at which point
+    \[
+        \DiffFrac{v}{t} = 0.
+    \]
+
+    This gives the \emph{terminal velocity}
+    \[
+        \boxed{v_{\text{term}} = - \sqrt{\frac{mg}{k}}.}
+    \]
+\end{example}
+
+Heavier objects reach a bigger terminal velocity, and for example, raindrops have a terminal velocity of \(\qty{10}{\metre\per\second}\). 
+
+Another good question to ask is, on what timescale does an object reach its terminal velocity?
+
+\begin{example}[Timescale to reach Terminal Velocity]
+    \label{ex:timescale-reach-terminal-velocity}%
+    Similar to before, we conduct dimensional analysis, so let
+    \[
+        t_0 \propto m^A g^B k^C
+    \]
+    and hence
+    \[
+        \brac{t_0} = \dimT = \dimM^A \dimL^B \dimT^{-2B} \dimM^C \dimL^{-C} = \dimM^{A + C} \dimL^{B - C} \dimT^{-2B}.
+    \]
+
+    This solves to \(A = \frac{1}{2}, B = C = - \frac{1}{2}\). Therefore,
+    \[
+        t_0 \propto \sqrt{\frac{m}{kg}}.
+    \]
+\end{example}
+
+For raindrops, \(t_0 \approx \qty{1}{\second}\). However, note that when we solve the equation, the graph of \(v\) against \(t\) looks something like follows.
+
+\begin{figure}[ht!]
+    \centering
+
+    \caption{Velocity-Time Graph for Terminal Velocity}
+    \label{fig:vt-graph-terminal-velocity}%
+\end{figure}
+
+In particular, an object never actually reaches terminal velocity. So this is more of a `timescale' rather than the actual time.
+
+In general, we can also have motion in different directions due to gravity, e.g.,
+\[
+    m \DiffFrac{\vm{v}}{t} = m \vm{g} - k \abs{\vm{v}} \vm{v},
+\]
+so it is natural to treat this as a vector differential equation for \(\vm{v}\).
+
+\subsubsection{Damping}
+
+Friction \emph{damps} the small oscillations about an equilibrium point. For small oscillations, typically linear drag is more important, so
+\[
+    \ddot{x} = - \omega_0^2 x - 2 \alpha \dot{x},
+\]
+where \(\omega_0\) is the natural frequency, and \(\alpha\) is the coefficient of the damping term.
+
+This was solved in \emph{Differential Equations} last term, and the solution is given by
+\[
+    \boxed{x = \exp\para{- \alpha t} \brac{A_+ \exp\para{i \Omega t} + A_- \exp\para{- i \Omega t}},}
+\]
+with the new frequency being
+\[
+    \boxed{\Omega = \sqrt{\omega_0^2 - \alpha^2}.}
+\]
+
+The three cases are given by
+\begin{itemize}
+    \item \(\omega_0^2 > \alpha^2\) giving \emph{underdamped motion}, which is decaying oscillations;
+    \item \(\omega_0^2 < \alpha^2\) giving \emph{overdamped motion}, which gives exponential decay;
+    \item \(\omega_0^2 = \alpha^2\) giving \emph{critical damping}, with solution of the form
+    \[
+        \boxed{x = \para{A + Bt} \exp\para{-\alpha t}.}
+    \]
+\end{itemize}
+
+Note that \(x\) and \(\ddot{x}\) are invariant under time reversal \(t \mapsto -t\), but \(\dot{x}\) is not. As far as we know, all the fundamental laws of nature are invariant under CPT -- Charge, Parity and Time. Therefore, frictional forces are odd under T, and hence cannot be a fundamental force.
