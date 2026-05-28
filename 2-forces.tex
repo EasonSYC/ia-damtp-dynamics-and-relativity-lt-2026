@@ -43,7 +43,7 @@ We now use gravity to demonstrate this.
     \label{def:gpe}%
     The \emph{gravitational potential energy} of a particle of mass \(m\) at \(\vm{x}\), due to a mass \(M\) at \(\vm{x}_0\), is
     \[
-        V = - \frac{G M m}{\norm{\vm{x} - \vm{x}_0}}.
+        V = - \frac{G M m}{\abs{\vm{x} - \vm{x}_0}}.
     \]
 \end{definition}
 
@@ -57,7 +57,7 @@ is Newton's Constant.
     \label{prop:gravitational-force}%
     The \emph{gravitational force/attraction} between two objects is given by
     \[
-        \boxed{\vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}^2}.}
+        \boxed{\vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\abs{\vm{x} - \vm{x}_0}^2}.}
     \]
 \end{proposition}
 
@@ -65,28 +65,28 @@ is Newton's Constant.
     We take the gradient of \(V\) to find the gravitational force.
 
     \begin{align*}
-        \PartialOp{x_i} \para{\norm{\vm{x} - \vm{x}_0}^2} &= \PartialOp{x_i} \para{\para{\vm{x} - \vm{x}_0}_j \para{\vm{x} - \vm{x}_0}_j} \\
+        \PartialOp{x_i} \para{\abs{\vm{x} - \vm{x}_0}^2} &= \PartialOp{x_i} \para{\para{\vm{x} - \vm{x}_0}_j \para{\vm{x} - \vm{x}_0}_j} \\
         &= 2 \para{\vm{x} - \vm{x}_0}_j \partial_i \para{\vm{x} - \vm{x}_0}_j \\
         &= 2 \para{\vm{x} - \vm{x}_0}_j \kronecker_{ij} \\
         &= \boxed{2 \para{\vm{x} - \vm{x}_0}_i,}
     \end{align*}
     while on the other hand
     \[
-        \PartialOp{x_i} \para{\norm{\vm{x} - \vm{x}_0}^2} = \boxed{2 \norm{\vm{x} - \vm{x}_0} \PartialOp{x_i} \norm{\vm{x} - \vm{x}_0}}
+        \PartialOp{x_i} \para{\abs{\vm{x} - \vm{x}_0}^2} = \boxed{2 \abs{\vm{x} - \vm{x}_0} \PartialOp{x_i} \abs{\vm{x} - \vm{x}_0}}
     \]
 
     Hence,
     \[
-        \PartialOp{x_i} \norm{\vm{x} - \vm{x}_0} = \frac{\para{\vm{x} - \vm{x}_0}_i}{\norm{\vm{x} - \vm{x}_0}},
+        \PartialOp{x_i} \abs{\vm{x} - \vm{x}_0} = \frac{\para{\vm{x} - \vm{x}_0}_i}{\abs{\vm{x} - \vm{x}_0}},
     \]
     so
     \[
-        \grad \norm{\vm{x} - \vm{x}_0} = \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}}.
+        \grad \abs{\vm{x} - \vm{x}_0} = \frac{\vm{x} - \vm{x}_0}{\abs{\vm{x} - \vm{x}_0}}.
     \]
 
     Hence, the gravitational force is given by
     \[
-        \vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\norm{\vm{x} - \vm{x}_0}^2}.
+        \vm{F} = - \grad V = - G M m \frac{\vm{x} - \vm{x}_0}{\abs{\vm{x} - \vm{x}_0}^2}.
     \]    
 \end{proof}
 
@@ -108,7 +108,7 @@ Indeed, this force is in the correct direction, being attractive.
     \label{def:gp}%
     The \emph{gravitational potential} is defined as
     \[
-    \Phi = - \frac{GM}{\norm{\vm{x} - \vm{x}_0}}.
+    \Phi = - \frac{GM}{\abs{\vm{x} - \vm{x}_0}}.
     \]
 \end{definition}
 
@@ -349,7 +349,7 @@ The velocity-dependent component of the force (the Lorentz Force, which describe
 
 Electrical forces are similar to the gravitational ones, that the potential \(\phi\) at \(\vm{x}\) due to another particle of charge \(Q\) at \(\vm{x}_0\) is given by
 \[
-    \boxed{\phi = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{1}{\norm{\vm{x} - \vm{x}_0}},}
+    \boxed{\phi = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{1}{\abs{\vm{x} - \vm{x}_0}},}
 \]
 where \(\epsilon_0\) is the permittivity of free space, with
 \[

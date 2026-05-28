@@ -4,7 +4,7 @@
     \label{def:rigid-body}%
     A \emph{rigid body} is an \(N\)-body system, where the distances between the \(N\) particles
     \[
-        \norm{\vm{x}_i - \vm{x}_j}
+        \abs{\vm{x}_i - \vm{x}_j}
     \]
     are fixed.
 \end{definition}
@@ -90,7 +90,7 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
 \begin{proof}
     This keeps the distances fixed, as if so,
     \begin{align*}
-        \DiffOp{t} \norm{\vm{x}_i - \vm{x}_j}^2 &= 2 \para{\dot{\vm{x}}_i - \dot{\vm{x}}_j} \cdot \para{\vm{x}_i - \vm{x}_j} \\
+        \DiffOp{t} \abs{\vm{x}_i - \vm{x}_j}^2 &= 2 \para{\dot{\vm{x}}_i - \dot{\vm{x}}_j} \cdot \para{\vm{x}_i - \vm{x}_j} \\
         &= 2 \brac{\vmb{\omega} \times \para{\vm{x}_i - \vm{x}_j}} \cdot \para{\vm{x}_i - \vm{x}_j} \\
         &= 0.
     \end{align*}
@@ -385,7 +385,7 @@ and let the angular velocity \(\vmb{\omega}\) capture the rotation about its cen
 
 Recall that the potential energy takes the form, in the case of conservative forces, of
 \[
-    V = \sum_{i = 1}^{n} V_i \para{\vm{x}_i} + \sum_{i < j} V_{ij} \para{\norm{\vm{x}_i - \vm{x}_j}}.
+    V = \sum_{i = 1}^{n} V_i \para{\vm{x}_i} + \sum_{i < j} V_{ij} \para{\abs{\vm{x}_i - \vm{x}_j}}.
 \]
 
 The second term drops out since they remain constant. A particularly nice case is when we are dealing with a uniform gravitational field, such that

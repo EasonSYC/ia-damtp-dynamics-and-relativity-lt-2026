@@ -157,8 +157,8 @@ Note that the vanishing of this term does not follow from Newton's Third Law. Th
 \begin{proof}[for Central Potential]
     If the force comes from a potential that depends on the distance from \(\vm{x}_i\) to \(\vm{x}_j\), then
     \begin{align*}
-        \vm{F}_{ij} &= - \grad_{i} V\para{\norm{\vm{x}_i - \vm{x}_j}} && \\
-        &= - V' \para{\norm{\vm{x}_i - \vm{x}_j}} \frac{\vm{x}_i - \vm{x}_j}{\norm{\vm{x}_i - \vm{x}_j}}.
+        \vm{F}_{ij} &= - \grad_{i} V\para{\abs{\vm{x}_i - \vm{x}_j}} && \\
+        &= - V' \para{\abs{\vm{x}_i - \vm{x}_j}} \frac{\vm{x}_i - \vm{x}_j}{\abs{\vm{x}_i - \vm{x}_j}}.
     \end{align*}
 
     This means each term in the cross product vanishes, and hence the sum vanishes.
@@ -213,11 +213,11 @@ and hence, differentiating gives us
     \]
     and
     \[
-        \vm{F}_{ij} = - \grad_i V_{ij} \para{\norm{\vm{x}_i - \vm{x}_j}},
+        \vm{F}_{ij} = - \grad_i V_{ij} \para{\abs{\vm{x}_i - \vm{x}_j}},
     \]
     then the total energy, taking the form of
     \[
-        \boxed{E = T + \sum_{i = 1}^{N} V_i \para{\vm{x}_i} + \sum_{i < j} V_{ij} \para{\norm{\vm{x}_i - \vm{x}_j}},}
+        \boxed{E = T + \sum_{i = 1}^{N} V_i \para{\vm{x}_i} + \sum_{i < j} V_{ij} \para{\abs{\vm{x}_i - \vm{x}_j}},}
     \]
     is conserved.
 \end{proposition}
