@@ -6,7 +6,7 @@ We first aim to build a structure of the universe to work in -- the one that we 
     \label{def:newtonian-spacetime}
     The three-dimensional space \(\RR^3\) can be endowed with a \emph{Cartesian reference frame} (i.e. an origin and a set of axes), such that points in space can be labelled as
     \[
-        \vm{x} = \para{x_1, x_2, x_3}.
+        \vb{x} = \pqty{x_1, x_2, x_3}.
     \]
 
     \emph{Times} can be labelled in an arbitrary reference frame, simply by a real number \(t\).
@@ -14,16 +14,16 @@ We first aim to build a structure of the universe to work in -- the one that we 
 
 \begin{definition}[Point Particle, Position, Velocity, Acceleration]
     \label{def:point-particle-position-velocity-acceleration}%
-    A \emph{point particle} is an idealised object that is completely determined by its \emph{position} at a given time, \(\vm{x} \para{t}\).
+    A \emph{point particle} is an idealised object that is completely determined by its \emph{position} at a given time, \(\vb{x} \pqty{t}\).
 
     The \emph{velocity} is the time derivative of the position, denoted as
     \[
-        \boxed{\vm{v} = \DiffFrac{\vm{x}}{t} = \dot{\vm{x}}.}
+        \boxed{\vb{v} = \dv{\vb{x}}{t} = \dot{\vb{x}}.}
     \]
 
     The \emph{acceleration} is defined as
     \[
-        \boxed{\vm{a} = \ddot{\vm{x}} = \dot{\vm{v}} = \DiffNFrac{\vm{x}}{t}{2}.}
+        \boxed{\vb{a} = \ddot{\vb{x}} = \dot{\vb{v}} = \dv[2]{\vb{x}}{t}.}
     \]
 \end{definition}
 
@@ -37,11 +37,11 @@ Electrons, tennis balls, and planets can all be good examples of point particles
 
 From \emph{Vector Calculus}, we may recall that the velocity is tangent to the trajectory. Also recall in Cartesian coordinates, that
 \[
-    \vm{v} = \DiffFrac{\vm{x}}{t} = \para{\DiffFrac{x_1}{t}, \DiffFrac{x_2}{t}, \DiffFrac{x_3}{t}},
+    \vb{v} = \dv{\vb{x}}{t} = \pqty{\dv{x_1}{t}, \dv{x_2}{t}, \dv{x_3}{t}},
 \]
 i.e., differentiation is simply differentiating by components. Other useful coordinate systems (specifically polar) will be discussed later.
 
-The above structure is \emph{not enough} to write down Newton's equations yet. Indeed, consider a `free' particle that does not experience any forces, for example, a particle that is alone in the depths of space, far away from anything else. The position of this particle is \(\vm{x}\para{t}\) -- but which frame should we use?
+The above structure is \emph{not enough} to write down Newton's equations yet. Indeed, consider a `free' particle that does not experience any forces, for example, a particle that is alone in the depths of space, far away from anything else. The position of this particle is \(\vb{x}\pqty{t}\) -- but which frame should we use?
 
 \begin{figure}[ht!]
     \centering
@@ -60,7 +60,7 @@ The particle may be at rest in a frame \(S\), but moving in a complicated way wi
 
 In an inertial frame, we may write for a free particle, that
 \[
-    \dot{\vm{v}} = \ddot{\vm{x}} = \vm{0}.
+    \dot{\vb{v}} = \ddot{\vb{x}} = \vb{0}.
 \]
 
 The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an improved version of Newton's First Law. This is a true statement about the world, but not an obvious one -- indeed, in antiquity, it was assumed that the natural state of an object is to be at rest.
@@ -76,19 +76,19 @@ The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an
     \label{def:galilean-transformation}%
     A \emph{Galilean transformation} is defined by a transformation of the form
     \[
-        \boxed{\vm{x}' = \vm{R} \vm{x} + \vm{k} + \vmb{\omega} t,}
+        \boxed{\vb{x}' = \vb{R} \vb{x} + \vb{k} + \vb*{\omega} t,}
     \]
     where:
     \begin{itemize}
-        \item \(\vm{R} \in \Or\para{3}\) is a constant \emph{rotation} or a \emph{reflection} matrix, i.e., \(\vm{R} \transpose \vm{R} = \identityM\);
-        \item \(\vm{k}\) is a constant vector that defines \emph{translation}; and
-        \item \(\vmb{\omega}\) is a constant velocity called a \emph{boost}.
+        \item \(\vb{R} \in \Or\pqty{3}\) is a constant \emph{rotation} or a \emph{reflection} matrix, i.e., \(\vb{R} \transpose \vb{R} = \identityM\);
+        \item \(\vb{k}\) is a constant vector that defines \emph{translation}; and
+        \item \(\vb*{\omega}\) is a constant velocity called a \emph{boost}.
     \end{itemize}
 \end{definition}
 
 Mathematically, it is easy to see that
 \[
-    \ddot{\vm{x}} = \vm{0} \iff \ddot{\vm{x}}' = \vm{0}.
+    \ddot{\vb{x}} = \vb{0} \iff \ddot{\vb{x}}' = \vb{0}.
 \]
 
 \begin{figure}[ht!]

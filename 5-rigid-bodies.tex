@@ -4,7 +4,7 @@
     \label{def:rigid-body}%
     A \emph{rigid body} is an \(N\)-body system, where the distances between the \(N\) particles
     \[
-        \abs{\vm{x}_i - \vm{x}_j}
+        \abs{\vb{x}_i - \vb{x}_j}
     \]
     are fixed.
 \end{definition}
@@ -15,14 +15,14 @@ In practice, this is due to very strong internal forces/structures. The only mot
 
 \begin{definition}[Angular Velocity]
     \label{def:angular-velocity}%
-    The \emph{angular velocity}, \(\vmb{\omega}\), is defined as
+    The \emph{angular velocity}, \(\vb*{\omega}\), is defined as
     \[
-        \vmb{\omega} = \omega \unitv{n},
+        \vb*{\omega} = \omega \unitv{n},
     \]
     where
     \begin{itemize}
         \item \(\unitv{n}\) points along the axis of rotation; and
-        \item \(\omega = \abs{\vmb{\omega}} = \dot{\theta}\) is the angular speed of rotation.
+        \item \(\omega = \abs{\vb*{\omega}} = \dot{\theta}\) is the angular speed of rotation.
     \end{itemize}
 \end{definition}
 
@@ -38,7 +38,7 @@ The direction of the angular velocity is determined using the right-hand rule, a
     \label{lem:cross-product-velocity-angular-velocity}%
     We have
     \[
-        \boxed{\dot{\vm{x}} = \vmb{\omega} \times \vm{x}.}
+        \boxed{\dot{\vb{x}} = \vb*{\omega} \cross \vb{x}.}
     \]
 \end{lemma}
 
@@ -50,11 +50,11 @@ The direction of the angular velocity is determined using the right-hand rule, a
 
 \autoref{lem:cross-product-velocity-angular-velocity} tells us that
 \begin{itemize}
-    \item \(\dot{\vm{x}}\) is orthogonal to both \(\vmb{\omega}\) and \(\vm{x}\); and
-    \item \(\abs{\dot{\vm{x}}} = \omega \abs{\vm{x}} \sin \phi = \omega d\).
+    \item \(\dot{\vb{x}}\) is orthogonal to both \(\vb*{\omega}\) and \(\vb{x}\); and
+    \item \(\abs{\dot{\vb{x}}} = \omega \abs{\vb{x}} \sin \phi = \omega d\).
 \end{itemize}
 
-Indeed, we have \(\omega = \abs{\dot{\theta}}\), and \(d = \abs{\unitv{n} \times \vm{x}}\).
+Indeed, we have \(\omega = \abs{\dot{\theta}}\), and \(d = \abs{\unitv{n} \cross \vb{x}}\).
 
 To fully describe a rotation, in addition to the angular velocity, a relation must specify a point about which the axis of rotation passes.
 
@@ -64,7 +64,7 @@ To fully describe a rotation, in addition to the angular velocity, a relation mu
     \label{fig:point-through-axis-of-rotation}%
 \end{figure}
 
-As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the same angular velocity, but they clearly are different rotations. In other words, the vector \(\vm{x}\) in \autoref{lem:cross-product-velocity-angular-velocity} is the position relative to some (in fact, any) point on the axis of rotation.
+As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the same angular velocity, but they clearly are different rotations. In other words, the vector \(\vb{x}\) in \autoref{lem:cross-product-velocity-angular-velocity} is the position relative to some (in fact, any) point on the axis of rotation.
 
 \subsection{Moment of Inertia}
 
@@ -83,15 +83,15 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
     \label{lem:particle-identical-angular-velocity}%
     In a rigid body, all particles rotate with the same angular velocity
     \[
-        \dot{\vm{x}}_i = \vmb{\omega} \times \vm{x}_i.
+        \dot{\vb{x}}_i = \vb*{\omega} \cross \vb{x}_i.
     \]
 \end{lemma}
 
 \begin{proof}
     This keeps the distances fixed, as if so,
     \begin{align*}
-        \DiffOp{t} \abs{\vm{x}_i - \vm{x}_j}^2 &= 2 \para{\dot{\vm{x}}_i - \dot{\vm{x}}_j} \cdot \para{\vm{x}_i - \vm{x}_j} \\
-        &= 2 \brac{\vmb{\omega} \times \para{\vm{x}_i - \vm{x}_j}} \cdot \para{\vm{x}_i - \vm{x}_j} \\
+        \dv{t} \abs{\vb{x}_i - \vb{x}_j}^2 &= 2 \pqty{\dot{\vb{x}}_i - \dot{\vb{x}}_j} \vdot \pqty{\vb{x}_i - \vb{x}_j} \\
+        &= 2 \bqty{\vb*{\omega} \cross \pqty{\vb{x}_i - \vb{x}_j}} \vdot \pqty{\vb{x}_i - \vb{x}_j} \\
         &= 0.
     \end{align*}
 \end{proof}
@@ -99,15 +99,15 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
 \begin{proposition}[Kinetic Energy of Rotating Rigid Body]
     The kinetic energy of a rigid body is given by
     \[
-        \boxed{T = \frac{1}{2} \sum_{i = 1}^{n} m_i \para{\dot{\vm{x}}_i \cdot \dot{\vm{x}}_i} = \frac{1}{2} I \omega^2.}
+        \boxed{T = \frac{1}{2} \sum_{i = 1}^{n} m_i \pqty{\dot{\vb{x}}_i \vdot \dot{\vb{x}}_i} = \frac{1}{2} I \omega^2.}
     \]
 \end{proposition}
 
 \begin{proof}    
     Rotation of a single particle involves kinetic energy, which is given by
     \begin{align*}
-        T &= \frac{1}{2} m \dot{\vm{x}} \cdot \dot{\vm{x}} \\
-        &= \frac{1}{2} m \para{\vmb{\omega} \times \vm{x}} \cdot \para{\vmb{\omega} \times \vm{x}} \\
+        T &= \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}} \\
+        &= \frac{1}{2} m \pqty{\vb*{\omega} \cross \vb{x}} \vdot \pqty{\vb*{\omega} \cross \vb{x}} \\
         &= \frac{1}{2} \omega^2 d^2.
     \end{align*}
 
@@ -122,7 +122,7 @@ In a way, \(I\) is effectively a `rotational mass', and the bigger the \(I\), th
     \label{prop:angular-momentum-rigid-body}%
     The total angular momentum for a rigid body, defined as
     \[
-        \vm{L} = \sum_{i = 1}^{n} m_i \para{\vm{x}_i \times \dot{\vm{x}}_i},
+        \vb{L} = \sum_{i = 1}^{n} m_i \pqty{\vb{x}_i \cross \dot{\vb{x}}_i},
     \]
     has component along the axis of rotation
     \[
@@ -133,9 +133,9 @@ In a way, \(I\) is effectively a `rotational mass', and the bigger the \(I\), th
 \begin{proof}
     We have
     \begin{align*}
-        L &= \vm{L} \cdot \unitv{n} \\
-        &= \omega \sum_{i = 1}^{n} m_i \brac{\vm{x}_i \times \para{\unitv{n} \times \vm{x}_i}} \cdot \unitv{n} \\
-        &= \omega \sum_{i = 1}^{n} m_i \brac{\para{\unitv{n} \times \vm{x}_i} \cdot \para{\unitv{n} \times \vm{x}_i}} \\
+        L &= \vb{L} \vdot \unitv{n} \\
+        &= \omega \sum_{i = 1}^{n} m_i \bqty{\vb{x}_i \cross \pqty{\unitv{n} \cross \vb{x}_i}} \vdot \unitv{n} \\
+        &= \omega \sum_{i = 1}^{n} m_i \bqty{\pqty{\unitv{n} \cross \vb{x}_i} \vdot \pqty{\unitv{n} \cross \vb{x}_i}} \\
         &= \omega \sum_{i = 1}^{n} m_i d_i^2 \\
         &= \omega I.
     \end{align*}
@@ -149,7 +149,7 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
     \label{prop:torque-rotational-acceleration}%
     If the torque applied to a rigid body is along its axis of rotation, with 
     \[
-        \vm{G} = G \unitv{n},
+        \vb{G} = G \unitv{n},
     \]
     then
     \[
@@ -158,9 +158,9 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
 \end{proposition}
 
 \begin{proof}
-    Recall that we have \(\dot{\vm{L}} = \vm{G}\). Dotting this with \(\unitv{n}\), we have
+    Recall that we have \(\dot{\vb{L}} = \vb{G}\). Dotting this with \(\unitv{n}\), we have
     \[
-        G = \dot{\vm{L}} \cdot \unitv{n} = I \dot{\omega}
+        G = \dot{\vb{L}} \vdot \unitv{n} = I \dot{\omega}
     \]
     as desired.
 \end{proof}
@@ -171,31 +171,31 @@ The results above is slightly unsatisfactory, since \(I\) depends on the choice 
 
 In Part II, we will define the \emph{inertia tensor} (which transforms under certain rules under change of axis), giving the result
 \[
-    T = \frac{1}{2} \vmb{\omega}\transpose  \tens{I}  \vmb{\omega},
+    T = \frac{1}{2} \vb*{\omega}\transpose  \tens{I}  \vb*{\omega},
 \]
 where the inertia tensor \(\tens{I}\) is defined as
 \[
-    I_{ab} = \sum_{i = 1}^{n} m_i \brac{\para{\vm{x}_i \cdot \vm{x}_i} \kronecker_{ab} - \para{\vm{x}_i}_a \para{\vm{x}_i}_b}.
+    I_{ab} = \sum_{i = 1}^{n} m_i \bqty{\pqty{\vb{x}_i \vdot \vb{x}_i} \kronecker_{ab} - \pqty{\vb{x}_i}_a \pqty{\vb{x}_i}_b}.
 \]
 
 \subsubsection{Calculation of Moment of Inertia}
 
 To calculate the moment of inertia for shapes, we may use the fact that at large \(N\), the particles are densely spaced, and the sums can be approximated by integrals, like
 \[
-    \sum_{i = 1}^{n} m_i f\para{\vm{x}_i} = \iiint_{V} \Diff^3 \vm{x} \rho\para{\vm{x}} f\para{\vm{x}},
+    \sum_{i = 1}^{n} m_i f\pqty{\vb{x}_i} = \iiint_{V} \dd[3]{\vb{x}} \rho\pqty{\vb{x}} f\pqty{\vb{x}},
 \]
-for some function \(f\para{\vm{x}}\), for example, \(d_i^2\), where \(\rho\para{\vm{x}}\) is the density. Therefore,
+for some function \(f\pqty{\vb{x}}\), for example, \(d_i^2\), where \(\rho\pqty{\vb{x}}\) is the density. Therefore,
 \[
-    M = \sum_{i = 1}^{n} m_i = \iiint_V \Diff^3 \vm{x} \rho\para{\vm{x}},
+    M = \sum_{i = 1}^{n} m_i = \iiint_V \dd[3]{\vb{x}} \rho\pqty{\vb{x}},
 \]
 and we have
 \[
-    I = \iiint_V \Diff^3 \vm{x} \rho\para{\vm{x}} x_{\perp}^2.
+    I = \iiint_V \dd[3]{\vb{x}} \rho\pqty{\vb{x}} x_{\perp}^2.
 \]
 
 In the remaining examples, we consider an object of uniform density
 \[
-    \rho\para{\vm{x}} = \rho_0
+    \rho\pqty{\vb{x}} = \rho_0
 \]
 where \(\rho_0\) is a constant.
 
@@ -219,7 +219,7 @@ where \(\rho_0\) is a constant.
     \label{ex:moi-rod}%
     For a rod, its mass is given by \(M = l \rho\), and the moment of inertia is
     \[
-        I = \rho \int_{0}^{l} \Diff x \cdot x^2 = \frac{\rho l^3}{3}.
+        I = \rho \int_{0}^{l} \dd{x} \cdot x^2 = \frac{\rho l^3}{3}.
     \]
 
     Therefore, we have
@@ -233,7 +233,7 @@ where \(\rho_0\) is a constant.
     \label{ex:moi-disc}%
     For a disc, its mass is given by \(M = \pi a^2 \rho\), and the moment of inertia is
     \begin{align*}
-        I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r \Diff r \cdot r^2 \\
+        I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r \dd{r} \cdot r^2 \\
         &= \rho \cdot 2\pi \cdot \frac{a^4}{4} \\
         &= \frac{\pi a^4 \rho}{2}.
     \end{align*}
@@ -249,8 +249,8 @@ where \(\rho_0\) is a constant.
     \label{ex:moi-ball}%
     For a ball, its mass is given by \(M = \frac{4}{3} \rho \pi a^3\). Its moment of inertia is given by, using integration in spherical coordinates,
     \begin{align*}
-        I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r^2 \Diff r r^2 \cdot \int_{0}^{\pi} \sin \theta \Diff \theta \sin^2 \theta \\
-        &= \rho \cdot 2\pi \cdot \para{\frac{a^5}{5}} \cdot \para{2 \cdot \frac{2}{3}} \\
+        I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r^2 \dd{r} r^2 \cdot \int_{0}^{\pi} \sin \theta \dd{\theta} \sin^2 \theta \\
+        &= \rho \cdot 2\pi \cdot \pqty{\frac{a^5}{5}} \cdot \pqty{2 \cdot \frac{2}{3}} \\
         &= \frac{8 a^5}{15} \rho \pi.
     \end{align*}
 
@@ -281,9 +281,9 @@ where \(\rho_0\) is a constant.
 \begin{proof}
     By definition, the moment of inertia along the \(x\), \(y\) and \(z\) are, respectively,
     \begin{align*}
-        I_x &= \iint \Diff^2 \vm{x} \rho y^2, \\
-        I_y &= \iint \Diff^2 \vm{x} \rho x^2, \\
-        I_z &= \iint \Diff^2 \vm{x} \rho \para{x^2 + y^2}.
+        I_x &= \iint \dd[2]{\vb{x}} \rho y^2, \\
+        I_y &= \iint \dd[2]{\vb{x}} \rho x^2, \\
+        I_z &= \iint \dd[2]{\vb{x}} \rho \pqty{x^2 + y^2}.
     \end{align*}
 
     The result follows trivially.
@@ -310,18 +310,18 @@ where \(\rho_0\) is a constant.
 \begin{proof}
     We put the origin on the parallel axis, and express all the positions relative to the centre of mass:
     \[
-        \vm{x}_i = \vm{R} + \vm{y}_i,
+        \vb{x}_i = \vb{R} + \vb{y}_i,
     \]
-    and we recall that \(\sum_{i = 1}^{n} \vm{y}_i m_i = \vm{0}\).
+    and we recall that \(\sum_{i = 1}^{n} \vb{y}_i m_i = \vb{0}\).
 
     Then, we have
     \begin{align*}
-        I &= \sum_{i = 1}^{n} m_i \para{\unitv{n} \times \vm{x}_i} \cdot \para{\unitv{n} \times \vm{x}_i} \\
-        &= \sum_{i = 1}^{n} m_i \brac{\unitv{n} \times \para{\vm{R} + \vm{y}_i}} \cdot\brac{\unitv{n} \times \para{\vm{R} + \vm{y}_i}} \\
-        &= \sum_{i = 1}^{n} m_i \brac{\para{\unitv{n} \times \vm{R}} \cdot \para{\unitv{n} \times \vm{R}} + \para{\unitv{n} \times \vm{y}_i} \cdot \para{\unitv{n} \times \vm{y}_i} + 2 \para{\unitv{n} \times \vm{R}} \cdot \para{\unitv{n} \times \vm{y}_i}}.
+        I &= \sum_{i = 1}^{n} m_i \pqty{\unitv{n} \cross \vb{x}_i} \vdot \pqty{\unitv{n} \cross \vb{x}_i} \\
+        &= \sum_{i = 1}^{n} m_i \bqty{\unitv{n} \cross \pqty{\vb{R} + \vb{y}_i}} \vdot\bqty{\unitv{n} \cross \pqty{\vb{R} + \vb{y}_i}} \\
+        &= \sum_{i = 1}^{n} m_i \bqty{\pqty{\unitv{n} \cross \vb{R}} \vdot \pqty{\unitv{n} \cross \vb{R}} + \pqty{\unitv{n} \cross \vb{y}_i} \vdot \pqty{\unitv{n} \cross \vb{y}_i} + 2 \pqty{\unitv{n} \cross \vb{R}} \vdot \pqty{\unitv{n} \cross \vb{y}_i}}.
     \end{align*}
 
-    Note that the first term has \(\abs{\unitv{n} \times \vm{R}} = h\), and hence gives the \(M h^2\) term; the second term is precisely the moment of inertia about the axis through the centre of mass, giving the \(I_{\text{c.o.m.}}\) term; the final term reduces to \(0\) since the sum of \(m_i \vm{y}_i\) is \(\vm{0}\).
+    Note that the first term has \(\abs{\unitv{n} \cross \vb{R}} = h\), and hence gives the \(M h^2\) term; the second term is precisely the moment of inertia about the axis through the centre of mass, giving the \(I_{\text{c.o.m.}}\) term; the final term reduces to \(0\) since the sum of \(m_i \vb{y}_i\) is \(\vb{0}\).
 
     This finishes the proof.
 \end{proof}
@@ -356,41 +356,41 @@ In particular, note that \(I\text{c.o.m.} < I\) for any parallel axis -- this me
 
 Allowing for the centre of mass to move as the body rotates, we study more general motion, where we now let
 \[
-    \vm{x}_i = \vm{R} \para{t} + \vm{y}_i,
+    \vb{x}_i = \vb{R} \pqty{t} + \vb{y}_i,
 \]
-and let the angular velocity \(\vmb{\omega}\) capture the rotation about its centre of mass, in the form
+and let the angular velocity \(\vb*{\omega}\) capture the rotation about its centre of mass, in the form
 \[
-    \dot{\vm{y}}_i = \vmb{\omega} \times \vm{y}_i.
+    \dot{\vb{y}}_i = \vb*{\omega} \cross \vb{y}_i.
 \]
 
 \begin{proposition}[Rotational Kinetic Energy]
     \label{prop:rotational-kinetic-energy}%
     The kinetic energy splits up into a \emph{translational} and a \emph{rotational} part, in the form
     \[
-        \boxed{T = \frac{1}{2} M \dot{\vm{R}} \cdot \dot{\vm{R}} + \frac{1}{2} I_{\text{c.o.m.}} \omega^2}.
+        \boxed{T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} I_{\text{c.o.m.}} \omega^2}.
     \]
 \end{proposition}
 
 \begin{proof}
     Recall from \autoref{prop:system-energy-split}, that
     \[
-        T = \frac{1}{2} M \dot{\vm{R}} \cdot \dot{\vm{R}} + \frac{1}{2} \sum_{i = 1}^{n} m_i \dot{\vm{y}}_i \cdot \dot{\vm{y}}_i.
+        T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} \sum_{i = 1}^{n} m_i \dot{\vb{y}}_i \vdot \dot{\vb{y}}_i.
     \]
 
     The second term gives the rotational kinetic energy using the relation
     \[
-        \dot{\vm{y}}_i = \vmb{\omega} \times \vm{y}_i.
+        \dot{\vb{y}}_i = \vb*{\omega} \cross \vb{y}_i.
     \]
 \end{proof}
 
 Recall that the potential energy takes the form, in the case of conservative forces, of
 \[
-    V = \sum_{i = 1}^{n} V_i \para{\vm{x}_i} + \sum_{i < j} V_{ij} \para{\abs{\vm{x}_i - \vm{x}_j}}.
+    V = \sum_{i = 1}^{n} V_i \pqty{\vb{x}_i} + \sum_{i < j} V_{ij} \pqty{\abs{\vb{x}_i - \vb{x}_j}}.
 \]
 
 The second term drops out since they remain constant. A particularly nice case is when we are dealing with a uniform gravitational field, such that
 \[
-    V_i \para{\vm{x}_i} = m_i g z_i.
+    V_i \pqty{\vb{x}_i} = m_i g z_i.
 \]
 
 In this case, we have
@@ -414,7 +414,7 @@ However, it is sometime easier to consider some axes that does not go through th
 
     A natural way to study it is using the end point (fixed point) as the pivot, and so there is only rotational motion about that point, and hence
     \[
-        T = \frac{1}{2} I \para{\dot{\theta}}^2,
+        T = \frac{1}{2} I \pqty{\dot{\theta}}^2,
     \]
     where \(\omega = \dot{\theta}\), and \(I = \frac{1}{3} M L^2\) from \autoref{ex:moi-rod}.
 
@@ -425,25 +425,25 @@ However, it is sometime easier to consider some axes that does not go through th
 
     Therefore, the total kinetic energy is given by
     \[
-        T = \frac{1}{2} M v_{\text{c.o.m.}}^2 + \frac{1}{2} I_{\text{c.o.m.}} \para{\dot{\theta}}^2.
+        T = \frac{1}{2} M v_{\text{c.o.m.}}^2 + \frac{1}{2} I_{\text{c.o.m.}} \pqty{\dot{\theta}}^2.
     \]
 
     It is easy to check that the angular velocity about the centre of mass is equal to that about the endpoint -- indeed this can be observed from the diagram, and due to the body being rigid. Therefore,
     \begin{align*}
-        T &= \frac{1}{2} M \frac{L^2}{4} \para{\dot{\theta}}^2 + \frac{1}{2} \para{I - M \frac{L^4}{4}} \para{\dot{\theta}}^2 \\
-        &= \frac{1}{2} I \para{\dot{\theta}}^2,
+        T &= \frac{1}{2} M \frac{L^2}{4} \pqty{\dot{\theta}}^2 + \frac{1}{2} \pqty{I - M \frac{L^4}{4}} \pqty{\dot{\theta}}^2 \\
+        &= \frac{1}{2} I \pqty{\dot{\theta}}^2,
     \end{align*}
     which agrees with the previous result.
 
     The total energy, including the potential component, is then given by
     \[
-        E = \frac{1}{2} I \para{\dot{\theta}}^2 - Mg \frac{L}{2} \cos \theta,
+        E = \frac{1}{2} I \pqty{\dot{\theta}}^2 - Mg \frac{L}{2} \cos \theta,
     \]
     where the potential energy has the negative sign taken, to make sure the potential energy increases as the pendulum moves up, as shown in \autoref{fig:potential-energy-pendulum}.
 
     We impose the principle of conservation of energy, which says
     \[
-        \DiffFrac{E}{t} = 0,
+        \dv{E}{t} = 0,
     \]
     and hence
     \[
@@ -471,25 +471,25 @@ However, it is sometime easier to consider some axes that does not go through th
 
     Therefore, the kinetic energy is given by
     \[
-        T = \frac{1}{2} m v^2 + \frac{1}{2} I \omega^2 = \frac{1}{2} \para{m + \frac{I}{a^2}} v^2,
+        T = \frac{1}{2} m v^2 + \frac{1}{2} I \omega^2 = \frac{1}{2} \pqty{m + \frac{I}{a^2}} v^2,
     \]
     so in other words, rolling changes the `effective mass' of the ball. From this expression, we may also see explicitly, that this energy is conserved:
     \begin{align*}
-        \DiffFrac{E}{t} &= M \dot{x} \ddot{x} + I \dot{\theta} \ddot{\theta} \\
-        &= \dot{x} \para{-f} + \para{\dot{\theta} a} f \\
-        &= f\para{- \dot{x} + \dot{\theta} a} \\
+        \dv{E}{t} &= M \dot{x} \ddot{x} + I \dot{\theta} \ddot{\theta} \\
+        &= \dot{x} \pqty{-f} + \pqty{\dot{\theta} a} f \\
+        &= f\pqty{- \dot{x} + \dot{\theta} a} \\
         &= 0
     \end{align*}
     which also demonstrates the importance of the no-slip condition.
 
     Now, we put the ball rolling down a slope, the conserved total energy is given by
     \[
-        E = \frac{1}{2} \para{M + \frac{I}{a^2}} \para{\dot{x}}^2 - Mg x \sin \alpha.
+        E = \frac{1}{2} \pqty{M + \frac{I}{a^2}} \pqty{\dot{x}}^2 - Mg x \sin \alpha.
     \]
 
     Imposing the conservation of energy, we have
     \[
-        \boxed{\para{M + \frac{I}{a^2}} \ddot{x} = Mg \sin \alpha.}
+        \boxed{\pqty{M + \frac{I}{a^2}} \ddot{x} = Mg \sin \alpha.}
     \]
 
     In other words, the ball rolls down the slope with slightly less acceleration -- it has the same `gravitational mass' but effectively less `inertial mass'.
@@ -553,7 +553,7 @@ Normal contact forces also produces \emph{elastic bounces}.
 
     Putting the first equation into the second equation, we have
     \[
-        \frac{1}{2m} \para{q_y^2 + Q_y^2 + 2 q_y Q_y} = \frac{q_y^2}{2m} + \frac{Q_y^2}{2M}.
+        \frac{1}{2m} \pqty{q_y^2 + Q_y^2 + 2 q_y Q_y} = \frac{q_y^2}{2m} + \frac{Q_y^2}{2M}.
     \]
 
     If \(M \gg m\), then \(\frac{Q_y^2}{2M} \ll \frac{Q_y^2}{2m}\), so
@@ -569,5 +569,5 @@ Normal contact forces also produces \emph{elastic bounces}.
 
 \begin{definition}[Impulse]
     \label{def:impulse}%
-    The change in momentum over a short time, \(\Delta \vm{p}\), is called an \emph{impulse}, denoted \(\vm{I}\).
+    The change in momentum over a short time, \(\Delta \vb{p}\), is called an \emph{impulse}, denoted \(\vb{I}\).
 \end{definition}
