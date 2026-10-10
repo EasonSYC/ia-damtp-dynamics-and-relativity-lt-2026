@@ -3,58 +3,58 @@
 We have studied a lot on the motion of a single particle, but the universe has many particles. We now study a system of \(N\) particles.
 
 Labelling the particles by \(i = 1, 2, \ldots, N\), each particle has a momentum
-\[
+\begin{equation}
     \vb{p}_i = m_i \dot{\vb{x}}_i.
-\]
+\end{equation}
 
 Each particle obeys Newton's Law individually by
-\[
+\begin{equation}
     \dot{\vb{p}}_i = \vb{F}_i.
-\]
+\end{equation}
 
 The force \(\vb{F}_i\) on the \(i\)-th particle can be \emph{external} (to the system), or due to the other particles, so we may decompose it as
-\[
+\begin{equation}
     \vb{F}_i = \vb{F}_i^{\text{ext}} + \sum_{j \neq i} \vb{F}_{ij},
-\]
+\end{equation}
 where we label \(F_{ij}\) as the force the \(i\)th particle experiences, due to the \(j\)th particle.
 
 There is a law on the relation between \(\vb{F}_{ij}\) and \(\vb{F}_{ji}\).
 
 \begin{theorem}[Newton's Third Law]
     \emph{Newton's Third Law} states that every action has an equal and opposite reaction. In formula, this means
-    \[
+    \begin{equation}
         \boxed{\vb{F}_{ij} = - \vb{F}_{ji}.}
-    \]
+    \end{equation}
 \end{theorem}
 
 \subsection{Centre of Mass}
 
 \begin{definition}[Centre of Mass]
     Let
-    \[
+    \begin{equation}
         M = \sum_{i = 1}^{N} m_i
-    \]
+    \end{equation}
     be the \emph{total mass} of the system. Then the \emph{centre of mass} is given by
-    \[
+    \begin{equation}
         \boxed{\vb{R} = \frac{1}{M} \sum_{i = 1}^{N} m_i \vb{x}_i.}
-    \]
+    \end{equation}
 \end{definition}
 
 \begin{proposition}[Centre of Mass and Total Momentum]
     \label{prop:centre-of-mass-total-momentum}%
     We have
-    \[
+    \begin{equation}
         \vb{p} = M \dot{\vb{R}}.
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     We have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \vb{p} &= \sum_{i = 1}^{N} \vb{p}_i \\
         &= \sum_{i = 1}^{N} m_i \dot{\vb{x}}_{i} \\
         &= M \dot{\vb{R}},
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 The centre of mass, in the momentum sense, is like a single particle of mass \(M\). This is also reflected when affected by external forces.
@@ -63,24 +63,24 @@ The centre of mass, in the momentum sense, is like a single particle of mass \(M
 
 \begin{proposition}[Centre of Mass and Total External Force]
     We have
-    \[
+    \begin{equation}
         \boxed{M \ddot{\vb{R}} = \vb{F} = \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}}}
-    \]
+    \end{equation}
     where \(\vb{F}\) is the \emph{total external force}.
 \end{proposition}
 
 \begin{proof}
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dot{\vb{p}} &= \sum_{i = 1}^{N} \dot{\vb{p}}_i \\
         &= \sum_{i = 1}^{N} \pqty{\vb{F}_i^{\text{ext}} + \sum_{j \neq i} \vb{F}_{ij}} \\
         &= \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} + \sum_{i = 1}^{N} \sum_{j = 1}^{i - 1} \vb{F}_{ij} + \sum_{i = 1}^{N} \sum_{j = i + 1}^{N} \vb{F}_{ij} \\
         &= \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} + \sum_{j < i} \vb{F}_{ij} + \sum_{j > i} \vb{F}_{ij} \\
         &= \vb{F},
-    \end{align*}
+    \end{align}\end{subequations}
     so we have
-    \[
+    \begin{equation}
         M \ddot{\vb{R}} = \vb{F} = \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}}.
-    \]
+    \end{equation}
 \end{proof}
 
 In other words, the centre of mass accelerates like a point particle subject to an external force \(\vb{F}\). This is why we can treat the Earth as a point particle, since the internal forces cancel out.
@@ -97,9 +97,9 @@ In fact, a similar result holds for the total angular momentum.
 \begin{definition}[Angular Momentum about a Point]
     \label{def:angular-momentum-about-point}%
     About a point \(\vb{a}\), we define the \emph{angular momentum about \(\vb{a}\)} as
-    \[
+    \begin{equation}
         \boxed{\vb{L} = \sum_{i = 1}^{N} \pqty{\vb{x}_i - \vb{a}} \cross \vb{p}_i.}
-    \]
+    \end{equation}
 \end{definition}
 
 (Recall here that in \autoref{def:angular-momentum} we set \(\vb{a} = \vb{0}\) to define the angular momentum about the origin.)
@@ -109,16 +109,16 @@ A concept closely related to angular momentum, the rotational analogy of force, 
 \begin{definition}[Total External Torque about a Point]
     \label{def:torque-about-point}%
     About a point \(\vb{a}\), we define the \emph{total (external) torque} about \(\vb{a}\) as
-    \[
+    \begin{equation}
         \boxed{\vb{G} = \sum_{i = 1}^{N} \pqty{\vb{x}_i - \vb{a}} \cross \vb{F}_i^{\text{ext}}.}
-    \]
+    \end{equation}
 \end{definition}
 
 \begin{proposition}[Torque is the Rate of Change in Angular Momentum]
     \label{prop:torque-rate-of-change-angular-momentum}%
-    \[
+    \begin{equation}
         \boxed{\dot{\vb{L}} = \vb{G}},
-    \]
+    \end{equation}
 \end{proposition}
 
 The most natural consequence of this result, is that an object cannot spin itself without the help of any external spinning effect (torque).
@@ -128,27 +128,27 @@ We split up our proof into two parts -- the first part having a more general pro
 \begin{lemma}[Rate of Change in Angular Momentum]
     \label{lem:rate-of-change-ang-mom}%
     We have
-    \[
+    \begin{equation}
         \dot{\vb{L}} = \vb{G} + \sum_{i < j} \pqty{\vb{x}_i - \vb{x}_j} \cross \vb{F}_{ij}.
-    \]
+    \end{equation}
 \end{lemma}
 
 \begin{proof}
     Differentiating gives us
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dot{\vb{L}} &= \sum_{i = 1}^{N} \dot{\vb{x}}_i \cross \vb{p}_i + \sum_{i = 1}^{N} \pqty{\vb{x}_i - \vb{a}} \cross \dot{\vb{p}}_i \\
         &= \vb{0} + \sum_{i = 1}^{N} \pqty{\vb{x}_i - \vb{a}} \cross \pqty{\vb{F}_i^{\text{ext}} + \sum_{j \neq i} \vb{F}_{ij}} \\
         &= \sum_{i = 1}^{N} \pqty{\vb{x}_i - \vb{a}} \cross \vb{F}_i^{\text{ext}} + \sum_{i < j} \bqty{\pqty{\vb{x}_i - \vb{a}} \cross \vb{F}_{ij} + \pqty{\vb{x}_j - \vb{a}} \cross \vb{F}_{ji}} \\
         &= \vb{G} + \sum_{i < j} \pqty{\vb{x}_i - \vb{x}_j} \cross \vb{F}_{ij}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 \begin{lemma}[Vanishing of Symmetric Term]
     \label{lem:vanishing-of-symmetric-term}%
     The sum
-    \[
+    \begin{equation}
         \sum_{i < j} \pqty{\vb{x}_i - \vb{x}_j} \cross \vb{F}_{ij}
-    \]
+    \end{equation}
     vanishes.
 \end{lemma}
 
@@ -156,10 +156,10 @@ Note that the vanishing of this term does not follow from Newton's Third Law. Th
 
 \begin{proof}[\proofname\ for Central Potential]
     If the force comes from a potential that depends on the distance from \(\vb{x}_i\) to \(\vb{x}_j\), then
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \vb{F}_{ij} &= - \grad_{i} V\pqty{\abs{\vb{x}_i - \vb{x}_j}} && \\
         &= - V' \pqty{\abs{\vb{x}_i - \vb{x}_j}} \frac{\vb{x}_i - \vb{x}_j}{\abs{\vb{x}_i - \vb{x}_j}}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     This means each term in the cross product vanishes, and hence the sum vanishes.
 \end{proof} 
@@ -174,64 +174,64 @@ It is natural to take \(\vb{a} = \vb{R}\), the centre of mass, for example when 
 \subsubsection{Total Energy}
 
 Now we look at the total energy, which splits up nicely, to an centre of mass part and an internal part. To help with the notations, let
-\[
+\begin{equation}
     \vb{x}_i = \vb{R} + \vb{y}_i,
-\]
+\end{equation}
 where \(\vb{y}_i\) is the position of the \(i\)-th particle relative to the centre of mass. It follows that
-\[
+\begin{equation}
     \sum_{i = 1}^{N} m_i \vb{y}_i = \vb{0},
-\]
+\end{equation}
 and hence, differentiating gives us
-\[
+\begin{equation}
     \sum_{i = 1}^{N} m_i \dot{\vb{y}}_i = \vb{0}.
-\]
+\end{equation}
 
 \begin{proposition}[Centre of Mass and Internal Kinetic Energies]
     \label{prop:system-energy-split}%
     The total kinetic energy is given by
-    \[
+    \begin{equation}
         \boxed{T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \sum_{i = 1}^{N} \frac{1}{2} m_i \dot{\vb{y}}_i \vdot\dot{\vb{y}}_i,}
-    \]
+    \end{equation}
     where the first term is the \emph{centre of mass kinetic energy}, and the second term is the \emph{internal kinetic energy}
 \end{proposition}
 
 \begin{proof}
     The total kinetic energy is given by
-    \begin{align*}
+    \begin{subequations}\begin{align}
         T &= \sum_{i = 1}^{N} \frac{1}{2} m_i \pqty{\dot{\vb{x}}_i \vdot \dot{\vb{x}}_i} \\
         &= \sum_{i = 1}^{N} \frac{1}{2} m_i \pqty{\dot{\vb{R}} \vdot \dot{\vb{R}} + \dot{\vb{y}}_i \vdot \dot{\vb{y}}_i + 2 \dot{\vb{R}} \vdot \dot{\vb{y}}_i} \\
         &= \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \sum_{i = 1}^{N} \frac{1}{2} m_i \dot{\vb{y}}_i \vdot\dot{\vb{y}}_i,
-    \end{align*}
+    \end{align}\end{subequations}
     the cross term vanishing since we may factor out the \(\dot{\vb{R}}\), and the sum remaining sums to zero.
 \end{proof}
 
 \begin{proposition}[Conservative Forces gives Conservative System Energy]
     \label{prop:conservative-force-conservative-energy}%
     If all the forces in the system are conservative, expressed using potentials
-    \[
+    \begin{equation}
         \vb{F}_i^{\text{ext}} = - \grad_i V_i \pqty{\vb{x}_i}
-    \]
+    \end{equation}
     and
-    \[
+    \begin{equation}
         \vb{F}_{ij} = - \grad_i V_{ij} \pqty{\abs{\vb{x}_i - \vb{x}_j}},
-    \]
+    \end{equation}
     then the total energy, taking the form of
-    \[
+    \begin{equation}
         \boxed{E = T + \sum_{i = 1}^{N} V_i \pqty{\vb{x}_i} + \sum_{i < j} V_{ij} \pqty{\abs{\vb{x}_i - \vb{x}_j}},}
-    \]
+    \end{equation}
     is conserved.
 \end{proposition}
 
 \begin{proof}
     The potentials must have \(V_{ij} = V_{ji}\) for Newton's Third Law. We may differentiate to show that
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dot{E} &= \sum_{i = 1}^{N} m_i \dot{\vb{x}}_i \vdot \ddot{\vb{x}_i} + \sum_{i = 1}^{N} \pqty{\grad_i V_i} \vdot \dot{\vb{x}}_i + \sum_{i < j} \bqty{\pqty{\grad_i V_{ij}} \vdot \dot{\vb{x}}_i + \pqty{\grad_j V_{ij}} \vdot \dot{\vb{x}}_j} \\
         &= \sum_{i = 1}^{N} m_i \dot{\vb{x}_i} \vdot \ddot{\vb{x}_i} - \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} \vdot \dot{\vb{x}}_i - \sum_{i < j} \bqty{\vb{F}_{ij} \vdot \dot{\vb{x}}_i + \vb{F}_{ji} \vdot \dot{\vb{x}}_j} \\
         &= \sum_{i = 1}^{N} m_i \dot{\vb{x}_i} \vdot \ddot{\vb{x}_i} - \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} \vdot \dot{\vb{x}}_i - \sum_{j \neq i} \vb{F}_{ij} \vdot \dot{\vb{x}}_i \\
         &= \sum_{i = 1}^{N} \dot{\vb{x}} \vdot \pqty{m_i \ddot{\vb{x}}_i - \vb{F}_i^{\text{ext}} - \sum_{j \neq i} F_{ij}} \\
         &= \sum_{i = 1}^{N} \dot{\vb{x}} \vdot \vb{0} \\
         &= 0,
-    \end{align*}
+    \end{align}\end{subequations}
     using Newton's Second Law in the final step.
 \end{proof}
 
@@ -242,52 +242,52 @@ There is an important special case to study, where we study two objects without 
 \begin{definition}[Relative Separation, Reduced Mass]
     \label{def:relative-separation-reduced-mass}%
     The \emph{relative separation} of a two-body system is defined as \(\vb{r} = \vb{x}_1 - \vb{x}_2\). The \emph{reduced mass} of a two-body system with masses \(m_1\) and \(m_2\) is given as
-    \[
+    \begin{equation}
         \boxed{\mu = \frac{m_1 m_2}{m_1 + m_2} = \frac{1}{\frac{1}{m_1} + \frac{1}{m_2}}.}
-    \]
+    \end{equation}
 \end{definition}
 
 \begin{proposition}[Kinetic Energy in Two-Body System]
     The kinetic energy in a two-body system can be expressed as
-    \[
+    \begin{equation}
         \boxed{T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} \mu \dot{\vb{r}} \vdot \dot{\vb{r}}.}
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     The centre of mass, \(\vb{R}\), satisfies
-    \[
+    \begin{equation}
         M \vb{R} = m_1 \vb{x}_1 + m_2 \vb{x}_2,
-    \]
+    \end{equation}
     where \(M = m_1 + m_2\) is the total mass, and hence, we may express the actual positions in terms of the relative separation and the centre of mass, as
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \vb{x}_1 &= \vb{R} + \frac{m_2}{M} \vb{r}, \\
         \vb{x}_2 &= \vb{R} - \frac{m_1}{M} \vb{r}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Therefore, the kinetic energy can therefore be expressed as
-    \begin{align*}
+    \begin{subequations}\begin{align}
         T &= \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{m_1}{2} \cdot \frac{m_2^2}{M^2} \vdot \dot{\vb{r}} \vdot \dot{\vb{r}} + \frac{m_2}{2} \cdot \frac{m_1^2}{M^2} \vdot \dot{\vb{r}} \vdot \dot{\vb{r}} \\
         &= \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} \mu \dot{\vb{r}} \vdot \dot{\vb{r}}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 \begin{proposition}[Relative Separation behaves like Object of Reduced Mass]
     \label{prop:rel-sep-obj-red-mass}%
     With no external forces, we have
-    \[
+    \begin{equation}
         \mu \ddot{\vb{r}} = \vb{F}_{12}.
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     With no external forces, we know that \(\ddot{\vb{R}} = \vb{0}\). Hence, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \mu \ddot{\vb{r}} &= \mu \pqty{\ddot{\vb{x}}_1 - \ddot{\vb{x}}_2} \\
         &= \mu \pqty{\frac{\vb{F}_{12}}{m_1} - \frac{\vb{F}_{21}}{m_2}} \\
         &= \mu \pqty{\frac{1}{m_1} + \frac{1}{m_2}} \vb{F}_{12} \\
         &= \vb{F}_{12}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 This means the relative separation behaves like a single-particle problem with the reduced mass, so this reduces the methods used to those already developed.
@@ -308,27 +308,27 @@ The relation \(\dot{\vb{p}} = \vb{F}^{\text{ext}}\) is very useful when the inte
 \end{figure}
 
 The process of fuel ejection may be complicated, but the \emph{total momentum} in the \(z\)-axis must obey that
-\[
+\begin{equation}
     \dot{p} = \frac{p \pqty{t + \delta t} - p \pqty{t}}{\delta t} = F^{\text{ext}}.
-\]
+\end{equation}
 
 We have that
-\[
+\begin{equation}
     p\pqty{t} = m\pqty{t} v\pqty{t},
-\]
+\end{equation}
 while at \(t + \delta t\),
-\begin{align*}
+\begin{subequations}\begin{align}
     p\pqty{t + \delta t} &= m \pqty{t + \delta t} v \pqty{t + \delta t} + \pqty{m\pqty{t} - m\pqty{t + \delta t}} \cdot \pqty{v\pqty{t} - u} \\
     &= m\pqty{t} + v\pqty{t} + \bqty{\dot{m}\pqty{t} v\pqty{t} + m\pqty{t} \dot{v}\pqty{t}} \delta t - \dot{m} \pqty{t} \delta t \pqty{v\pqty{t} - u}.
-\end{align*}
+\end{align}\end{subequations}
 
 Hence,
-\[
+\begin{equation}
     \boxed{m \dot{v} + u \dot{m} = F^{\text{ext}}.}
-\]
+\end{equation}
 
 This is known as the \emph{Tsiolkovsky Rocket Equation}. Some write this in terms of
-\[
+\begin{equation}
     m \dot{v} = F^{\text{ext}} - u \dot{m},
-\]
+\end{equation}
 imagining the final term as a `thrust force' due to Newton's Third Law.

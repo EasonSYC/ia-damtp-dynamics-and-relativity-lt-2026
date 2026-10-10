@@ -5,9 +5,9 @@ We first aim to build a structure of the universe to work in -- the one that we 
 \begin{definition}[The Newtonian Space-Time]
     \label{def:newtonian-spacetime}
     The three-dimensional space \(\RR^3\) can be endowed with a \emph{Cartesian reference frame} (i.e. an origin and a set of axes), such that points in space can be labelled as
-    \[
+    \begin{equation}
         \vb{x} = \pqty{x_1, x_2, x_3}.
-    \]
+    \end{equation}
 
     \emph{Times} can be labelled in an arbitrary reference frame, simply by a real number \(t\).
 \end{definition}
@@ -17,14 +17,14 @@ We first aim to build a structure of the universe to work in -- the one that we 
     A \emph{point particle} is an idealised object that is completely determined by its \emph{position} at a given time, \(\vb{x} \pqty{t}\).
 
     The \emph{velocity} is the time derivative of the position, denoted as
-    \[
+    \begin{equation}
         \boxed{\vb{v} = \dv{\vb{x}}{t} = \dot{\vb{x}}.}
-    \]
+    \end{equation}
 
     The \emph{acceleration} is defined as
-    \[
+    \begin{equation}
         \boxed{\vb{a} = \ddot{\vb{x}} = \dot{\vb{v}} = \dv[2]{\vb{x}}{t}.}
-    \]
+    \end{equation}
 \end{definition}
 
 \begin{figure}[ht!]
@@ -36,9 +36,9 @@ We first aim to build a structure of the universe to work in -- the one that we 
 Electrons, tennis balls, and planets can all be good examples of point particles: this depends on the context.
 
 From \emph{Vector Calculus}, we may recall that the velocity is tangent to the trajectory. Also recall in Cartesian coordinates, that
-\[
+\begin{equation}
     \vb{v} = \dv{\vb{x}}{t} = \pqty{\dv{x_1}{t}, \dv{x_2}{t}, \dv{x_3}{t}},
-\]
+\end{equation}
 i.e., differentiation is simply differentiating by components. Other useful coordinate systems (specifically polar) will be discussed later.
 
 The above structure is \emph{not enough} to write down Newton's equations yet. Indeed, consider a `free' particle that does not experience any forces, for example, a particle that is alone in the depths of space, far away from anything else. The position of this particle is \(\vb{x}\pqty{t}\) -- but which frame should we use?
@@ -59,9 +59,9 @@ The particle may be at rest in a frame \(S\), but moving in a complicated way wi
 \end{definition}
 
 In an inertial frame, we may write for a free particle, that
-\[
+\begin{equation}
     \dot{\vb{v}} = \ddot{\vb{x}} = \vb{0}.
-\]
+\end{equation}
 
 The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an improved version of Newton's First Law. This is a true statement about the world, but not an obvious one -- indeed, in antiquity, it was assumed that the natural state of an object is to be at rest.
 
@@ -75,9 +75,9 @@ The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an
 \begin{definition}[Galilean Transformation]
     \label{def:galilean-transformation}%
     A \emph{Galilean transformation} is defined by a transformation of the form
-    \[
+    \begin{equation}
         \boxed{\vb{x}' = \vb{R} \vb{x} + \vb{k} + \vb*{\omega} t,}
-    \]
+    \end{equation}
     where:
     \begin{itemize}
         \item \(\vb{R} \in \Or\pqty{3}\) is a constant \emph{rotation} or a \emph{reflection} matrix, i.e., \(\vb{R} \transpose \vb{R} = \identityM\);
@@ -87,9 +87,9 @@ The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an
 \end{definition}
 
 Mathematically, it is easy to see that
-\[
+\begin{equation}
     \ddot{\vb{x}} = \vb{0} \iff \ddot{\vb{x}}' = \vb{0}.
-\]
+\end{equation}
 
 \begin{figure}[ht!]
     \centering
@@ -107,8 +107,8 @@ Galilean invariance restricts the type of forces that are possible. Furthermore,
 However, acceleration is \emph{not} relative -- if you are accelerating in one inertial frame, then you will be accelerating in \emph{all} other inertial frames, and with the same magnitude.
 
 The Galilean transformations form the \emph{Galilean group} (i.e. two Galilean transformations compose to another Galilean transformation), which is often supplemented by a time translation
-\[
+\begin{equation}
     t' = t + t_0.
-\]
+\end{equation}
 
 Laws of physics are also invariant under time translations, i.e., all inertial frames have the same time, called \emph{absolute time}.

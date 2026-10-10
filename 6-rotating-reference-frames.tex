@@ -15,42 +15,42 @@ We first set up the problems, defining some notations.
     \end{itemize}
     
     From the perspective of the inertial frame, let \(\vb*{\omega}\) be the angular velocity the \(\vb{e}_i'\) axes rotate, so
-    \[
+    \begin{equation}
         \dot{\vb{e}}_i' = \vb*{\omega} \cross \vb{e}_i'.
-    \]
+    \end{equation}
 
     In the two frames, the position of a particle is, respectively,
-    \[
+    \begin{equation}
         \vb{x} = x_i \vb{e}_i = x_i' \vb{e}_i'.
-    \]
+    \end{equation}
 
     The differential operators
-    \[
+    \begin{equation}
         \pqty{\dv{t}}_S, \pqty{\dv{t}}_{S'}
-    \]
+    \end{equation}
     means differentiating by Cartesian components with respect to a certain frame.
 \end{definition}
 
 \begin{proposition}[Velocity in a Rotating Frame]
     \label{prop:velocity-rotating-frame}%
     The velocity described in a rotating frame is given by
-    \[
+    \begin{equation}
         \pqty{\dv{\vb{x}}{t}}_{S} = \pqty{\dv{\vb{x}}{t}}_{S'} + \vb*{\omega} \cross \vb{x}.
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     On one hand, in the inertial frame, we have
-    \[
+    \begin{equation}
         \dot{\vb{x}} = \dot{x}_i \vb{e}_i = \pqty{\dv{\vb{x}}{t}}_{S},
-    \]
+    \end{equation}
     while in the rotating frame, differentiating gives
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dot{\vb{x}} &= \dot{x}_i' \vb{e}_i' + x_i' \dot{\vb{e}}_i' \\
         &= \dot{x}_i' \vb{e}_i' + x_i' \pqty{\vb*{\omega} \cross \vb{e}_i'} \\
         &= \dot{x}_i' \vb{e}_i' + \vb*{\omega} \cross \vb{x} \\
         &= \pqty{\dv{\vb{x}}{t}}_{S'} + \vb*{\omega} \cross \vb{x}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 This result is expected -- the difference is just the relative velocity of the two frames.
@@ -58,26 +58,26 @@ This result is expected -- the difference is just the relative velocity of the t
 \begin{proposition}[Acceleration in a Rotating Frame]
     \label{prop:acceleration-rotating-frame}%
     The acceleration in a rotating frame is given by
-    \[
+    \begin{equation}
         \boxed{\pqty{\dv[2]{\vb{x}}{t}}_{S} = \pqty{\dv[2]{\vb{x}}{t}}_{S'} + 2 \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \vb{x}}.}
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     Using Newton's Law, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \ddot{\vb{x}} &= \ddot{x}_i \vb{e}_i \\
         &= \ddot{x}_i' \vb{e}_i' + \dot{x}_i' \dot{\vb{e}}_i' + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \dot{\vb{x}} \\
         &= \pqty{\dv[2]{\vb{x}}{t}}_{S'} + \dot{x}_i' \pqty{\vb*{\omega} \cross \vb{e}_i'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \dot{\vb{x}} \\
         &= \pqty{\dv[2]{\vb{x}}{t}}_{S'} + \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \dot{\vb{x}}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Hence, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \pqty{\dv[2]{\vb{x}}{t}}_{S} &= \pqty{\dv[2]{\vb{x}}{t}}_{S'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \dot{\vb{x}} + \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} \\
         &= \pqty{\dv[2]{\vb{x}}{t}}_{S'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \pqty{\pqty{\dv{\vb{x}}{t}}_{S'} + \vb*{\omega} \cross \vb{x}} + \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} \\
         &= \pqty{\dv[2]{\vb{x}}{t}}_{S'} + 2 \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} + \dot{\vb*{\omega}} \cross \vb{x} + \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \vb{x}}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 Putting Newton's equations into this, we get \autoref{cor:fictitious-force-rotating-frame}.
@@ -85,9 +85,9 @@ Putting Newton's equations into this, we get \autoref{cor:fictitious-force-rotat
 \begin{corollary}[Fictitious Forces in Rotating Frame]
     \label{cor:fictitious-force-rotating-frame}%
     In a rotating frame, Newton's Law involving the fictitious forces takes the form
-    \[
+    \begin{equation}
         \boxed{m \pqty{\dv[2]{\vb{x}}{t}}_{S'} = \vb{F} - m \dot{\vb*{\omega}} \cross \vb{x} - 2 m \vb*{\omega} \cross \pqty{\dv{\vb{x}}{t}}_{S'} - m \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \vb{x}}.}
-    \]
+    \end{equation}
 \end{corollary}
 
 \begin{definition}[Fictitious Forces: Euler/Coriolis/Centrifugal]
@@ -104,13 +104,13 @@ In other words, a free particle with \(\vb{F} = \vb{0}\) does \emph{not} move on
 \begin{example}[Rotation of Earth]
     \label{ex:rotation-of-earth}%
     For the rotation of Earth,
-    \[
+    \begin{equation}
         \omega_{\text{rot}} = \frac{2 \pi}{\SI{1}{\day}} \approx \SI{7e5}{\per\second},
-    \]
+    \end{equation}
     and
-    \[
+    \begin{equation}
         R_{\text{Earth}} \approx \SI{6e3}{\kilo\metre}.
-    \]
+    \end{equation}
 
     We neglect small `wobbles' of Earth, which means \(\dot{\vb*{\omega}} = \vb{0}\), so we do not experience Euler Force on Earth.
 \end{example}
@@ -118,13 +118,13 @@ In other words, a free particle with \(\vb{F} = \vb{0}\) does \emph{not} move on
 \subsection{Centrifugal Force}
 
 The centrifugal force
-\[
+\begin{equation}
     \vb{F}_{\text{cent}} = - m \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \vb{x}}
-\]
+\end{equation}
 points away from axis of rotation, with magnitude
-\[
+\begin{equation}
     \abs{\vb{F}_{\text{cent}}} = m \omega^2 r \cos \theta = m \omega^2 d.
-\]
+\end{equation}
 
 \begin{figure}[ht!]
     \centering
@@ -136,13 +136,13 @@ points away from axis of rotation, with magnitude
 \begin{proposition}[Centrifugal Potential]
     \label{prop:centrifugal-potential}%
     The centrifugal force is conservative, satisfying
-    \[
+    \begin{equation}
         \vb{F}_{\text{cent}} = - \grad V_{\text{cent}},
-    \]
+    \end{equation}
     where the centrifugal potential \(V_{\text{cent}}\) is given by
-    \[
+    \begin{equation}
         V_{\text{cent}} = - \frac{m}{2} \abs{\vb*{\omega} \cross \vb{x}}^2 = - \frac{m}{2} \omega^2 d^2.
-    \]
+    \end{equation}
 \end{proposition}
 
 The centrifugal potential energy can be lowered by moving away from the axis of rotation.
@@ -159,30 +159,30 @@ The centrifugal potential energy can be lowered by moving away from the axis of 
     We aim to calculate how much centrifugal force displaces a hanging string by directly pointing towards the centre of the force, as setup in \autoref{fig:hanging-string-centrifugal}.
 
     Forces acting on the particle (i.e. weight at the end of the string) satisfies
-    \[
+    \begin{equation}
         \vb{g} = - m g \unitv{r}.
-    \]
+    \end{equation}
 
     As the force diagram in \autoref{fig:hanging-string-centrifugal} demonstrates, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \vb{F}_{\text{cent}} &= - m \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \vb{x}} \\
         &= m \omega^2 r \cos \theta \pqty{\cos \theta \unitv{r} - \sin \theta \unitv*{\theta}}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     To hold the string together, there must be a force exerted by the molecules in the string that balances the other forces, and macroscopically, we call it the tension \(\vb{T}\). Therefore, we have
-    \[
+    \begin{equation}
         \vb{T} = T \cos \phi \unitv{r} + T \sin \phi \unitv*{\theta}.
-    \]
+    \end{equation}
 
     In equilibrium, balancing gives
-    \[
+    \begin{equation}
         \vb{g} + \vb{F}_{\text{cent}} + \vb{T} = \vb{0}.
-    \]
+    \end{equation}
 
     Two equations in the \(\unitv{r}\) and \(\unitv*{\theta}\) components allows us to solve for the unknowns \(T\) and \(\phi\), and hence,
-    \[
+    \begin{equation}
         \tan \phi = \frac{\omega^2 R \cos \theta \sin \theta}{g - \omega^2 R \cos^2 \theta}.
-    \]
+    \end{equation}
 
     Putting in familiar values, at the equator, \(\theta = 0\), gravity would be a bit ``weaker'', but \(\phi = 0\). At the North Pole, \(\theta = \frac{\pi}{2}\), and the object receives no centrifugal force, so \(\phi = 0\) indeed.
 
@@ -192,9 +192,9 @@ The centrifugal potential energy can be lowered by moving away from the axis of 
 \subsection{Coriolis Force}
 
 The Coriolis force satisfies
-\[
+\begin{equation}
     \vb{F}_{\text{cor}} = - 2 m \vb*{\omega} \cross \vb{v},
-\]
+\end{equation}
 where \(\vb{v}\) is the velocity measured in the rotating frame (e.g., the Earth).
 
 We note the similarity with the Lorentz force, with the magnetic flux density \(\vb{B}\) substituted by \(\vb*{\omega}\). Therefore, moving particles will turn in circles.
@@ -229,53 +229,53 @@ We note the similarity with the Lorentz force, with the magnetic flux density \(
     We drop a ball from a tower on the equator, and we study where it falls.
 
     First, we study the answer qualitatively, using conservation of angular momentum. Initially, the angular momentum is given by
-    \[
+    \begin{equation}
         l = \omega \pqty{R + h}^2,
-    \]
+    \end{equation}
     and as the ball falls, the distance to axis decreases, so the angular velocity must speed up to conserve \(l\). For example, at the foot,
-    \[
+    \begin{equation}
         l = \omega' R^2,
-    \]
+    \end{equation}
     so \(\omega' > \omega\), and hence the ball rotates faster than Earth, and must fall in front of the tower.
 
     Quantitatively, neglecting centrifugal force, we have
-    \[
+    \begin{equation}
         \ddot{\vb{x}} = \vb{g} - 2 \vb*{\omega} \cross \dot{\vb{x}}
-    \]
+    \end{equation}
     in the rotating frame. Integrating once, we get
-    \[
+    \begin{equation}
         \dot{\vb{x}} = \vb{g} t - 2 \vb*{\omega} \cross \pqty{\vb{x} - \vb{x}_0},
-    \]
+    \end{equation}
     where \(\vb{x}_0\) is the initial position (an integration constant). Substituting back into the original equation, we get
-    \[
+    \begin{equation}
         \ddot{\vb{x}} = \vb{g} - 2 \vb*{\omega} \cross \vb{g} t + 4 \vb*{\omega} \cross \pqty{\vb*{\omega} \cross \pqty{\vb{x} - \vb{x}_0}}.
-    \]
+    \end{equation}
 
     The final term has the same order as the centrifugal force, and acts in vertical direction, so is small compared to gravity. Therefore, we have
-    \[
+    \begin{equation}
         \ddot{\vb{x}} = \vb{g} - 2 \vb*{\omega} \cross \vb{g} t.
-    \]
+    \end{equation}
 
     We integrate twice to get
-    \[
+    \begin{equation}
         \vb{x} = \vb{x}_0 + \frac{1}{2} \vb{g} t^2 - \frac{1}{3} \pqty{\vb*{\omega} \cross \vb{g}} t^3.
-    \]
+    \end{equation}
 
     Constructing the basis in \autoref{fig:dropping-ball-from-tower}, using \(\vb{e}_1, \vb{e}_2, \vb{e}_3\) as North, West and Up respectively, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \vb*{\omega} &= \omega \vb{e}_1, \\
         \vb{g} &= - g \vb{e}_3, \\
         \vb{x}_0 &= \pqty{R + h} \vb{e}_3.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Hence, we may solve that
-    \[
+    \begin{equation}
         \vb{x} = \pmqty{
             0 \\
             - \frac{1}{3} \omega g t^3 \\
             R + h - \frac{1}{2} g t^2
         }.
-    \]
+    \end{equation}
 
     When the object hits the ground, we have \(\frac{1}{2} g t^2 = h\). Clearly, the positive \(t\) solution gives \(x_2 < 0\) at this time, so it has fallen `east' to the tower, in its front.
 \end{example}
@@ -294,19 +294,19 @@ We note the similarity with the Lorentz force, with the magnetic flux density \(
     Consider an extremal case -- if we hang a pendulum at the North Pole, as the Earth rotates under the pendulum, from the point of view of someone on the Earth, it will look like the pendulum rotates.
 
     At a general latitude, we build the coordinate axis similarly as in \autoref{ex:dropping-ball-from-tower}, so we have
-    \[
+    \begin{equation}
         \vb*{\omega} = \pmqty{\omega \cos \theta \\ 0 \\ \omega \sin \theta}
-    \]
+    \end{equation}
     where \(\theta\) is the latitude of the object.
 
     The tension in the string satisfies
-    \[
+    \begin{equation}
         \vb{T} = T \pmqty{- \frac{x}{l} \\ - \frac{y}{l} \\ \frac{l - z}{l}},
-    \]
+    \end{equation}
     with the geometrical constraint
-    \[
+    \begin{equation}
         x^2 + y^2 + \pqty{l - z}^2 = l^2.
-    \]
+    \end{equation}
 
     With the equations of motion (giving 3 ODEs), in addition to the constraints, it suffices to solve the four unknowns, \(x, y, z\) and \(T\). The general strategy is to:
     \begin{enumerate}
@@ -317,13 +317,13 @@ We note the similarity with the Lorentz force, with the magnetic flux density \(
     \end{enumerate}
 
     The solution is tedious, but the upshot is that the pendulum, in general, follows an ellipse in the \(\pqty{x, y}\) plane that slowly rotates, i.e.,
-    \[
+    \begin{equation}
         x + iy = \exp \pqty{- i \omega t \sin \theta} \cdot \bqty{a \cos \pqty{\sqrt{\frac{g}{l}} t} + b \sin \pqty{\sqrt{\frac{g}{l}}} t},
-    \]
+    \end{equation}
     where \(a\) and \(b\) are complex constants, and \(\exp\) gives the rotation of the ellipse. This means, the period of rotation is
-    \[
+    \begin{equation}
         \frac{\SI{24}{\hour}}{\sin \theta}.
-    \]
+    \end{equation}
 
     The extremal cases \(\theta = \frac{\pi}{2}\) and \(\theta \to 0^+\) indeed satisfies this equation intuitively.
 \end{example}

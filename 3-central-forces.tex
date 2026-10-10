@@ -1,27 +1,27 @@
 \section{Central Forces}
 
 An important class of potentials only depend on the distance to the origin
-\[
+\begin{equation}
     \boxed{V\pqty{\vb{x}} = V\pqty{r}}
-\]
+\end{equation}
 where we use \(r = \abs{\vb{x}}\). The force, hence, only points towards (or away from) the origin
-\[
+\begin{equation}
     \vb{F} = - \grad V = - \dv{V}{r} \grad r = - \dv{V}{r} \unitv{x}.
-\]
+\end{equation}
 
 Hence,
-\[
+\begin{equation}
     \boxed{\vb{F} = - \dv{V}{r} \unitv{x}.}
-\]
+\end{equation}
 
 \subsection{Conservation of Angular Momentum}
 
 \begin{definition}[Angular Momentum]
     \label{def:angular-momentum}%
     The \emph{angular momentum} of a particle about  the origin is
-    \[
+    \begin{equation}
         \boxed{\vb{L} = m \vb{x} \cross \dot{\vb{x}}} = \vb{x} \cross \vb{p}.
-    \]
+    \end{equation}
 \end{definition}
 
 The most important fact about central potentials is that angular momentum is conserved.
@@ -36,31 +36,31 @@ The most important fact about central potentials is that angular momentum is con
 Note that the angular momentum vector \(\vb{L}\) is orthogonal to both position and velocity/momentum.
 
 For a general force \(\vb{F}\), we have
-\begin{align*}
+\begin{subequations}\begin{align}
     \dv{\vb{L}}{t} &= m \dv{t} \pqty{\vb{x} \cross \dot{\vb{x}}} \\
     &= m \pqty{\dot{\vb{x}} \cross \dot{\vb{x}} + \vb{x} \cross \ddot{\vb{x}}} \\
     &= m \pqty{\vb{x} \cross \ddot{\vb{x}}} \\
     &= \vb{x} \cross \vb{F}.
-\end{align*}
+\end{align}\end{subequations}
 
 \begin{definition}[Torque]
     The \emph{torque} is defined as
-    \[
+    \begin{equation}
         \boxed{\vb{G} = \vb{x} \cross \vb{F}.}
-    \]
+    \end{equation}
 \end{definition}
 
 Therefore, we have
-\[
+\begin{equation}
     \boxed{\dot{\vb{L}} = \vb{x} \cross \vb{F} = \vb{G}.}
-\]
+\end{equation}
 
 \begin{theorem}[Conservation of Angular Momentum for Central Forces]
     \label{prop:conservation-angular-momentum-central-force}%
     For a central force, the angular momentum is conserved:
-    \[
+    \begin{equation}
         \boxed{\dot{\vb{L}} = \vb{0}.}
-    \]  
+    \end{equation}  
 \end{theorem}
 
 \begin{proof}
@@ -68,41 +68,41 @@ Therefore, we have
 \end{proof}
 
 This gives a major simplification: since \(\vb{L}\) remains constant and obeys that
-\begin{align*}
+\begin{subequations}\begin{align}
     \vb{L} \vdot \vb{x} &= 0, \\
     \vb{L} \vdot \dot{\vb{x}} &= 0,
-\end{align*}
+\end{align}\end{subequations}
 so the position and velocity are constrained to the plane perpendicular to \(\vb{L}\) and through the origin. This reduces the analysis of 3D dynamics to 2D dynamics in the plane.
 
 \subsection{Polar Coordinates in the Plane}
 
 \begin{definition}[Polar Coordinates]
     The \emph{polar coordinates} in the plane are defined, with respect to the Cartesian coordinate system, with
-    \[
+    \begin{equation}
         x = r \cos \theta, \quad y = r \sin \theta,
-    \]
+    \end{equation}
     with an orthogonal curvilinear basis
-    \[
+    \begin{equation}
         \unitv{r} = \pmqty{\cos \theta \\ \sin \theta}, \quad \unitv*{\theta} = \pmqty{- \sin \theta \\ \cos \theta}.
-    \]
+    \end{equation}
 \end{definition}
 
 We may verify that
-\[
+\begin{equation}
     \abs{\unitv{r}} = \abs{\unitv*{\theta}} = 1, \quad \unitv{r} \vdot \unitv*{\theta} = 0.
-\]
+\end{equation}
 
 The crucial point of this basis, is that the basis vectors depend on the position (more precisely, the orientation), in the way
-\[
+\begin{equation}
     \boxed{\dv{\unitv{r}}{\theta} = \unitv*{\theta}, \quad \dv{\unitv*{\theta}}{\theta} = - \unitv{r}.}
-\]
+\end{equation}
 
 We must keep track of these changes when we write (differentiate) vector equations in polar coordinates -- specifically, a good habit would be to spell out every time the basis vectors, and restrict the use of component vectors to Cartesian coordinates.
 
 \begin{proposition}[Position, Velocity and Acceleration in Polar Basis]
     \label{prop:position-velocity-acceleration-polar}%
     We have
-    \[
+    \begin{equation}
         \boxed{
             \begin{aligned}
                 \vb{x} &= r \unitv{r}, \\
@@ -110,27 +110,27 @@ We must keep track of these changes when we write (differentiate) vector equatio
                 \ddot{\vb{x}} &= \pqty{\ddot{r} - r \dot{\theta}^2} \unitv{r} + \pqty{2 \dot{r} \dot{\theta} + r \ddot{\theta}} \unitv*{\theta}.
             \end{aligned}
         }  
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     We start from
-    \[
+    \begin{equation}
         \vb{x} = r \unitv{r},
-    \]
+    \end{equation}
     which is just by definition. Differentiating once, we get
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dot{\vb{x}} &= \dot{r} \unitv{r} + r \dot{\unitv{\vb{r}}} \\
         &= \dot{r} \unitv{r} + r \dv{\unitv{r}}{\theta} \dot{\theta} \\
         &= \dot{r} \unitv{r} + r \dot{\theta} \unitv*{\theta}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Differentiating again, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \ddot{\vb{x}} &= \ddot{r} \unitv{r} + 2 \dot{r} \dot{\theta} \unitv*{\theta} + r \ddot{\theta} \unitv*{\theta} + t \dot{\theta} \dot{\unitv*{\vb*{\theta}}} \\
         &= \ddot{r} \unitv{r} + 2 \dot{r} \dot{\theta} \unitv*{\theta} + r \ddot{\theta} \unitv*{\theta} - r \dot{\theta}^2 \unitv{r} \\
         &= \pqty{\ddot{r} - r \dot{\theta}^2} \unitv{r} + \pqty{2 \dot{r} \dot{\theta} + r \ddot{\theta}} \unitv*{\theta}.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 We call \(\dot{\theta}\) the \emph{angular speed/velocity}.
@@ -138,58 +138,58 @@ We call \(\dot{\theta}\) the \emph{angular speed/velocity}.
 \begin{example}[Circular Motion]
     \label{ex:circular-motion}
     We demonstrate this using an example in circular motion at constant angular speed, which means \(\dot{r} = 0\), \(\dot{\theta} = \omega\), \(\ddot{r} = 0\), and \(\ddot{\theta} = 0\), so
-    \[
+    \begin{equation}
         \ddot{\vb{x}} = - r \omega^2 \unitv{r}.
-    \]
+    \end{equation}
     
     Circular motion requires a \emph{centripetal force} towards the origin.
 \end{example}
 
 To write Newton's equation for a central force, recall we have
-\[
+\begin{equation}
     \vb{F} = - \dv{v}{r} \unitv{r}.
-\]
+\end{equation}
 
 Hence, considering the radial (\(\unitv{r}\)) and angular (\(\unitv*{\theta}\)) components, we have
-\begin{align*}
+\begin{subequations}\begin{align}
     r \ddot{\theta} + 2 \dot{r} \dot{\theta} &= 0, \\
     m \pqty{\ddot{r} - r \dot{\theta}^2} &= - \dv{V}{r}.
-\end{align*}
+\end{align}\end{subequations}
 
 The first equation is a total derivative, giving
-\[
+\begin{equation}
     \frac{1}{r} \dv{t} \pqty{r^2 \dot{\theta}} = 0,
-\]
+\end{equation}
 which shows the quantity \(\boxed{l = r^2 \dot{\theta}}\) is constant. In fact, this is the magnitude of the angular momentum
-\begin{align*}
+\begin{subequations}\begin{align}
     \vb{L} &= m \vb{x} \cross \dot{\vb{x}} \\
     &= m \pqty{r \unitv{r}} \cross \pqty{\dot{r} \unitv{r} + r \dot{\theta} \unitv*{\theta}} \\
     &= m r^2 \dot{\theta} \pqty{\unitv{r} \cross \unitv*{\theta}},
-\end{align*}
+\end{align}\end{subequations}
 so
-\[
+\begin{equation}
     \boxed{\abs{\vb{L}} = ml.}
-\]
+\end{equation}
 
 Sometimes we refer to \(l\) (which is technically angular momentum per unit mass) simply as `angular momentum', despite this factor of \(m\).
 
 Using the definition of \(l\), we eliminate \(\dot{\theta}\), and get
-\[
+\begin{equation}
     m \pqty{\ddot{r} - r \frac{l^2}{r^4}} = - \dv{V}{r}.
-\]
+\end{equation}
 
 \begin{definition}[Effective Potential]
     \label{def:effective-potential}%
     The \emph{effective potential} of a central force  is given by
-    \[
+    \begin{equation}
         \boxed{V_{\text{eff}} \pqty{r} = V \pqty{r} + \frac{m l^2}{2 r^2}.}
-    \]
+    \end{equation}
 \end{definition}
 
 Using this, the equation above reduces to
-\[
+\begin{equation}
     \boxed{m \ddot{r} = - \dv{V_{\text{eff}}}{r},}
-\]
+\end{equation}
 which is effectively a one-dimensional problem! This is possible due to conserved angular momentum.
 
 \subsection{The Effective Potential}
@@ -205,12 +205,12 @@ Consider \(V\pqty{r} = - \frac{k}{r}\), an attractive \(\frac{1}{r}\) potential 
 
 Another way to see the effective potential is from the conserved energy.
 
-\begin{align*}
+\begin{subequations}\begin{align}
     \boxed{E} &= \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}} + V\pqty{r} \\
     &= \frac{1}{2} m \pqty{\dot{r}^2 + r^2 \dot{\theta}^2} + V\pqty{r} \\
     &= \frac{1}{2} m \dot{r}^2 + V\pqty{r} + \frac{1}{2} m \frac{l^2}{r^2} \\
     &= \boxed{\frac{1}{2} m \dot{r}^2 + V_{\text{eff}} \pqty{r}.}
-\end{align*}
+\end{align}\end{subequations}
 
 The \emph{centrifugal barrier} (that prevents an object from falling to the origin) is due to the \emph{angular kinetic energy} -- since when the radius decreases, conservation of angular momentum tells us that the angular speed must increase. In a way, the effective potential takes care of that and pretends as if the setup is in one-dimension.
 
@@ -235,67 +235,67 @@ Gravity in \(d\) dimensions have \(V \propto \frac{1}{r^{d - 2}}\) -- so circula
 \subsection{The Orbit Equation}
 
 We now attempt to solve the equations of motion. Centuries of studies shows that this is most convenient to work in terms of the substitution
-\[
+\begin{equation}
     u = \frac{1}{r}.
-\]
+\end{equation}
 
 We now derive the orbit equations for \(u\pqty{\theta}\), changing variables from \(r\pqty{t}\). In particular, we are more interested here about the shape of the orbit.
 
 \begin{lemma}[Orbit Equation for \(u\) in terms of \(\theta\)]
     \label{lem:orbit-equation}%
     Using the substitution \(u = 1 / r\), we have
-    \[
+    \begin{equation}
         \boxed{\dv[2]{u}{\theta} + u = - \frac{1}{ml^2 u^2} F\pqty{\frac{1}{u}}.}
-    \]
+    \end{equation}
 \end{lemma}
 
 \begin{proof}
     We have
-    \[
+    \begin{equation}
         \dv{r}{t} = \dv{r}{\theta} \cdot \dot{\theta} = \dv{r}{\theta} \cdot \frac{l}{r^2} = -l \dv{u}{\theta},
-    \]
+    \end{equation}
     and hence,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dv[2]{r}{t} &= \dv{t} \pqty{- l \dv{u}{\theta}} \\
         &= - l \dv[2]{u}{\theta} \dot{\theta} \\
         &= - l^2 u^2 \dv[2]{u}{\theta}.
-    \end{align*}
+    \end{align}\end{subequations}
     
     Therefore, we may simplify the equation to
-    \begin{align*}
+    \begin{subequations}\begin{align}
         m \ddot{r} - \frac{m l^2}{r^3} &= F\pqty{r} \\
         - l^2 m u \dv[2]{u}{\theta} - m u^3 l^2 &= F\pqty{\frac{1}{u}}
-    \end{align*}
+    \end{align}\end{subequations}
     and hence
-    \[
+    \begin{equation}
         \dv[2]{u}{\theta} + u = - \frac{1}{ml^2 u^2} F\pqty{\frac{1}{u}}.s
-    \]
+    \end{equation}
 \end{proof}
 
 We take the special case where the potential is given by
-\[
+\begin{equation}
     V = \frac{km}{r^2}, \quad k = GM
-\]
+\end{equation}
 which is the \emph{Kepler Problem}. Hence,
-\[
+\begin{equation}
     \dv[2]{u}{\theta} + u = \frac{k}{l^2}.
-\]
+\end{equation}
 
 This is the equation for a harmonic oscillator with a displaced centre, so
-\[
+\begin{equation}
     \boxed{u = A \cos \pqty{\theta - \theta_0} + \frac{k}{l^2}.}
-\]
+\end{equation}
 
 Note that \(u = u_{\max}\) at \(\theta = \theta_0\), so \(r = 1 / u\) has \(r = r_{\min}\) at that point, giving the \emph{periapsis}.
 
 We may choose our axis on the plane, such that \(\theta_0 = 0\), so
-\[
+\begin{equation}
     \boxed{r = \frac{r_0}{e \cos \theta + 1}}
-\]
+\end{equation}
 where
-\[
+\begin{equation}
     r_0 = \frac{l^2}{k},
-\]
+\end{equation}
 and \(e\) is a constant of integration, known as the \emph{constant of eccentricity}.
 
 Recall from \emph{Vectors and Matrices} that this is the equation for a \emph{conic section}. Therefore, we have the following four cases for an orbit.
@@ -317,25 +317,25 @@ Recall from \emph{Vectors and Matrices} that this is the equation for a \emph{co
 \end{table}
 
 By simplification, we have
-\[
+\begin{equation}
     r_0 - r e \cos \theta = r,
-\]
+\end{equation}
 and by completing the square, we have
-\[
+\begin{equation}
     \pqty{r_0 - ex}^2 = x^2 + y^2.
-\]
+\end{equation}
 
 \subsubsection{Elliptical Orbit}
 
 By expanding and regrouping, we have that
-\[
+\begin{equation}
     \frac{\pqty{x - x_c}^2}{a^2} + \frac{y^2}{b^2} = 1.
-\]
+\end{equation}
 
 This is an ellipse centred at \(\pqty{x_c, 0}\), and the parameters are given by
-\[
+\begin{equation}
     x_c = - \frac{e r_0}{1 - e^2} = -ea.
-\]
+\end{equation}
 
 Note that the orbit is \emph{not} centred at the origin -- the origin is one of its focus.
 
@@ -351,13 +351,13 @@ Planets in the solar system typically have small \(e\), almost circular, for exa
 \subsubsection{Parabolic Orbit}
 
 When \(e = 1\), we have
-\[
+\begin{equation}
     r_0^2 - 2 r_0 x + x^2 = x^2 + y^2,
-\]
+\end{equation}
 and hence
-\[
+\begin{equation}
     r_0^2 - 2 r_0 x = y^2
-\]
+\end{equation}
 gives a parabola, still with the origin as its focus, not the tip.
 
 \subsubsection{Hyperbolic Orbit}
@@ -377,16 +377,16 @@ There are millennia of results on conic sections that can all be derived using t
 
 We evaluate the energy.
 
-\begin{align*}
+\begin{subequations}\begin{align}
     \boxed{E} &= \frac{1}{2} m \dot{r}^2 + \frac{m l^2}{2 r^2} - \frac{km}{r} \\
     &= \frac{1}{2} m l^2 \pqty{\dv{u}{\theta}}^2 + \frac{m l^2}{2} u^2 - kmu \\
     &= \boxed{\frac{m k^2}{2l^2} \pqty{e^2 - 1}.}
-\end{align*}
+\end{align}\end{subequations}
 
 In particular, for a circular orbit,
-\[
+\begin{equation}
     E = - \frac{m k^2}{2 l^2}
-\]
+\end{equation}
 is the minimum of the effective potential.
 
 \subsection{Kepler's Laws}
@@ -414,63 +414,63 @@ A consequence of the above are Kepler's Laws of planetary motion.
     \begin{enumerate}
         \item This was already shown by solving the orbit equation above.
         \item We have
-        \[
+        \begin{equation}
             \delta A = \frac{1}{2} r^2 \delta \theta,
-        \]
+        \end{equation}
         so
-        \[
+        \begin{equation}
             \boxed{\dot{A}} = \frac{1}{2} r^2 \dot{\theta} = \boxed{\frac{l}{2}}
-        \]
+        \end{equation}
         is a constant. In other words, Kepler's Second Law follows from the conservation of angular momentum, for any central force.
         \item It is natural to use dimensional analysis for this. The only parameter in Newton's equation is \(k = GM\), since the \(m\) cancels. So the period \(T\) can be expressed in the form
-        \[
+        \begin{equation}
             T = c R^A k^B
-        \]
+        \end{equation}
         where \(c\) is some dimensionless constant. Note that
-        \[
+        \begin{equation}
             F = m \ddot{x} \sim \frac{km}{r^2}
-        \]
+        \end{equation}
         so the dimensions of \(k\) are
-        \[
+        \begin{equation}
             \bqty{k} = \bqty{r^2 \ddot{x}} = \dimL^3 \dimT^{-2}.
-        \]
+        \end{equation}
 
         Hence,
-        \[
+        \begin{equation}
             \dimT = \dimL^A \dimL^{3B} \dimT^{-2B},
-        \]
+        \end{equation}
         which solves to \(A = \frac{3}{2}\), \(B = -\frac{1}{2}\), so
-        \[
+        \begin{equation}
             \boxed{T \propto \frac{R^{3 / 2}}{k^{1 / 2}}.}
-        \]
+        \end{equation}
 
         But note that there is no unique radius associated with an ellipse -- but any well-defined length will do!
 
         In particular, this requires an inverse square force, and we may do this alternatively by integration. The period satisfies
-        \begin{align*}
+        \begin{subequations}\begin{align}
             T &= \int_{0}^{T} \dd{t} \\
             &= \int_{0}^{A} \frac{2}{l} \dd{A} \\
             &= \frac{2}{l} A \\
             &= \frac{2}{l} \pi ab.
-        \end{align*}
+        \end{align}\end{subequations}
 
         Recall \(r = \frac{r_0}{e \cos \theta + 1}\), so
-        \[
+        \begin{equation}
             ab = \frac{r_0^2}{\pqty{1 - e^2}^{3 / 2}},
-        \]
+        \end{equation}
         and hence
-        \[
+        \begin{equation}
             T = \frac{2 \pi}{l} \cdot \frac{r_0^2}{\pqty{1 - e^2}^{3 / 2}}.
-        \]
+        \end{equation}
 
         Since \(l^2 = k r_0\), we have
-        \[
+        \begin{equation}
             \boxed{T = \frac{2\pi}{\sqrt{GM}} \pqty{\frac{r_0}{1 - e^2}}^{3 / 2} = \frac{2\pi}{\sqrt{GM}} R_{\text{av}}^{3 / 2},}
-        \]
+        \end{equation}
         where \(R_{\text{av}}\) is the average radius, expressed as
-        \[
+        \begin{equation}
             \boxed{R_{\text{av}} = \frac{r_0}{1 - e^2} = \frac{1}{2} \pqty{r_{\min} + r_{\max}}.}
-        \]
+        \end{equation}
     \end{enumerate}
 \end{proof}
 
@@ -493,37 +493,37 @@ An important concept is the \emph{impact parameter} \(b\).
 \end{definition}
 
 The impact parameter is related to the angular momentum
-\[
+\begin{equation}
     \boxed{l} = \frac{\abs{\vb{L}}}{m} = \boxed{bv}
-\]
+\end{equation}
 
 The reason is a non-interacting particle would have a conserved angular momentum. The velocity does not change, and at the closest point (when there are no forces)
-\[
+\begin{equation}
     l = \abs{\vb{x} \cross \dot{\vb{x}}} = bv.
-\]
+\end{equation}
 
 This then must also be the angular momentum at the start. But the initial angular momentum \(l\) is the same for the interacting and non-interacting particles, and is preserved in the interacting case as well.
 
 \begin{example}[Repulsive Scattering for Two Charged Particles]
     \label{ex:charged-particles-repulsive-scattering}%
     \emph{Rutherford Scattering (1911)} showed that certain scattering of atoms could be explained if all the positive charge in the atom was confined to a tiny nucleus. Consider scattering by a \emph{repulsive interaction} for two charged particles, where we have potential
-    \[
+    \begin{equation}
         V = \frac{\kappa}{r}
-    \]
+    \end{equation}
     for \(\kappa\) being \emph{Coulomb's constant} with
-    \[
+    \begin{equation}
         \kappa = \frac{q Q}{4 \pi \epsilon_0}.
-    \]
+    \end{equation}
 
     We may reuse results on Kepler problems by setting
-    \[
+    \begin{equation}
         - km = \kappa.
-    \]
+    \end{equation}
 
     In particular, the orbits are 
-    \[
+    \begin{equation}
         r = \frac{r_0}{\tilde{e} \cos \theta - 1}
-    \]
+    \end{equation}
     with \(r_0 = l^2 m / \kappa\).
 \end{example}
 
@@ -541,35 +541,35 @@ Note that the incoming and outgoing impact parameters are equal by conservation 
 \begin{example}[Angle of Scattering for Repulsive Scattering]
     \label{ex:angle-of-scattering-repulsive}%
     From geometry and the orbit equation, that
-    \[
+    \begin{equation}
         \phi = \pi - 2\alpha, \quad \tilde{e} \cos \alpha = 1.
-    \]
+    \end{equation}
     
     We may acquire \(\phi\) in terms of the impact parameter and the initial velocity, as
-    \begin{align*}
+    \begin{subequations}\begin{align}
         E &= \frac{1}{2} m v^2 && \text{Conservation of Energy}\\
         &= \frac{\kappa^2}{2 l^2 m} \pqty{\tilde{e}^2 - 1} && \text{Conic Sections} \\
         &= \frac{\kappa^2}{2 m b^2 v^2} \tan^2 \alpha. && l = bv    
-    \end{align*}
+    \end{align}\end{subequations}
     
     The final line is because of
-    \[
+    \begin{equation}
         \tan^2 \alpha = \frac{1}{\cos^2 \alpha} - 1 = \tilde{e}^2 - 1.
-    \]
+    \end{equation}
     
     Now, note that
-    \[
+    \begin{equation}
         \tan \alpha = \tan \frac{\pi - \phi}{2} = \frac{1}{\tan \frac{\phi}{2}},
-    \]
+    \end{equation}
     and hence the above equality is also equal to
-    \[
+    \begin{equation}
         \frac{\kappa^2}{2 m b^2 v^2} \cdot \frac{1}{\tan^2 \pqty{\phi / 2}}.
-    \]
+    \end{equation}
     
     Hence,
-    \[
+    \begin{equation}
         \boxed{\phi = 2 \arctan \pqty{\frac{\kappa}{b m v^2}}}.
-    \]
+    \end{equation}
 \end{example}
 
 We see that small \(b\) leads to a large angle of scattering, allowing scattering to probe very short distances.

@@ -3,9 +3,9 @@
 \begin{definition}[Rigid Body]
     \label{def:rigid-body}%
     A \emph{rigid body} is an \(N\)-body system, where the distances between the \(N\) particles
-    \[
+    \begin{equation}
         \abs{\vb{x}_i - \vb{x}_j}
-    \]
+    \end{equation}
     are fixed.
 \end{definition}
 
@@ -16,9 +16,9 @@ In practice, this is due to very strong internal forces/structures. The only mot
 \begin{definition}[Angular Velocity]
     \label{def:angular-velocity}%
     The \emph{angular velocity}, \(\vb*{\omega}\), is defined as
-    \[
+    \begin{equation}
         \vb*{\omega} = \omega \unitv{n},
-    \]
+    \end{equation}
     where
     \begin{itemize}
         \item \(\unitv{n}\) points along the axis of rotation; and
@@ -37,9 +37,9 @@ The direction of the angular velocity is determined using the right-hand rule, a
 \begin{lemma}[Cross Product Relation between Velocity and Angular Velocity]
     \label{lem:cross-product-velocity-angular-velocity}%
     We have
-    \[
+    \begin{equation}
         \boxed{\dot{\vb{x}} = \vb*{\omega} \cross \vb{x}.}
-    \]
+    \end{equation}
 \end{lemma}
 
 \begin{figure}[ht!]
@@ -71,9 +71,9 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
 \begin{definition}[Moment of Inertia]
     \label{def:moment-of-inertia}%
     The \emph{moment of inertia} of a rigid body, defined with respect to a choice of axis, is a scalar defined by
-    \[
+    \begin{equation}
         \boxed{I = \sum_{i = 1}^{n} m_i d_i^2,}
-    \]
+    \end{equation}
     where \(d_i\) is the perpendicular distance of the \(i\)th particle to the axis of rotation.
 \end{definition}
 
@@ -82,34 +82,34 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
 \begin{lemma}[All Particles have Same Angular Velocity for Rigid Body]
     \label{lem:particle-identical-angular-velocity}%
     In a rigid body, all particles rotate with the same angular velocity
-    \[
+    \begin{equation}
         \dot{\vb{x}}_i = \vb*{\omega} \cross \vb{x}_i.
-    \]
+    \end{equation}
 \end{lemma}
 
 \begin{proof}
     This keeps the distances fixed, as if so,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dv{t} \abs{\vb{x}_i - \vb{x}_j}^2 &= 2 \pqty{\dot{\vb{x}}_i - \dot{\vb{x}}_j} \vdot \pqty{\vb{x}_i - \vb{x}_j} \\
         &= 2 \bqty{\vb*{\omega} \cross \pqty{\vb{x}_i - \vb{x}_j}} \vdot \pqty{\vb{x}_i - \vb{x}_j} \\
         &= 0.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 \begin{proposition}[Kinetic Energy of Rotating Rigid Body]
     The kinetic energy of a rigid body is given by
-    \[
+    \begin{equation}
         \boxed{T = \frac{1}{2} \sum_{i = 1}^{n} m_i \pqty{\dot{\vb{x}}_i \vdot \dot{\vb{x}}_i} = \frac{1}{2} I \omega^2.}
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}    
     Rotation of a single particle involves kinetic energy, which is given by
-    \begin{align*}
+    \begin{subequations}\begin{align}
         T &= \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}} \\
         &= \frac{1}{2} m \pqty{\vb*{\omega} \cross \vb{x}} \vdot \pqty{\vb*{\omega} \cross \vb{x}} \\
         &= \frac{1}{2} \omega^2 d^2.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Summing this over all particles gives the result.
 \end{proof}
@@ -121,24 +121,24 @@ In a way, \(I\) is effectively a `rotational mass', and the bigger the \(I\), th
 \begin{proposition}[Angular Momentum for Rigid Body]
     \label{prop:angular-momentum-rigid-body}%
     The total angular momentum for a rigid body, defined as
-    \[
+    \begin{equation}
         \vb{L} = \sum_{i = 1}^{n} m_i \pqty{\vb{x}_i \cross \dot{\vb{x}}_i},
-    \]
+    \end{equation}
     has component along the axis of rotation
-    \[
+    \begin{equation}
         \boxed{L = \omega I.}
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     We have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         L &= \vb{L} \vdot \unitv{n} \\
         &= \omega \sum_{i = 1}^{n} m_i \bqty{\vb{x}_i \cross \pqty{\unitv{n} \cross \vb{x}_i}} \vdot \unitv{n} \\
         &= \omega \sum_{i = 1}^{n} m_i \bqty{\pqty{\unitv{n} \cross \vb{x}_i} \vdot \pqty{\unitv{n} \cross \vb{x}_i}} \\
         &= \omega \sum_{i = 1}^{n} m_i d_i^2 \\
         &= \omega I.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{proof}
 
 Again, we see \(I\) has a similar appearance of `rotational mass'.
@@ -148,20 +148,20 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
 \begin{proposition}[Torque causes Rotational Acceleration]
     \label{prop:torque-rotational-acceleration}%
     If the torque applied to a rigid body is along its axis of rotation, with 
-    \[
+    \begin{equation}
         \vb{G} = G \unitv{n},
-    \]
+    \end{equation}
     then
-    \[
+    \begin{equation}
         \boxed{G = I \dot{\omega}.}
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     Recall that we have \(\dot{\vb{L}} = \vb{G}\). Dotting this with \(\unitv{n}\), we have
-    \[
+    \begin{equation}
         G = \dot{\vb{L}} \vdot \unitv{n} = I \dot{\omega}
-    \]
+    \end{equation}
     as desired.
 \end{proof}
 
@@ -170,33 +170,33 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
 The results above is slightly unsatisfactory, since \(I\) depends on the choice of axis, unlike mass \(m\), which is a scalar, independent of the choice of axis.
 
 In Part II, we will define the \emph{inertia tensor} (which transforms under certain rules under change of axis), giving the result
-\[
+\begin{equation}
     T = \frac{1}{2} \vb*{\omega}\transpose  \tens{I}  \vb*{\omega},
-\]
+\end{equation}
 where the inertia tensor \(\tens{I}\) is defined as
-\[
+\begin{equation}
     I_{ab} = \sum_{i = 1}^{n} m_i \bqty{\pqty{\vb{x}_i \vdot \vb{x}_i} \kronecker_{ab} - \pqty{\vb{x}_i}_a \pqty{\vb{x}_i}_b}.
-\]
+\end{equation}
 
 \subsubsection{Calculation of Moment of Inertia}
 
 To calculate the moment of inertia for shapes, we may use the fact that at large \(N\), the particles are densely spaced, and the sums can be approximated by integrals, like
-\[
+\begin{equation}
     \sum_{i = 1}^{n} m_i f\pqty{\vb{x}_i} = \iiint_{V} \dd[3]{\vb{x}} \rho\pqty{\vb{x}} f\pqty{\vb{x}},
-\]
+\end{equation}
 for some function \(f\pqty{\vb{x}}\), for example, \(d_i^2\), where \(\rho\pqty{\vb{x}}\) is the density. Therefore,
-\[
+\begin{equation}
     M = \sum_{i = 1}^{n} m_i = \iiint_V \dd[3]{\vb{x}} \rho\pqty{\vb{x}},
-\]
+\end{equation}
 and we have
-\[
+\begin{equation}
     I = \iiint_V \dd[3]{\vb{x}} \rho\pqty{\vb{x}} x_{\perp}^2.
-\]
+\end{equation}
 
 In the remaining examples, we consider an object of uniform density
-\[
+\begin{equation}
     \rho\pqty{\vb{x}} = \rho_0
-\]
+\end{equation}
 where \(\rho_0\) is a constant.
 
 \begin{figure}[ht!]
@@ -209,55 +209,55 @@ where \(\rho_0\) is a constant.
 \begin{example}[Circle/Hoop/1-Sphere, Rotating about its Axis of Symmetry]
     \label{ex:moi-hoop}%
     For a circular hoop, \(M = 2 \pi a \rho\), and \(I = 2 \pi a \rho a^2\). Therefore, we have
-    \[
+    \begin{equation}
         \boxed{I = M a^2}
-    \]
+    \end{equation}
     for a hoop.
 \end{example}
 
 \begin{example}[Rod, Rotating about its End]
     \label{ex:moi-rod}%
     For a rod, its mass is given by \(M = l \rho\), and the moment of inertia is
-    \[
+    \begin{equation}
         I = \rho \int_{0}^{l} \dd{x} \cdot x^2 = \frac{\rho l^3}{3}.
-    \]
+    \end{equation}
 
     Therefore, we have
-    \[
+    \begin{equation}
         I = \frac{1}{3} M l^2
-    \]
+    \end{equation}
     for a rod.
 \end{example}
 
 \begin{example}[Disc/2-Ball, Rotating about its Axis of Symmetry]
     \label{ex:moi-disc}%
     For a disc, its mass is given by \(M = \pi a^2 \rho\), and the moment of inertia is
-    \begin{align*}
+    \begin{subequations}\begin{align}
         I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r \dd{r} \cdot r^2 \\
         &= \rho \cdot 2\pi \cdot \frac{a^4}{4} \\
         &= \frac{\pi a^4 \rho}{2}.
-    \end{align*}
+    \end{align}\end{subequations}
         
     Therefore, we have
-    \[
+    \begin{equation}
         \boxed{I = \frac{1}{2} M a^2}
-    \]
+    \end{equation}
     for a disc.
 \end{example}
 
 \begin{example}[Ball/3-Ball, Rotating about a Diameter]
     \label{ex:moi-ball}%
     For a ball, its mass is given by \(M = \frac{4}{3} \rho \pi a^3\). Its moment of inertia is given by, using integration in spherical coordinates,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         I &= \rho \cdot 2\pi \cdot \int_{0}^{a} r^2 \dd{r} r^2 \cdot \int_{0}^{\pi} \sin \theta \dd{\theta} \sin^2 \theta \\
         &= \rho \cdot 2\pi \cdot \pqty{\frac{a^5}{5}} \cdot \pqty{2 \cdot \frac{2}{3}} \\
         &= \frac{8 a^5}{15} \rho \pi.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Therefore,
-    \[
+    \begin{equation}
         \boxed{I = \frac{2}{5} a^2 M}
-    \]
+    \end{equation}
     for a sphere.
 \end{example}
 
@@ -266,9 +266,9 @@ where \(\rho_0\) is a constant.
 \begin{theorem}[Perpendicular Axis Theorem]
     \label{thm:perpendicular-axis-thm}%
     For any 2-D body (a \emph{lamina}) lying in the \(x-y\) plane, we have
-    \[
+    \begin{equation}
         \boxed{I_z = I_x + I_y.}
-    \]
+    \end{equation}
 \end{theorem}
 
 \begin{figure}[ht!]
@@ -280,11 +280,11 @@ where \(\rho_0\) is a constant.
 
 \begin{proof}
     By definition, the moment of inertia along the \(x\), \(y\) and \(z\) are, respectively,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         I_x &= \iint \dd[2]{\vb{x}} \rho y^2, \\
         I_y &= \iint \dd[2]{\vb{x}} \rho x^2, \\
         I_z &= \iint \dd[2]{\vb{x}} \rho \pqty{x^2 + y^2}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     The result follows trivially.
 \end{proof}
@@ -294,9 +294,9 @@ where \(\rho_0\) is a constant.
 \begin{theorem}[Parallel Axis Theorem]
     \label{thm:parallel-axis-thm}%
     We have
-    \[
+    \begin{equation}
         \boxed{I = M h^2 + I_{\text{c.o.m.}},}
-    \]
+    \end{equation}
     where \(I_{\text{c.o.m.}}\) and \(I\) are the moment of inertia measured about a pair of axes, one through the centre of mass, and one through a parallel axis, respectively, \(M\) is the total mass, and \(h\) is the distance between the axes.
 \end{theorem}
 
@@ -309,17 +309,17 @@ where \(\rho_0\) is a constant.
 
 \begin{proof}
     We put the origin on the parallel axis, and express all the positions relative to the centre of mass:
-    \[
+    \begin{equation}
         \vb{x}_i = \vb{R} + \vb{y}_i,
-    \]
+    \end{equation}
     and we recall that \(\sum_{i = 1}^{n} \vb{y}_i m_i = \vb{0}\).
 
     Then, we have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         I &= \sum_{i = 1}^{n} m_i \pqty{\unitv{n} \cross \vb{x}_i} \vdot \pqty{\unitv{n} \cross \vb{x}_i} \\
         &= \sum_{i = 1}^{n} m_i \bqty{\unitv{n} \cross \pqty{\vb{R} + \vb{y}_i}} \vdot\bqty{\unitv{n} \cross \pqty{\vb{R} + \vb{y}_i}} \\
         &= \sum_{i = 1}^{n} m_i \bqty{\pqty{\unitv{n} \cross \vb{R}} \vdot \pqty{\unitv{n} \cross \vb{R}} + \pqty{\unitv{n} \cross \vb{y}_i} \vdot \pqty{\unitv{n} \cross \vb{y}_i} + 2 \pqty{\unitv{n} \cross \vb{R}} \vdot \pqty{\unitv{n} \cross \vb{y}_i}}.
-    \end{align*}
+    \end{align}\end{subequations}
 
     Note that the first term has \(\abs{\unitv{n} \cross \vb{R}} = h\), and hence gives the \(M h^2\) term; the second term is precisely the moment of inertia about the axis through the centre of mass, giving the \(I_{\text{c.o.m.}}\) term; the final term reduces to \(0\) since the sum of \(m_i \vb{y}_i\) is \(\vb{0}\).
 
@@ -338,11 +338,11 @@ In particular, note that \(I\text{c.o.m.} < I\) for any parallel axis -- this me
 \begin{example}[Application of Parallel Axis Theorem on Disc]
     \label{ex:parallel-axis-thm-disc}%
     Recall in \autoref{ex:moi-disc} that we calculated the moment of inertia of a disc rotating about its axis of symmetry. Now, if we move the axis to its edge, we will have
-    \begin{align*}
+    \begin{subequations}\begin{align}
         I &= I_{\text{c.o.m.}} + a^2 M \\
         &= \frac{1}{2} a^2 M + a^2 M \\
         &= \frac{3}{2} a^2 M.
-    \end{align*}
+    \end{align}\end{subequations}
 \end{example}
 
 \begin{figure}[ht!]
@@ -355,48 +355,48 @@ In particular, note that \(I\text{c.o.m.} < I\) for any parallel axis -- this me
 \subsection{Motion of Rigid Bodies}
 
 Allowing for the centre of mass to move as the body rotates, we study more general motion, where we now let
-\[
+\begin{equation}
     \vb{x}_i = \vb{R} \pqty{t} + \vb{y}_i,
-\]
+\end{equation}
 and let the angular velocity \(\vb*{\omega}\) capture the rotation about its centre of mass, in the form
-\[
+\begin{equation}
     \dot{\vb{y}}_i = \vb*{\omega} \cross \vb{y}_i.
-\]
+\end{equation}
 
 \begin{proposition}[Rotational Kinetic Energy]
     \label{prop:rotational-kinetic-energy}%
     The kinetic energy splits up into a \emph{translational} and a \emph{rotational} part, in the form
-    \[
+    \begin{equation}
         \boxed{T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} I_{\text{c.o.m.}} \omega^2}.
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
     Recall from \autoref{prop:system-energy-split}, that
-    \[
+    \begin{equation}
         T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} \sum_{i = 1}^{n} m_i \dot{\vb{y}}_i \vdot \dot{\vb{y}}_i.
-    \]
+    \end{equation}
 
     The second term gives the rotational kinetic energy using the relation
-    \[
+    \begin{equation}
         \dot{\vb{y}}_i = \vb*{\omega} \cross \vb{y}_i.
-    \]
+    \end{equation}
 \end{proof}
 
 Recall that the potential energy takes the form, in the case of conservative forces, of
-\[
+\begin{equation}
     V = \sum_{i = 1}^{n} V_i \pqty{\vb{x}_i} + \sum_{i < j} V_{ij} \pqty{\abs{\vb{x}_i - \vb{x}_j}}.
-\]
+\end{equation}
 
 The second term drops out since they remain constant. A particularly nice case is when we are dealing with a uniform gravitational field, such that
-\[
+\begin{equation}
     V_i \pqty{\vb{x}_i} = m_i g z_i.
-\]
+\end{equation}
 
 In this case, we have
-\[
+\begin{equation}
     V = \sum_{i = 1}^{n} V_i = g \sum_{i = 1}^{n} m_i z_i = g M R_z,
-\]
+\end{equation}
 and a rigid body is just like a point mass \(M\) at the centre of mass \(P\).
 
 However, it is sometime easier to consider some axes that does not go through the centre of mass -- which for example, sometimes reflects more accurately the motion the object is undergoing.
@@ -413,42 +413,42 @@ However, it is sometime easier to consider some axes that does not go through th
     We set up as in \autoref{fig:rigid-rod-pendulum}, having a rod with mass \(M\) attached fixed at one point.
 
     A natural way to study it is using the end point (fixed point) as the pivot, and so there is only rotational motion about that point, and hence
-    \[
+    \begin{equation}
         T = \frac{1}{2} I \pqty{\dot{\theta}}^2,
-    \]
+    \end{equation}
     where \(\omega = \dot{\theta}\), and \(I = \frac{1}{3} M L^2\) from \autoref{ex:moi-rod}.
 
     Alternatively, we consider motion about the centre of mass, and the speed at which it is moving is
-    \[
+    \begin{equation}
         v_{\text{c.o.m.}} = \frac{1}{2} L \dot{\theta}.
-    \]
+    \end{equation}
 
     Therefore, the total kinetic energy is given by
-    \[
+    \begin{equation}
         T = \frac{1}{2} M v_{\text{c.o.m.}}^2 + \frac{1}{2} I_{\text{c.o.m.}} \pqty{\dot{\theta}}^2.
-    \]
+    \end{equation}
 
     It is easy to check that the angular velocity about the centre of mass is equal to that about the endpoint -- indeed this can be observed from the diagram, and due to the body being rigid. Therefore,
-    \begin{align*}
+    \begin{subequations}\begin{align}
         T &= \frac{1}{2} M \frac{L^2}{4} \pqty{\dot{\theta}}^2 + \frac{1}{2} \pqty{I - M \frac{L^4}{4}} \pqty{\dot{\theta}}^2 \\
         &= \frac{1}{2} I \pqty{\dot{\theta}}^2,
-    \end{align*}
+    \end{align}\end{subequations}
     which agrees with the previous result.
 
     The total energy, including the potential component, is then given by
-    \[
+    \begin{equation}
         E = \frac{1}{2} I \pqty{\dot{\theta}}^2 - Mg \frac{L}{2} \cos \theta,
-    \]
+    \end{equation}
     where the potential energy has the negative sign taken, to make sure the potential energy increases as the pendulum moves up, as shown in \autoref{fig:potential-energy-pendulum}.
 
     We impose the principle of conservation of energy, which says
-    \[
+    \begin{equation}
         \dv{E}{t} = 0,
-    \]
+    \end{equation}
     and hence
-    \[
+    \begin{equation}
         \boxed{I \ddot{\theta} = - Mg \frac{L}{2} \sin \theta.}
-    \]
+    \end{equation}
 \end{example}
 
 \begin{figure}[ht!]
@@ -463,34 +463,34 @@ However, it is sometime easier to consider some axes that does not go through th
     We study the motion of a rolling ball without slipping. No-slip rolling occurs when the friction between the ball and the ground is so strong, that the relative velocity is forced to be \(0\), and the point of contact is not moving.
 
     Comparing to frictionless sliding, where the ball is not rolling at all (with \(\dot{\theta} = 0\)), we have the geometrical constraint
-    \[
+    \begin{equation}
         \boxed{v = a \dot{\theta}.}
-    \]
+    \end{equation}
 
     Because there is no relative velocity between the ball and the ground, no work is done by the friction force, so the energy is conserved by rolling -- the only role of friction is to impose the non-slip condition.
 
     Therefore, the kinetic energy is given by
-    \[
+    \begin{equation}
         T = \frac{1}{2} m v^2 + \frac{1}{2} I \omega^2 = \frac{1}{2} \pqty{m + \frac{I}{a^2}} v^2,
-    \]
+    \end{equation}
     so in other words, rolling changes the `effective mass' of the ball. From this expression, we may also see explicitly, that this energy is conserved:
-    \begin{align*}
+    \begin{subequations}\begin{align}
         \dv{E}{t} &= M \dot{x} \ddot{x} + I \dot{\theta} \ddot{\theta} \\
         &= \dot{x} \pqty{-f} + \pqty{\dot{\theta} a} f \\
         &= f\pqty{- \dot{x} + \dot{\theta} a} \\
         &= 0
-    \end{align*}
+    \end{align}\end{subequations}
     which also demonstrates the importance of the no-slip condition.
 
     Now, we put the ball rolling down a slope, the conserved total energy is given by
-    \[
+    \begin{equation}
         E = \frac{1}{2} \pqty{M + \frac{I}{a^2}} \pqty{\dot{x}}^2 - Mg x \sin \alpha.
-    \]
+    \end{equation}
 
     Imposing the conservation of energy, we have
-    \[
+    \begin{equation}
         \boxed{\pqty{M + \frac{I}{a^2}} \ddot{x} = Mg \sin \alpha.}
-    \]
+    \end{equation}
 
     In other words, the ball rolls down the slope with slightly less acceleration -- it has the same `gravitational mass' but effectively less `inertial mass'.
 \end{example}
@@ -518,9 +518,9 @@ At an angle, the normal contact force on its own does not prevent an object from
 \begin{theorem}[Coefficient of Friction]
     \label{thm:coefficient-of-friction}%
     Once an object starts sliding, typically, the magnitude of dry friction obeys the formula
-    \[
+    \begin{equation}
         F_F = \mu F_N,
-    \]
+    \end{equation}
     where \(\mu\) is the \emph{coefficient of friction}, related only to the nature of the contact, irrelevant of the relative speed between the surfaces, or the magnitude of the normal contact force.
 \end{theorem}
 
@@ -540,30 +540,30 @@ Normal contact forces also produces \emph{elastic bounces}.
     As in \autoref{fig:elastic-bounce-normal-contact}, normal force on impact is in the direction normal to the surface at the point of impact, in the \(y\) direction.
     
     Conservation of Total Momentum gives
-    \[
+    \begin{equation}
         p_y = q_y + Q_y,
-    \]
+    \end{equation}
     where \(Q_y\) is the momentum of the Earth/wall after the collision. (We model the ball and the Earth/wall as a closed system.)
 
     \emph{Elastic} means total energy is conserved. Conservation of Energy gives
-    \[
+    \begin{equation}
         \frac{p_y^2}{2m} = \frac{q_y^2}{2m} + \frac{Q_y^2}{2M},
-    \]
+    \end{equation}
     where \(m\) is the mass of the ball, and \(M\) is the mass of the Earth/wall. We have \(M \gg m\).
 
     Putting the first equation into the second equation, we have
-    \[
+    \begin{equation}
         \frac{1}{2m} \pqty{q_y^2 + Q_y^2 + 2 q_y Q_y} = \frac{q_y^2}{2m} + \frac{Q_y^2}{2M}.
-    \]
+    \end{equation}
 
     If \(M \gg m\), then \(\frac{Q_y^2}{2M} \ll \frac{Q_y^2}{2m}\), so
-    \[
+    \begin{equation}
         Q_y = - 2 q_y,
-    \]
+    \end{equation}
     and hence
-    \[
+    \begin{equation}
         \boxed{p_y = - q_y},
-    \]
+    \end{equation}
     and the ball bounces back up with the same magnitude of momentum. This means \(\beta = \alpha\).
 \end{example}
 
