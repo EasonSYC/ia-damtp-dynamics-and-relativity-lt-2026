@@ -1,6 +1,6 @@
 \section{Forces}
 
-Once there is more than one particle in the universe, there will be \emph{interactions} between the particles. In Newtonian physics, they are described by \emph{forces}. (In the future, in alternative formulations, these might be described as energies/potentials, fields, or in the geometry of the spacetime.)
+Once there is more than one particle in the universe, there will be \term{interactions} between the particles. In Newtonian physics, they are described by \term{forces}. (In the future, in alternative formulations, these might be described as energies/potentials, fields, or in the geometry of the spacetime.)
 
 \subsection{Newton's Second Law}
 
@@ -10,12 +10,12 @@ Once there is more than one particle in the universe, there will be \emph{intera
     \begin{equation}
         \boxed{\dot{\vb{p}} = \vb{F},}
     \end{equation}
-    where the \emph{momentum} is defined as \(\vb{p} = m \dot{\vb{x}}\), where \(m\) is the \emph{(inertial) mass} of the particle.
+    where the \term{momentum} is defined as \(\vb{p} = m \dot{\vb{x}}\), where \(m\) is the \term{(inertial) mass} of the particle.
 \end{theorem}
 
-The \emph{mass} \(m\) is an additional property of particles. It could change with time, but we usually assume it is constant, unless otherwise specified.
+The \term{mass} \(m\) is an additional property of particles. It could change with time, but we usually assume it is constant, unless otherwise specified.
 
-The \emph{force} \(\vb{F}\) depends on the interactions, but it can \emph{only} depend on \(\vb{x}\) and \(\dot{\vb{x}}\) (and note no \(t\) dependence -- Galilean invariance bans this). In this case, Newton's Second Law is a second-order differential equation, for \(\vb{x} \pqty{t}\). Hence, given \(\vb{x}\) and \(\dot{\vb{x}}\) at \(t = 0\), for all particles, Newton's equations uniquely determine \(\vb{x}\pqty{t}\) for all future times.
+The \term{force} \(\vb{F}\) depends on the interactions, but it can \emph{only} depend on \(\vb{x}\) and \(\dot{\vb{x}}\) (and note no \(t\) dependence -- Galilean invariance bans this). In this case, Newton's Second Law is a second-order differential equation, for \(\vb{x} \pqty{t}\). Hence, given \(\vb{x}\) and \(\dot{\vb{x}}\) at \(t = 0\), for all particles, Newton's equations uniquely determine \(\vb{x}\pqty{t}\) for all future times.
 
 Newtonian mechanics has been superseded by both quantum mechanics (which describes small things) and relativity (which describes large and fast things), but it is the limiting case of both formulations, and accurately describes much of the universe.
 
@@ -27,10 +27,10 @@ Newtonian mechanics has been superseded by both quantum mechanics (which describ
     \begin{equation}
         \boxed{\vb{F} = - \grad V}
     \end{equation}
-    is called a \emph{conservative force}, and \(V\) is called its \emph{potential}.
+    is called a \term{conservative force}, and \(V\) is called its \term{potential}.
 \end{definition}
 
-From \emph{Vector Calculus}, the gradient in Cartesian coordinates is the vector
+From \textit{IA Vector Calculus}, the gradient in Cartesian coordinates is the vector
 \begin{equation}
     \grad V = \pqty{\pdv{V}{x_1}, \pdv{V}{x_2}, \pdv{V}{x_3}}.
 \end{equation}
@@ -41,7 +41,7 @@ We now use gravity to demonstrate this.
 
 \begin{definition}[Gravitational Potential Energy]
     \label{def:gpe}%
-    The \emph{gravitational potential energy} of a particle of mass \(m\) at \(\vb{x}\), due to a mass \(M\) at \(\vb{x}_0\), is
+    The \term{gravitational potential energy} of a particle of mass \(m\) at \(\vb{x}\), due to a mass \(M\) at \(\vb{x}_0\), is
     \begin{equation}
         V = - \frac{G M m}{\abs{\vb{x} - \vb{x}_0}}.
     \end{equation}
@@ -55,7 +55,7 @@ is Newton's Constant.
 
 \begin{proposition}[Gravitational Force]
     \label{prop:gravitational-force}%
-    The \emph{gravitational force/attraction} between two objects is given by
+    The \term{gravitational force/attraction} between two objects is given by
     \begin{equation}
         \boxed{\vb{F} = - \grad V = - G M m \frac{\vb{x} - \vb{x}_0}{\abs{\vb{x} - \vb{x}_0}^3}.}
     \end{equation}
@@ -106,7 +106,7 @@ Indeed, this force is in the correct direction, being attractive.
 
 \begin{definition}[Gravitational Potential]
     \label{def:gp}%
-    The \emph{gravitational potential} is defined as
+    The \term{gravitational potential} is defined as
     \begin{equation}
     \Phi = - \frac{GM}{\abs{\vb{x} - \vb{x}_0}}.
     \end{equation}
@@ -177,7 +177,7 @@ Note our assumptions here:
 
 \begin{definition}[Energy due to Conservative Force]
     \label{def:energy-conservative-force}%
-    The formula for \emph{energy} due to a conservative force is given by
+    The formula for \term{energy} due to a conservative force is given by
     \begin{equation}
         \boxed{E = \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}} + V\pqty{\vb{x}}.}
     \end{equation}
@@ -185,7 +185,7 @@ Note our assumptions here:
 
 \begin{proposition}[Conservative Forces give Conserved Energy]
     \label{prop:conservative-forces-conserved-energy}%
-    Conservative forces have a \emph{conserved energy} in the form above.
+    Conservative forces have a \term{conserved energy} in the form above.
 \end{proposition}
 
 \begin{proof}
@@ -205,7 +205,7 @@ Note our assumptions here:
 
 \begin{example}[Object Thrown to Space]
     \label{ex:object-thrown-to-space}%
-    Suppose we throw an object to space, and we want it to never fall back down. The minimum initial speed required for the object not to fall back is called the \emph{escape velocity}.
+    Suppose we throw an object to space, and we want it to never fall back down. The minimum initial speed required for the object not to fall back is called the \term{escape velocity}.
 
     As the object is thrown,
     \begin{equation}
@@ -229,14 +229,14 @@ Note our assumptions here:
 \end{example}
 
 \begin{remark}
-    Note that in the above example, we have the escape velocity is independent of the mass, since the masses cancel. This is under an assumption called \emph{principle of equivalence}, that the \emph{gravitational mass} (the mass for the inverse square law), is equal to the \emph{inertial mass} (the mass that appears in Newton's Second Law).
+    Note that in the above example, we have the escape velocity is independent of the mass, since the masses cancel. This is under an assumption called \term{principle of equivalence}, that the \term{gravitational mass} (the mass for the inverse square law), is equal to the \term{inertial mass} (the mass that appears in Newton's Second Law).
 \end{remark}
 
-It is useful to separate the \emph{potential} and \emph{kinetic} components of the energy.
+It is useful to separate the \term{potential} and \term{kinetic} components of the energy.
 
 \begin{definition}[Kinetic Energy]
     \label{def:kinetic-energy}%
-    The \emph{kinetic energy} of a particle is defined by
+    The \term{kinetic energy} of a particle is defined by
     \begin{equation}
         \boxed{T = \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}}.}
     \end{equation}
@@ -251,7 +251,7 @@ We have
 
 \begin{definition}[Work Done]
     \label{def:work-done}%
-    The \emph{work done} by a force along a trajectory \(\mathcal{C}\) is defined as
+    The \term{work done} by a force along a trajectory \(\mathcal{C}\) is defined as
     \begin{equation}
         \boxed{W = \int_{\mathcal{C}} \vb{F} \vdot \dd{\vb{x}}}
     \end{equation}
@@ -285,7 +285,7 @@ We have
 
 \begin{definition}[Power]
     \label{def:power}%
-    The \emph{power} of a force is the rate of work done
+    The \term{power} of a force is the rate of work done
     \begin{equation}
         \boxed{P = \vb{F} \vdot \dot{\vb{x}}.}
     \end{equation}
@@ -303,11 +303,11 @@ We have
 
 \subsection{Electromagnetic Forces}
 
-Forces that depend on the velocity \(\dot{\vb{x}}\) typically don't have a conserved energy, for example friction, but the \emph{Lorentz Force} is an exception.
+Forces that depend on the velocity \(\dot{\vb{x}}\) typically don't have a conserved energy, for example friction, but the \term{Lorentz Force} is an exception.
 
 \begin{definition}[Electromagnetic Force on Charged Particle]
     \label{def:em-force-charged-particle}%
-    The \emph{electromagnetic fields} \(\vb{E}\) and \(\vb{B}\) exert the following forces on a particle with \emph{charge} \(q\)
+    The \term{electromagnetic fields} \(\vb{E}\) and \(\vb{B}\) exert the following forces on a particle with \term{charge} \(q\)
     \begin{equation}
         \boxed{\vb{F} = q \pqty{\vb{E} \pqty{\vb{x}} + \dot{\vb{x}} \cross \vb{B} \pqty{\vb{x}}}}.
     \end{equation}
@@ -318,11 +318,11 @@ For example, the charge of an electron is
     q = \SI{-1.6e-19}{\coulomb}.
 \end{equation}
 
-We restrict ourselves now to \emph{static} (time-independent) electromagnetic fields, which means (due to Maxwell's Equations)
+We restrict ourselves now to \term{static} (time-independent) electromagnetic fields, which means (due to Maxwell's Equations)
 \begin{equation}
     \vb{E} = - \grad \phi
 \end{equation}
-where \(\phi\) is the \emph{electrostatic potential}.
+where \(\phi\) is the \term{electrostatic potential}.
 
 \begin{proposition}[Conservation of Energy in Static Electromagnetic Fields]
     \label{prop:conservation-of-energy-em-field}%
@@ -356,7 +356,7 @@ where \(\epsilon_0\) is the permittivity of free space, with
     \epsilon_0 \approx \SI{8.85e-12}{\per\metre\cubed\per\kilogram \second\squared\coulomb\squared}.
 \end{equation}
 
-Like gravity, this leads to an inverse square law, called the \emph{Coulomb force}. A big difference, however, is that charges can be positive or negative, but mass is always positive. This means gravity dominates in our universe for `big' objects (planets, chairs, etc.) while electric forces tend to cancel out overall.
+Like gravity, this leads to an inverse square law, called the \term{Coulomb force}. A big difference, however, is that charges can be positive or negative, but mass is always positive. This means gravity dominates in our universe for `big' objects (planets, chairs, etc.) while electric forces tend to cancel out overall.
 
 \subsubsection{Magnetic Forces}
 
@@ -365,7 +365,7 @@ Magnetic forces are different. A charged particle in a magnetic field obeys
     m \ddot{\vb{x}} = q \dot{\vb{x}} \cross \vb{B}.
 \end{equation}
 
-We aim to solve this, which is a \emph{vector differential equation}. The most direct way to solve is to write in Cartesian coordinates. Let \(\vb{B}\) be constant, without loss of generality, in the \(z\)-direction, so
+We aim to solve this, which is a \term{vector differential equation}. The most direct way to solve is to write in Cartesian coordinates. Let \(\vb{B}\) be constant, without loss of generality, in the \(z\)-direction, so
 \begin{equation}
     \vb{B} = \pqty{0, 0, B} = B \unitv{z}.
 \end{equation}
@@ -381,7 +381,7 @@ The equations of motion become, for \(\vb{x} = \pqty{x, y, z}\),
 \begin{equation}
     \boxed{z = z_0 + v_z t}
 \end{equation}
-which means the particle moves with constant velocity (\emph{drifts}) in the \(z\)-direction.
+which means the particle moves with constant velocity (\term{drifts}) in the \(z\)-direction.
 
 To solve for the \(x\) and \(y\) components, we take the time derivative of (1), and use (2), so we have
 \begin{equation}
@@ -392,7 +392,7 @@ This is a second-order differential equation for \(\dot{x}\), so
 \begin{equation}
     \dot{x} = \tilde{A} \sin \pqty{\omega t + \phi},
 \end{equation}
-where \(\boxed{\omega = \frac{qB}{m}}\) is the \emph{cyclotron frequency}. Hence,
+where \(\boxed{\omega = \frac{qB}{m}}\) is the \term{cyclotron frequency}. Hence,
 \begin{equation}
     \boxed{x = x_0 + A \cos \pqty{\omega t + \phi}.}
 \end{equation}
@@ -405,7 +405,7 @@ and hence
     \boxed{y = y_0 - A \sin \pqty{\omega t + \phi}.}
 \end{equation}
 
-Here, \(A\) and \(\phi\) are arbitrary constants. This gives \emph{cyclotron motion} which is an \emph{anticlockwise} spiral, and the time period is given by
+Here, \(A\) and \(\phi\) are arbitrary constants. This gives \term{cyclotron motion} which is an \emph{anticlockwise} spiral, and the time period is given by
 \begin{equation}
     T = \frac{2\pi}{\omega}.
 \end{equation}
@@ -498,7 +498,7 @@ restricting the range of \(X\) where the particle can be.
 \end{figure}
 
 \begin{definition}[Turning Points]
-    The points satisfying  \(V\pqty{x} = E\) (giving \(\dot{x} = 0\)) are called \emph{turning points}.
+    The points satisfying  \(V\pqty{x} = E\) (giving \(\dot{x} = 0\)) are called \term{turning points}.
 \end{definition}
 
 Typically, particles `bounces off' the potential at turning points and turns around.
@@ -508,8 +508,8 @@ We now refer to \autoref{fig:potential-energy-allowed-motion}.
 \begin{definition}[Bounded and Unbounded Motion]
     \label{def:bounded-unbounded-motion}%
     \begin{itemize}
-        \item Region (a) gives \emph{bounded motion}, since the particle bounces back and forth between the turning points.
-        \item Region (b) gives \emph{unbounded motion}, since the particle bounces off the turning point and flies off to \(x \to \minusinfty\).
+        \item Region (a) gives \term{bounded motion}, since the particle bounces back and forth between the turning points.
+        \item Region (b) gives \term{unbounded motion}, since the particle bounces off the turning point and flies off to \(x \to \minusinfty\).
     \end{itemize}
 \end{definition}
 
@@ -517,7 +517,7 @@ We now refer to \autoref{fig:potential-energy-allowed-motion}.
 
 \begin{definition}[Equilibrium Points]
     \label{def:equilibrium-points}%
-    \emph{Equilibrium points} are points where \(V'\pqty{x} = 0\). A particle at rest at such a point has \(E = V\pqty{x}\).
+    \term{Equilibrium points} are points where \(V'\pqty{x} = 0\). A particle at rest at such a point has \(E = V\pqty{x}\).
 \end{definition}
 
 These cases are special, since they are points where particles can sit forever.
@@ -549,8 +549,8 @@ Similar to when we classify minimums and maximums of a function, we may classify
     \label{def:stable-unstable-equilibrium-points}%
     Let \(x_0\) be an equilibrium point.
     \begin{itemize}
-        \item If \(\boxed{V''\pqty{x_0} > 0}\), we say \(x_0\) is a \emph{stable equilibrium point} where \(V\) is a \emph{minimum}.
-        \item If \(\boxed{V''\pqty{x_0} < 0}\), we say \(x_0\) is an \emph{unstable equilibrium point} where \(V\) is a \emph{maximum}.
+        \item If \(\boxed{V''\pqty{x_0} > 0}\), we say \(x_0\) is a \term{stable equilibrium point} where \(V\) is a \emph{minimum}.
+        \item If \(\boxed{V''\pqty{x_0} < 0}\), we say \(x_0\) is an \term{unstable equilibrium point} where \(V\) is a \emph{maximum}.
     \end{itemize}
     
     
@@ -558,7 +558,7 @@ Similar to when we classify minimums and maximums of a function, we may classify
 
 \paragraph{Stable Equilibrium Point}
 
-If \(x_0\) is a stable equilibrium point, this gives the potential for a \emph{harmonic oscillator} (quadratic). Similarly, we have
+If \(x_0\) is a stable equilibrium point, this gives the potential for a \term{harmonic oscillator} (quadratic). Similarly, we have
 \begin{equation}
     V'\pqty{x} \approx V'\pqty{x_0} + \pqty{x - x_0} V''\pqty{x_0} = \pqty{x - x_0} V''\pqty{x_0}.
 \end{equation}
@@ -653,7 +653,7 @@ Dimensional analysis is a way to get information about solutions to the equation
     \end{equation}
 \end{example}
 
-In general, the necessary rescaling may not be obvious. Associating \emph{dimensions} to all constants and variables of a form of bookkeeping that accounts for how these quantities appear in equations. The basic dimensions that we concern are
+In general, the necessary rescaling may not be obvious. Associating \term{dimensions} to all constants and variables of a form of bookkeeping that accounts for how these quantities appear in equations. The basic dimensions that we concern are
 \begin{itemize}
     \item length \(\dimL\),
     \item mass \(\dimM\), and
@@ -676,7 +676,7 @@ For all equations, we have
     \bqty{\LHS} = \bqty{\RHS}.
 \end{equation}
 
-All arguments of non-trivial functions (i.e. involving sums of different powers) must be \emph{dimensionless}, e.g., \(\sin \theta\) tells us that \(\bqty{\theta} = \dimLess\).
+All arguments of non-trivial functions (i.e. involving sums of different powers) must be \term{dimensionless}, e.g., \(\sin \theta\) tells us that \(\bqty{\theta} = \dimLess\).
 
 \begin{example}[Dimensional Analysis on Pendulum]
     \label{ex:dimensional-analysis-pendulum}%
@@ -703,22 +703,22 @@ All arguments of non-trivial functions (i.e. involving sums of different powers)
     \end{equation}
 \end{example}
 
-Note that in the above example, if \(A, B, C\) are not all fixed, this means we have some \emph{dimensionless ratio/group} - and we cannot say how they behave in the final solution, since there may be a (very general) function taking it as an argument.
+Note that in the above example, if \(A, B, C\) are not all fixed, this means we have some \term{dimensionless ratio/group} - and we cannot say how they behave in the final solution, since there may be a (very general) function taking it as an argument.
 
 \subsection{Friction}
 
-When objects move through a medium (e.g. air or water), \emph{microscopic forces} between the object and the medium cause momentum and energy to be carried off into the medium and lost.
+When objects move through a medium (e.g. air or water), \term{microscopic forces} between the object and the medium cause momentum and energy to be carried off into the medium and lost.
 
 \begin{definition}[Friction]
     \label{def:friction}%
-    \emph{Friction} is a \emph{macroscopic force} that keeps track of the momentum lost due to the complicated microscopic behaviours.
+    \term{Friction} is a \term{macroscopic force} that keeps track of the momentum lost due to the complicated microscopic behaviours.
 \end{definition}
 
 Friction has two important properties.
 
 \begin{enumerate}
-    \item \emph{Friction does not conserve energy}. It is lost to the medium, and this is called \emph{heat}.
-    \item \emph{Friction is irreversible}. Energy once lost by the object is never gained. (This is closely tied to the Second Law of Thermodynamics on entropy).
+    \item \textbf{Friction does not conserve energy}. It is lost to the medium, and this is called \term{heat}.
+    \item \textbf{Friction is irreversible}. Energy once lost by the object is never gained. (This is closely tied to the Second Law of Thermodynamics on entropy).
 \end{enumerate}
 
 For the second property, if ever in doubt of the sign of a friction force, it must always \emph{slow an object down}. This means that the friction force must change sign if velocity is reversed from \(\vb{v}\) to \(- \vb{v}\).
@@ -730,17 +730,17 @@ Two important examples of friction are given by linear and quadratic drags.
 \begin{definition}[Linear and Quadratic Drag]
     \label{def:linear-and-quadratic-drag}%
     \begin{itemize}
-        \item \emph{Linear Drag} is where the frictional force takes the form
+        \item \term{Linear Drag} is where the frictional force takes the form
         \begin{equation}
             \boxed{\vb{F} = - k_1 \vb{v}.}
         \end{equation}
-        \item \emph{Quadratic Drag} is where the frictional force takes the form
+        \item \term{Quadratic Drag} is where the frictional force takes the form
         \begin{equation}
             \boxed{\vb{F} = - k_2 \abs{\vb{v}} \vb{v} = - k_2 \pqty{\vb{v} \vdot \vb{v}} \unitv{v}.}
         \end{equation}
     \end{itemize}
 
-    The coefficients \(k_1\) and \(k_2\) are called \emph{coefficients of friction}.
+    The coefficients \(k_1\) and \(k_2\) are called \term{coefficients of friction}.
 
 \end{definition}
 
@@ -762,7 +762,7 @@ This seems to agree with the dimension of the force. This is indeed the result.
 
 \paragraph{Linear Drag}
 
-Linear drag, on the other hand, is dependent on \emph{viscous effects}, for example a spoon in honey. The object \emph{moves} the \emph{medium related with it}.
+Linear drag, on the other hand, is dependent on \term{viscous effects}, for example a spoon in honey. The object \emph{moves} the \emph{medium related with it}.
 
 \begin{figure}[ht!]
     \centering
@@ -771,11 +771,11 @@ Linear drag, on the other hand, is dependent on \emph{viscous effects}, for exam
     \label{fig:linear-drag-viscous-fluid}%
 \end{figure}
 
-For example, \emph{Stokes's law} for a spherical object with radius \(L\) gives
+For example, \term{Stokes's law} for a spherical object with radius \(L\) gives
 \begin{equation}
     k_1 = 6 \pi \eta L
 \end{equation}
-where \(\eta\) is the \emph{viscosity} of the fluid.
+where \(\eta\) is the \term{viscosity} of the fluid.
 
 \paragraph{Reynolds's Number}
 
@@ -783,7 +783,7 @@ Both linear and quadratic drag are typically present. In a fluid, their importan
 
 \begin{definition}[Reynolds's Number]
     \label{def:reynolds-number}%
-    The \emph{Reynolds's Number} is defined as
+    The \term{Reynolds's Number} is defined as
     \begin{equation}
         \boxed{R = \frac{\rho L v}{\eta}.}
     \end{equation}
@@ -811,7 +811,7 @@ In particular, \(R \gg 1\) gives \(F_{\text{quad}}\) dominates, and \(R \ll 1\) 
         \dv{v}{t} = 0.
     \end{equation}
 
-    This gives the \emph{terminal velocity}
+    This gives the \term{terminal velocity}
     \begin{equation}
         \boxed{v_{\text{term}} = - \sqrt{\frac{mg}{k}}.}
     \end{equation}
@@ -857,13 +857,13 @@ so it is natural to treat this as a vector differential equation for \(\vb{v}\).
 
 \subsubsection{Damping}
 
-Friction \emph{damps} the small oscillations about an equilibrium point. For small oscillations, typically linear drag is more important, so
+Friction \term{damps} the small oscillations about an equilibrium point. For small oscillations, typically linear drag is more important, so
 \begin{equation}
     \ddot{x} = - \omega_0^2 x - 2 \alpha \dot{x},
 \end{equation}
 where \(\omega_0\) is the natural frequency, and \(\alpha\) is the coefficient of the damping term.
 
-This was solved in \emph{Differential Equations} last term, and the solution is given by
+This was solved in \emph{IA Differential Equations} last term, and the solution is given by
 \begin{equation}
     \boxed{x = \exp\pqty{- \alpha t} \bqty{A_+ \exp\pqty{i \Omega t} + A_- \exp\pqty{- i \Omega t}},}
 \end{equation}
@@ -874,9 +874,9 @@ with the new frequency being
 
 The three cases are given by
 \begin{itemize}
-    \item \(\omega_0^2 > \alpha^2\) giving \emph{underdamped motion}, which is decaying oscillations;
-    \item \(\omega_0^2 < \alpha^2\) giving \emph{overdamped motion}, which gives exponential decay;
-    \item \(\omega_0^2 = \alpha^2\) giving \emph{critical damping}, with solution of the form
+    \item \(\omega_0^2 > \alpha^2\) giving \term{underdamped motion}, which is decaying oscillations;
+    \item \(\omega_0^2 < \alpha^2\) giving \term{overdamped motion}, which gives exponential decay;
+    \item \(\omega_0^2 = \alpha^2\) giving \term{critical damping}, with solution of the form
     \begin{equation}
         \boxed{x = \pqty{A + Bt} \exp\pqty{-\alpha t}.}
     \end{equation}

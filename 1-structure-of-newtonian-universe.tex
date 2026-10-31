@@ -4,24 +4,24 @@ We first aim to build a structure of the universe to work in -- the one that we 
 
 \begin{definition}[The Newtonian Space-Time]
     \label{def:newtonian-spacetime}
-    The three-dimensional space \(\RR^3\) can be endowed with a \emph{Cartesian reference frame} (i.e. an origin and a set of axes), such that points in space can be labelled as
+    The three-dimensional space \(\RR^3\) can be endowed with a \term{Cartesian reference frame} (i.e. an origin and a set of axes), such that points in space can be labelled as
     \begin{equation}
         \vb{x} = \pqty{x_1, x_2, x_3}.
     \end{equation}
 
-    \emph{Times} can be labelled in an arbitrary reference frame, simply by a real number \(t\).
+    \term{Times} can be labelled in an arbitrary reference frame, simply by a real number \(t\).
 \end{definition}
 
 \begin{definition}[Point Particle, Position, Velocity, Acceleration]
     \label{def:point-particle-position-velocity-acceleration}%
-    A \emph{point particle} is an idealised object that is completely determined by its \emph{position} at a given time, \(\vb{x} \pqty{t}\).
+    A \term{point particle} is an idealised object that is completely determined by its \term{position} at a given time, \(\vb{x} \pqty{t}\).
 
-    The \emph{velocity} is the time derivative of the position, denoted as
+    The \term{velocity} is the time derivative of the position, denoted as
     \begin{equation}
         \boxed{\vb{v} = \dv{\vb{x}}{t} = \dot{\vb{x}}.}
     \end{equation}
 
-    The \emph{acceleration} is defined as
+    The \term{acceleration} is defined as
     \begin{equation}
         \boxed{\vb{a} = \ddot{\vb{x}} = \dot{\vb{v}} = \dv[2]{\vb{x}}{t}.}
     \end{equation}
@@ -35,7 +35,7 @@ We first aim to build a structure of the universe to work in -- the one that we 
 
 Electrons, tennis balls, and planets can all be good examples of point particles: this depends on the context.
 
-From \emph{Vector Calculus}, we may recall that the velocity is tangent to the trajectory. Also recall in Cartesian coordinates, that
+From \textit{IA Vector Calculus}, we may recall that the velocity is tangent to the trajectory. Also recall in Cartesian coordinates, that
 \begin{equation}
     \vb{v} = \dv{\vb{x}}{t} = \pqty{\dv{x_1}{t}, \dv{x_2}{t}, \dv{x_3}{t}},
 \end{equation}
@@ -55,7 +55,7 @@ The particle may be at rest in a frame \(S\), but moving in a complicated way wi
 
 \begin{definition}[Inertial Frames]
     \label{def:inertial-frame}%
-    \emph{Inertial frames} are reference frames which a \emph{free particle} has constant velocity.
+    \term{Inertial frames} are reference frames which a \term{free particle} has constant velocity.
 \end{definition}
 
 In an inertial frame, we may write for a free particle, that
@@ -63,26 +63,26 @@ In an inertial frame, we may write for a free particle, that
     \dot{\vb{v}} = \ddot{\vb{x}} = \vb{0}.
 \end{equation}
 
-The \emph{Law of Inertia} (which asserts the existence of inertial frames) is an improved version of Newton's First Law. This is a true statement about the world, but not an obvious one -- indeed, in antiquity, it was assumed that the natural state of an object is to be at rest.
+The \term{Law of Inertia} (which asserts the existence of inertial frames) is an improved version of Newton's First Law. This is a true statement about the world, but not an obvious one -- indeed, in antiquity, it was assumed that the natural state of an object is to be at rest.
 
 \subsection{Galilean Relativity Principle}
 
 \begin{theorem}[Galilean Relativity Principle]
     \label{thm:galilean-relativity-principle}%
-    A frame related to an inertial frame by a \emph{Galilean transformation} is also an inertial frame, and all laws of physics are the same in both frames.
+    A frame related to an inertial frame by a \term{Galilean transformation} is also an inertial frame, and all laws of physics are the same in both frames.
 \end{theorem}
 
 \begin{definition}[Galilean Transformation]
     \label{def:galilean-transformation}%
-    A \emph{Galilean transformation} is defined by a transformation of the form
+    A \term{Galilean transformation} is defined by a transformation of the form
     \begin{equation}
         \boxed{\vb{x}' = \vb{R} \vb{x} + \vb{k} + \vb*{\omega} t,}
     \end{equation}
     where:
     \begin{itemize}
-        \item \(\vb{R} \in \Or\pqty{3}\) is a constant \emph{rotation} or a \emph{reflection} matrix, i.e., \(\vb{R} \transpose \vb{R} = \identityM\);
-        \item \(\vb{k}\) is a constant vector that defines \emph{translation}; and
-        \item \(\vb*{\omega}\) is a constant velocity called a \emph{boost}.
+        \item \(\vb{R} \in \Or\pqty{3}\) is a constant \term{rotation} or a \term{reflection} matrix, i.e., \(\vb{R} \transpose \vb{R} = \identityM\);
+        \item \(\vb{k}\) is a constant vector that defines \term{translation}; and
+        \item \(\vb*{\omega}\) is a constant velocity called a \term{boost}.
     \end{itemize}
 \end{definition}
 
@@ -106,9 +106,9 @@ Galilean invariance restricts the type of forces that are possible. Furthermore,
 
 However, acceleration is \emph{not} relative -- if you are accelerating in one inertial frame, then you will be accelerating in \emph{all} other inertial frames, and with the same magnitude.
 
-The Galilean transformations form the \emph{Galilean group} (i.e. two Galilean transformations compose to another Galilean transformation), which is often supplemented by a time translation
+The Galilean transformations form the \term{Galilean group} (i.e. two Galilean transformations compose to another Galilean transformation), which is often supplemented by a time translation
 \begin{equation}
     t' = t + t_0.
 \end{equation}
 
-Laws of physics are also invariant under time translations, i.e., all inertial frames have the same time, called \emph{absolute time}.
+Laws of physics are also invariant under time translations, i.e., all inertial frames have the same time, called \term{absolute time}.

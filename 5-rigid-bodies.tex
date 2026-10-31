@@ -2,7 +2,7 @@
 
 \begin{definition}[Rigid Body]
     \label{def:rigid-body}%
-    A \emph{rigid body} is an \(N\)-body system, where the distances between the \(N\) particles
+    A \term{rigid body} is an \(N\)-body system, where the distances between the \(N\) particles
     \begin{equation}
         \abs{\vb{x}_i - \vb{x}_j}
     \end{equation}
@@ -15,7 +15,7 @@ In practice, this is due to very strong internal forces/structures. The only mot
 
 \begin{definition}[Angular Velocity]
     \label{def:angular-velocity}%
-    The \emph{angular velocity}, \(\vb*{\omega}\), is defined as
+    The \term{angular velocity}, \(\vb*{\omega}\), is defined as
     \begin{equation}
         \vb*{\omega} = \omega \unitv{n},
     \end{equation}
@@ -70,7 +70,7 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
 
 \begin{definition}[Moment of Inertia]
     \label{def:moment-of-inertia}%
-    The \emph{moment of inertia} of a rigid body, defined with respect to a choice of axis, is a scalar defined by
+    The \term{moment of inertia} of a rigid body, defined with respect to a choice of axis, is a scalar defined by
     \begin{equation}
         \boxed{I = \sum_{i = 1}^{n} m_i d_i^2,}
     \end{equation}
@@ -169,7 +169,7 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
 
 The results above are slightly unsatisfactory, since \(I\) depends on the choice of axis, unlike mass \(m\), which is a scalar, independent of the choice of axis.
 
-In Part II, we will define the \emph{inertia tensor} (which transforms under certain rules under change of axis), giving the result
+In \textit{II Classical Dynamics}, we will define the \term{inertia tensor} (which transforms under certain rules under change of axis), giving the result
 \begin{equation}
     T = \frac{1}{2} \vb*{\omega}\transpose  \tens{I}  \vb*{\omega},
 \end{equation}
@@ -265,7 +265,7 @@ where \(\rho_0\) is a constant.
 
 \begin{theorem}[Perpendicular Axis Theorem]
     \label{thm:perpendicular-axis-thm}%
-    For any 2-D body (a \emph{lamina}) lying in the \(x-y\) plane, we have
+    For any 2-D body (a \term{lamina}) lying in the \(x-y\) plane, we have
     \begin{equation}
         \boxed{I_z = I_x + I_y.}
     \end{equation}
@@ -365,7 +365,7 @@ and let the angular velocity \(\vb*{\omega}\) capture the rotation about its cen
 
 \begin{proposition}[Rotational Kinetic Energy]
     \label{prop:rotational-kinetic-energy}%
-    The kinetic energy splits up into a \emph{translational} and a \emph{rotational} part, in the form
+    The kinetic energy splits up into a \term{translational} and a \term{rotational} part, in the form
     \begin{equation}
         \boxed{T = \frac{1}{2} M \dot{\vb{R}} \vdot \dot{\vb{R}} + \frac{1}{2} I_{\text{c.o.m.}} \omega^2}.
     \end{equation}
@@ -504,7 +504,7 @@ However, it is sometime easier to consider some axes that does not go through th
 
 \subsection{Normal Forces}
 
-Objects do not fall through tables, etc., because the table exerts a \emph{normal force} on the object that pushes it away. The microscopic origin of normal forces is electrostatic repulsion and the Pauli exclusion principle.
+Objects do not fall through tables, etc., because the table exerts a \term{normal force} on the object that pushes it away. The microscopic origin of normal forces is electrostatic repulsion and the Pauli exclusion principle.
 
 \begin{figure}[ht!]
     \centering
@@ -513,7 +513,7 @@ Objects do not fall through tables, etc., because the table exerts a \emph{norma
     \label{fig:normal-dry-friction}
 \end{figure}
 
-At an angle, the normal contact force on its own does not prevent an object from sliding. This is due to the \emph{dry friction force}, labelled \(F_F\) in \autoref{fig:normal-dry-friction}.
+At an angle, the normal contact force on its own does not prevent an object from sliding. This is due to the \term{dry friction force}, labelled \(F_F\) in \autoref{fig:normal-dry-friction}.
 
 \begin{theorem}[Coefficient of Friction]
     \label{thm:coefficient-of-friction}%
@@ -521,12 +521,12 @@ At an angle, the normal contact force on its own does not prevent an object from
     \begin{equation}
         F_F = \mu F_N,
     \end{equation}
-    where \(\mu\) is the \emph{coefficient of friction}, related only to the nature of the contact, irrelevant of the relative speed between the surfaces, or the magnitude of the normal contact force.
+    where \(\mu\) is the \term{coefficient of friction}, related only to the nature of the contact, irrelevant of the relative speed between the surfaces, or the magnitude of the normal contact force.
 \end{theorem}
 
 Note that although the magnitude of \(F_F\) is independent of the speed, it always acts in the direction such that it opposes motion.
 
-Normal contact forces also produce \emph{elastic bounces}.
+Normal contact forces also produce \term{elastic bounces}.
 
 \begin{figure}[ht!]
     \centering
@@ -545,7 +545,7 @@ Normal contact forces also produce \emph{elastic bounces}.
     \end{equation}
     where \(Q_y\) is the momentum of the Earth/wall after the collision. (We model the ball and the Earth/wall as a closed system.)
 
-    \emph{Elastic} means total energy is conserved. Conservation of Energy gives
+    \term{Elastic} means total energy is conserved. Conservation of Energy gives
     \begin{equation}
         \frac{p_y^2}{2m} = \frac{q_y^2}{2m} + \frac{Q_y^2}{2M},
     \end{equation}
@@ -569,5 +569,5 @@ Normal contact forces also produce \emph{elastic bounces}.
 
 \begin{definition}[Impulse]
     \label{def:impulse}%
-    The change in momentum over a short time, \(\Delta \vb{p}\), is called an \emph{impulse}, denoted \(\vb{I}\).
+    The change in momentum over a short time, \(\Delta \vb{p}\), is called an \term{impulse}, denoted \(\vb{I}\).
 \end{definition}
