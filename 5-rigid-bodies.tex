@@ -108,7 +108,7 @@ As in \autoref{fig:point-through-axis-of-rotation}, these two rotations have the
     \begin{subequations}\begin{align}
         T &= \frac{1}{2} m \dot{\vb{x}} \vdot \dot{\vb{x}} \\
         &= \frac{1}{2} m \pqty{\vb*{\omega} \cross \vb{x}} \vdot \pqty{\vb*{\omega} \cross \vb{x}} \\
-        &= \frac{1}{2} \omega^2 d^2.
+        &= \frac{1}{2} m \omega^2 d^2.
     \end{align}\end{subequations}
 
     Summing this over all particles gives the result.
@@ -167,7 +167,7 @@ Again, we see \(I\) has a similar appearance of `rotational mass'.
 
 \subsubsection{Inertia Tensor}
 
-The results above is slightly unsatisfactory, since \(I\) depends on the choice of axis, unlike mass \(m\), which is a scalar, independent of the choice of axis.
+The results above are slightly unsatisfactory, since \(I\) depends on the choice of axis, unlike mass \(m\), which is a scalar, independent of the choice of axis.
 
 In Part II, we will define the \emph{inertia tensor} (which transforms under certain rules under change of axis), giving the result
 \begin{equation}
@@ -333,7 +333,7 @@ where \(\rho_0\) is a constant.
     \label{fig:parallel-axis-thm-proof}%
 \end{figure}
 
-In particular, note that \(I\text{c.o.m.} < I\) for any parallel axis -- this means the object is `easiest to spin' about an axis through its centre of mass.
+In particular, note that \(I_{\text{c.o.m.}} < I\) for any parallel axis -- this means the object is `easiest to spin' about an axis through its centre of mass.
 
 \begin{example}[Application of Parallel Axis Theorem on Disc]
     \label{ex:parallel-axis-thm-disc}%
@@ -430,7 +430,7 @@ However, it is sometime easier to consider some axes that does not go through th
 
     It is easy to check that the angular velocity about the centre of mass is equal to that about the endpoint -- indeed this can be observed from the diagram, and due to the body being rigid. Therefore,
     \begin{subequations}\begin{align}
-        T &= \frac{1}{2} M \frac{L^2}{4} \pqty{\dot{\theta}}^2 + \frac{1}{2} \pqty{I - M \frac{L^4}{4}} \pqty{\dot{\theta}}^2 \\
+        T &= \frac{1}{2} M \frac{L^2}{4} \pqty{\dot{\theta}}^2 + \frac{1}{2} \pqty{I - M \frac{L^2}{4}} \pqty{\dot{\theta}}^2 \\
         &= \frac{1}{2} I \pqty{\dot{\theta}}^2,
     \end{align}\end{subequations}
     which agrees with the previous result.
@@ -475,7 +475,7 @@ However, it is sometime easier to consider some axes that does not go through th
     \end{equation}
     so in other words, rolling changes the `effective mass' of the ball. From this expression, we may also see explicitly, that this energy is conserved:
     \begin{subequations}\begin{align}
-        \dv{E}{t} &= M \dot{x} \ddot{x} + I \dot{\theta} \ddot{\theta} \\
+        \dv{E}{t} &= m \dot{x} \ddot{x} + I \dot{\theta} \ddot{\theta} \\
         &= \dot{x} \pqty{-f} + \pqty{\dot{\theta} a} f \\
         &= f\pqty{- \dot{x} + \dot{\theta} a} \\
         &= 0
@@ -484,12 +484,12 @@ However, it is sometime easier to consider some axes that does not go through th
 
     Now, we put the ball rolling down a slope, the conserved total energy is given by
     \begin{equation}
-        E = \frac{1}{2} \pqty{M + \frac{I}{a^2}} \pqty{\dot{x}}^2 - Mg x \sin \alpha.
+        E = \frac{1}{2} \pqty{m + \frac{I}{a^2}} \pqty{\dot{x}}^2 - mg x \sin \alpha.
     \end{equation}
 
     Imposing the conservation of energy, we have
     \begin{equation}
-        \boxed{\pqty{M + \frac{I}{a^2}} \ddot{x} = Mg \sin \alpha.}
+        \boxed{\pqty{m + \frac{I}{a^2}} \ddot{x} = mg \sin \alpha.}
     \end{equation}
 
     In other words, the ball rolls down the slope with slightly less acceleration -- it has the same `gravitational mass' but effectively less `inertial mass'.
@@ -504,7 +504,7 @@ However, it is sometime easier to consider some axes that does not go through th
 
 \subsection{Normal Forces}
 
-Object don't fall through tables, etc., because the table exerts a \emph{normal force} on the object that pushes it away. The microscopic origin of normal forces is electrostatic repulsion and the Pauli exclusion principle.
+Objects do not fall through tables, etc., because the table exerts a \emph{normal force} on the object that pushes it away. The microscopic origin of normal forces is electrostatic repulsion and the Pauli exclusion principle.
 
 \begin{figure}[ht!]
     \centering
@@ -526,7 +526,7 @@ At an angle, the normal contact force on its own does not prevent an object from
 
 Note that although the magnitude of \(F_F\) is independent of the speed, it always acts in the direction such that it opposes motion.
 
-Normal contact forces also produces \emph{elastic bounces}.
+Normal contact forces also produce \emph{elastic bounces}.
 
 \begin{figure}[ht!]
     \centering

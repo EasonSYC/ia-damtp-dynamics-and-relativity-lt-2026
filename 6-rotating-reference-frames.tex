@@ -105,7 +105,7 @@ In other words, a free particle with \(\vb{F} = \vb{0}\) does \emph{not} move on
     \label{ex:rotation-of-earth}%
     For the rotation of Earth,
     \begin{equation}
-        \omega_{\text{rot}} = \frac{2 \pi}{\SI{1}{\day}} \approx \SI{7e5}{\per\second},
+        \omega_{\text{rot}} = \frac{2 \pi}{\SI{1}{\day}} \approx \SI{7e-5}{\per\second},
     \end{equation}
     and
     \begin{equation}
@@ -156,11 +156,11 @@ The centrifugal potential energy can be lowered by moving away from the axis of 
 
 \begin{example}[Hanging String]
     \label{ex:hanging-string}%
-    We aim to calculate how much centrifugal force displaces a hanging string by directly pointing towards the centre of the force, as setup in \autoref{fig:hanging-string-centrifugal}.
+    We aim to calculate how much centrifugal force displaces a hanging string by directly pointing towards the centre of the force, as set up in \autoref{fig:hanging-string-centrifugal}.
 
     Forces acting on the particle (i.e. weight at the end of the string) satisfies
     \begin{equation}
-        \vb{g} = - m g \unitv{r}.
+        \vb{G} = - m g \unitv{r}.
     \end{equation}
 
     As the force diagram in \autoref{fig:hanging-string-centrifugal} demonstrates, we have
@@ -176,7 +176,7 @@ The centrifugal potential energy can be lowered by moving away from the axis of 
 
     In equilibrium, balancing gives
     \begin{equation}
-        \vb{g} + \vb{F}_{\text{cent}} + \vb{T} = \vb{0}.
+        \vb{G} + \vb{F}_{\text{cent}} + \vb{T} = \vb{0}.
     \end{equation}
 
     Two equations in the \(\unitv{r}\) and \(\unitv*{\theta}\) components allows us to solve for the unknowns \(T\) and \(\phi\), and hence,
@@ -318,7 +318,7 @@ We note the similarity with the Lorentz force, with the magnetic flux density \(
 
     The solution is tedious, but the upshot is that the pendulum, in general, follows an ellipse in the \(\pqty{x, y}\) plane that slowly rotates, i.e.,
     \begin{equation}
-        x + iy = \exp \pqty{- i \omega t \sin \theta} \cdot \bqty{a \cos \pqty{\sqrt{\frac{g}{l}} t} + b \sin \pqty{\sqrt{\frac{g}{l}}} t},
+        x + iy = \exp \pqty{- i \omega t \sin \theta} \cdot \bqty{a \cos \pqty{\sqrt{\frac{g}{l}} t} + b \sin \pqty{\sqrt{\frac{g}{l}} t}},
     \end{equation}
     where \(a\) and \(b\) are complex constants, and \(\exp\) gives the rotation of the ellipse. This means, the period of rotation is
     \begin{equation}

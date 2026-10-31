@@ -173,7 +173,7 @@ It is natural to take \(\vb{a} = \vb{R}\), the centre of mass, for example when 
 
 \subsubsection{Total Energy}
 
-Now we look at the total energy, which splits up nicely, to an centre of mass part and an internal part. To help with the notations, let
+Now we look at the total energy, which splits up nicely into a centre-of-mass part and an internal part. To help with the notation, let
 \begin{equation}
     \vb{x}_i = \vb{R} + \vb{y}_i,
 \end{equation}
@@ -205,7 +205,7 @@ and hence, differentiating gives us
     the cross term vanishing since we may factor out the \(\dot{\vb{R}}\), and the sum remaining sums to zero.
 \end{proof}
 
-\begin{proposition}[Conservative Forces gives Conservative System Energy]
+\begin{proposition}[Conservative Forces Give Conserved System Energy]
     \label{prop:conservative-force-conservative-energy}%
     If all the forces in the system are conservative, expressed using potentials
     \begin{equation}
@@ -225,11 +225,10 @@ and hence, differentiating gives us
 \begin{proof}
     The potentials must have \(V_{ij} = V_{ji}\) for Newton's Third Law. We may differentiate to show that
     \begin{subequations}\begin{align}
-        \dot{E} &= \sum_{i = 1}^{N} m_i \dot{\vb{x}}_i \vdot \ddot{\vb{x}_i} + \sum_{i = 1}^{N} \pqty{\grad_i V_i} \vdot \dot{\vb{x}}_i + \sum_{i < j} \bqty{\pqty{\grad_i V_{ij}} \vdot \dot{\vb{x}}_i + \pqty{\grad_j V_{ij}} \vdot \dot{\vb{x}}_j} \\
-        &= \sum_{i = 1}^{N} m_i \dot{\vb{x}_i} \vdot \ddot{\vb{x}_i} - \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} \vdot \dot{\vb{x}}_i - \sum_{i < j} \bqty{\vb{F}_{ij} \vdot \dot{\vb{x}}_i + \vb{F}_{ji} \vdot \dot{\vb{x}}_j} \\
-        &= \sum_{i = 1}^{N} m_i \dot{\vb{x}_i} \vdot \ddot{\vb{x}_i} - \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} \vdot \dot{\vb{x}}_i - \sum_{j \neq i} \vb{F}_{ij} \vdot \dot{\vb{x}}_i \\
-        &= \sum_{i = 1}^{N} \dot{\vb{x}} \vdot \pqty{m_i \ddot{\vb{x}}_i - \vb{F}_i^{\text{ext}} - \sum_{j \neq i} F_{ij}} \\
-        &= \sum_{i = 1}^{N} \dot{\vb{x}} \vdot \vb{0} \\
+        \dot{E} &= \sum_{i = 1}^{N} m_i \dot{\vb{x}}_i \vdot \ddot{\vb{x}}_i + \sum_{i = 1}^{N} \pqty{\grad_i V_i} \vdot \dot{\vb{x}}_i + \sum_{i < j} \bqty{\pqty{\grad_i V_{ij}} \vdot \dot{\vb{x}}_i + \pqty{\grad_j V_{ij}} \vdot \dot{\vb{x}}_j} \\
+        &= \sum_{i = 1}^{N} m_i \dot{\vb{x}}_i \vdot \ddot{\vb{x}}_i - \sum_{i = 1}^{N} \vb{F}_i^{\text{ext}} \vdot \dot{\vb{x}}_i - \sum_{i < j} \bqty{\vb{F}_{ij} \vdot \dot{\vb{x}}_i + \vb{F}_{ji} \vdot \dot{\vb{x}}_j} \\
+        &= \sum_{i = 1}^{N} \dot{\vb{x}}_i \vdot \pqty{m_i \ddot{\vb{x}}_i - \vb{F}_i^{\text{ext}} - \sum_{j \neq i} \vb{F}_{ij}} \\
+        &= \sum_{i = 1}^{N} \dot{\vb{x}}_i \vdot \vb{0} \\
         &= 0,
     \end{align}\end{subequations}
     using Newton's Second Law in the final step.
@@ -294,7 +293,7 @@ This means the relative separation behaves like a single-particle problem with t
 
 If one mass is much bigger than the other, say \(m_1 \gg m_2\), then the reduced mass has \(\mu \approx m_2\). In this limit, this becomes our previous orbit problem: the heavy object is essentially still, and the lighter object orbits around it.
 
-In general, we cannot solve analytically for \(N > 2\). However, if \(N \gg 1\) is large, we might be able to apply statistical methods to study such setup.
+In general, we cannot solve analytically for \(N > 2\). However, if \(N \gg 1\) is large, we might be able to apply statistical methods to study such a system.
 
 \subsection{Rocket Equation and Variable Mass}
 
@@ -319,7 +318,7 @@ We have that
 while at \(t + \delta t\),
 \begin{subequations}\begin{align}
     p\pqty{t + \delta t} &= m \pqty{t + \delta t} v \pqty{t + \delta t} + \pqty{m\pqty{t} - m\pqty{t + \delta t}} \cdot \pqty{v\pqty{t} - u} \\
-    &= m\pqty{t} + v\pqty{t} + \bqty{\dot{m}\pqty{t} v\pqty{t} + m\pqty{t} \dot{v}\pqty{t}} \delta t - \dot{m} \pqty{t} \delta t \pqty{v\pqty{t} - u}.
+    &= m\pqty{t} v\pqty{t} + \bqty{\dot{m}\pqty{t} v\pqty{t} + m\pqty{t} \dot{v}\pqty{t}} \delta t - \dot{m} \pqty{t} \delta t \pqty{v\pqty{t} - u}.
 \end{align}\end{subequations}
 
 Hence,

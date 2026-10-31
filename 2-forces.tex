@@ -205,14 +205,14 @@ Note our assumptions here:
 
 \begin{example}[Object Thrown to Space]
     \label{ex:object-thrown-to-space}%
-    Suppose we throw an object to space, and we want it to never fall back down. The minimal velocity of the object must have to not fall down is called the \emph{escape velocity}.
+    Suppose we throw an object to space, and we want it to never fall back down. The minimum initial speed required for the object not to fall back is called the \emph{escape velocity}.
 
     As the object is thrown,
     \begin{equation}
         E = \frac{1}{2} m v^2 - \frac{G M m}{R}.
     \end{equation}
 
-    To not fall back, the object must reach \(\abs{\vb{x}} = \infty\), without the velocity \(\abs{\dot{\vb{x}}} = 0\). Hence,
+    To not fall back, the object must be able to reach \(\abs{\vb{x}} = \infty\), where its speed is non-negative. Hence,
     \begin{equation}
         \frac{1}{2} m v^2 - \frac{G M m}{R} = E_{\text{initial}} = E_{\text{final}} = E_{\infty} = \frac{1}{2} m v_\infty^2 - 0 > 0.
     \end{equation}
@@ -370,7 +370,7 @@ We aim to solve this, which is a \emph{vector differential equation}. The most d
     \vb{B} = \pqty{0, 0, B} = B \unitv{z}.
 \end{equation}
 
-The equations of motions become, for \(\vb{x} = \pqty{x, y, z}\), that
+The equations of motion become, for \(\vb{x} = \pqty{x, y, z}\),
 \begin{subequations}\begin{align}
     m \ddot{x} &= q \dot{y} B \tag{1}, \\
     m \ddot{y} &= -q \dot{x} B \tag{2}, \\
@@ -486,7 +486,7 @@ In particular, from the equation
 \end{equation}
 this means since squares are non-negative, we have
 \begin{equation}
-    E > V\pqty{x},
+    E \geq V\pqty{x},
 \end{equation}
 restricting the range of \(X\) where the particle can be.
 
@@ -509,7 +509,7 @@ We now refer to \autoref{fig:potential-energy-allowed-motion}.
     \label{def:bounded-unbounded-motion}%
     \begin{itemize}
         \item Region (a) gives \emph{bounded motion}, since the particle bounces back and forth between the turning points.
-        \item Region (b) gives \emph{unbounded motion}, since the particle bounces off the turning point, and flies off to \(x \to \minusinfty\).
+        \item Region (b) gives \emph{unbounded motion}, since the particle bounces off the turning point and flies off to \(x \to \minusinfty\).
     \end{itemize}
 \end{definition}
 
@@ -517,7 +517,7 @@ We now refer to \autoref{fig:potential-energy-allowed-motion}.
 
 \begin{definition}[Equilibrium Points]
     \label{def:equilibrium-points}%
-    \emph{Equilibrium points} are when \(V\pqty{x} = E\) and \(V'\pqty{x} = 0\).
+    \emph{Equilibrium points} are points where \(V'\pqty{x} = 0\). A particle at rest at such a point has \(E = V\pqty{x}\).
 \end{definition}
 
 These cases are special, since they are points where particles can sit forever.
@@ -529,7 +529,7 @@ These cases are special, since they are points where particles can sit forever.
     \label{fig:motion-near-equilibrium-points}%
 \end{figure}
 
-The motions of equations and conservation of energy gives
+The equations of motion and conservation of energy give
 \begin{subequations}\begin{align}
     m \ddot{x} &= - V'\pqty{x} = 0, \\
     E &= \frac{1}{2} m \dot{x}^2 + V\pqty{x},
@@ -565,7 +565,7 @@ If \(x_0\) is a stable equilibrium point, this gives the potential for a \emph{h
 
 Hence, Newton's Equations gives
 \begin{equation}
-    m \ddot{x} = - V'\pqty{x} \approx - \pqty{x - x_0} V''\pqty{x},
+    m \ddot{x} = - V'\pqty{x} \approx - \pqty{x - x_0} V''\pqty{x_0},
 \end{equation}
 and hence
 \begin{equation}
@@ -573,7 +573,7 @@ and hence
 \end{equation}
 where \(A\) is the amplitude, \(\phi\) is the phase, and oscillations are with frequency
 \begin{equation}
-    \omega = \sqrt{\frac{V'\pqty{x_0}}{m}}.
+    \omega = \sqrt{\frac{V''\pqty{x_0}}{m}}.
 \end{equation}
 
 We want \(A \ll 1\) to put the oscillations close to the equilibrium point. If the amplitude of the oscillations are small enough, we can neglect higher-order terms in the Taylor expansion, and the oscillation solution is hence valid.
@@ -637,13 +637,13 @@ Dimensional analysis is a way to get information about solutions to the equation
         \dv[2]{\theta}{\tau} = - \sin \theta.
     \end{equation}
 
-    The solution of this equation is independent of \(g\) and \(l\). Therefore, the solution is some \(\theta\pqty{\tau}\). The period \(\Delta \tau\) of \(\theta\pqty{\tau}\) may depend on the initial angle \(\theta_0 = \theta\pqty{-}\), but cannot depend on \(g\) and \(l\). Hence,
+    The solution of this equation is independent of \(g\) and \(l\). Therefore, the solution is some \(\theta\pqty{\tau}\). The period \(\Delta \tau\) of \(\theta\pqty{\tau}\) may depend on the initial angle \(\theta_0 = \theta\pqty{0}\), but cannot depend on \(g\) and \(l\). Hence,
     \begin{equation}
         \theta\pqty{\tau + \Delta \tau} = \theta\pqty{\tau}
     \end{equation}
     gives
     \begin{equation}
-        \Delta t = \sqrt{\frac{f}{g}} \Delta \tau
+        \Delta t = \sqrt{\frac{l}{g}} \Delta \tau
     \end{equation}
     as the period.
 
@@ -694,7 +694,7 @@ All arguments of non-trivial functions (i.e. involving sums of different powers)
 
     Taking dimensions, we have
     \begin{equation}
-        \dimT = \bqty{T} = \bqty{g}^A \bqty{l}^B \bqty{m}^C = \dimL^A \dimT^{-2A} \dimL^{B} \dimM^{c}.
+        \dimT = \bqty{T} = \bqty{g}^A \bqty{l}^B \bqty{m}^C = \dimL^A \dimT^{-2A} \dimL^{B} \dimM^{C}.
     \end{equation}
 
     This solves to \(A = - \frac{1}{2}\), \(B = \frac{1}{2}\), and \(C = 0\). So
@@ -707,7 +707,7 @@ Note that in the above example, if \(A, B, C\) are not all fixed, this means we 
 
 \subsection{Friction}
 
-When objects move through a medium (e.g. air or water), \emph{microscopic forces} between the object medium causes momentum and energy to be carried off into the medium, and lost.
+When objects move through a medium (e.g. air or water), \emph{microscopic forces} between the object and the medium cause momentum and energy to be carried off into the medium and lost.
 
 \begin{definition}[Friction]
     \label{def:friction}%
@@ -768,7 +768,7 @@ Linear drag, on the other hand, is dependent on \emph{viscous effects}, for exam
     \centering
 
     \caption{Linear Drag of Viscous Fluid}
-    \label{fig:linear-drag-viscous-fliud}%
+    \label{fig:linear-drag-viscous-fluid}%
 \end{figure}
 
 For example, \emph{Stokes's law} for a spherical object with radius \(L\) gives
